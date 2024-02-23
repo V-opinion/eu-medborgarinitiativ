@@ -1,0 +1,15 @@
+.prc-block-area.editor-link-is-hovering{
+	--marginUnit: calc( 1em + 1px );
+    border-width: var(--wp-admin-border-width-focus);
+    border-color:  var(--wp-admin-theme-color);
+    border-style: solid;
+    padding: 0 1em;
+    margin-left: calc(-1 * var(--marginUnit));
+    margin-right: calc(-1 * var(--marginUnit));
+}
+
+.prc-block-area__edit-link {
+	font-family: var(--wp--preset--font-family--sans-serif);
+	color: var(--wp--preset--color--gray-medium);
+	font-size: 13px;
+}
