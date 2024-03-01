@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Fonts CDN-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap"
+      rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--- Custom Css --->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Internal CSS -->
+    <style>
+      .slideUpBtn {
+    padding: 12px 24px;
+    background-color: transparent;
+    border: 2px solid hsl(243, 80%, 62%);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(1,.15,.34,.92)
+}
+
+.slideUpBtn span {
+    display: inline-block;
+    transition: inherit;
+    color: hsl(243, 80%, 62%);
+}
+
+.slideUpBtn:hover span {
+    opacity: 0;
+    transform: translateY(-100%)
+}
+
+.slideUpBtn::before {
+    content: "";
+    background-color: hsl(243, 80%, 62%);;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(100%);
+    transition: inherit;
+    width: 100%;
+    transition: transform 0.5s cubic-bezier(1,.15,.34,.92)
+}
+
+.slideUpBtn::after {
+    content: 'Vote Now';
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: inherit;
+    transform: translateY(100%);
+    width: 100%;
+
+}
+
+.slideUpBtn:hover::before {
+    transform: translateY(0) scale(3);
+    transition-delay: .025s;
+}
+
+.slideUpBtn:hover::after {
+    opacity: 1;
+    color: hsl(222, 100%, 95%);
+    transform: translateY(0);
+}
+    </style>
+    <!-- End Internal CSS -->
+  </head>
+  <body>
+    <!------------------  Navbar Section ------------------>
+    <div class="container-fluid" id="cont-3">
+      <header id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-dark"> <a class="navbar-brand"
+            href="index.html" style="color: white; font-weight: 600; margin-top: 15px;">GO
+            VOTE</a> <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation"> <span class="navbar-toggler-icon" style="color: white;"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto animate__animated animate__bounceInDown"
+              style="padding-right: 50px;">
+              <li class="nav-item"> <a class="nav-link" href="index.html" style="color:white; font-weight: 600; text-align: center; font-size: 18px; margin-top: 20px;  text-transform: capitalize; padding: 20px;">Home</a>
+              </li>
+              <li class="nav-item"> <a class="nav-link" href="year.php" style="color: white; font-weight: 600; text-align: center; font-size: 18px; margin-top: 20px;  text-transform: capitalize; padding: 20px;">Candidate</a>
+              </li>
+              <li class="nav-item"> <a class="nav-link" href="result.php" style="color: white; font-weight: 600; text-align: center; font-size: 18px; margin-top: 20px;  text-transform: capitalize; padding: 20px;">Result</a>
+              </li>
+              <li class="nav-item"> <a class="nav-link" href="about.php" style="color: white; font-weight: 600; text-align: center; font-size: 18px; margin-top: 20px;  text-transform: capitalize; padding: 20px;">About</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!------------------  HomePage Section ------------------>
+      <section id="banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 animate__animated animate__bounceInLeft" style="text-align: center;">
+              <h1>ONLINE VOTING SYSTEM</h1>
+              <p>
+              </p>
+              <p style="margin-bottom: 0.1in; border: medium none; padding: 0in; text-align: justify; background-color: #349f27;">
+                <font color="#111111"><font face="Times New Roman, serif"><font
+                      size="3"><span style="font-style: normal"><span style="font-weight: normal">We
+start
+                          from the principle that it is democracy that has given
+                          all
+                          religious communities freedom of religion, and that
+                          democracy be
+                          introduced in all religions, without exception.</span></span></font></font></font></p>
+              <a href="candidate.php"><button class="magnifyBtn">VOTE NOW</button></a>
+            </div>
+            <div class="col-md-6"> <img src="img/2.svg" alt="" srcset="" class="animate__animated animate__bounceInRight "
+                style="margin-left: 10px; margin-top: 20px;" height="400vh " width="90%">
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!------------------  Space Section ------------------>
+    <section class="space">
+      <div class="container">
+        <div class="col-md-12">
+          <div class="row"> </div>
+        </div>
+      </div>
+    </section>
+    <!------------------  Candidate Section ------------------>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Online Voting System</h1>
+        </div>
+        <div class="col-md-12" style=" width: 100%; "> <img src="../../Users/Landets%20runt/Pictures/bist%C3%A5ndet%20till%20Palestinier.png"
+            alt="FRC" srcset="" style="width: 918px; height: 953px;"> </div>
+        <div class="col-md-12"> <a href="candidate.php"><span><button style="margin-top: 20px;"
+                class="slideUpBtn">Vote Now</button></span></a> </div>
+      </div>
+    </div>
+    <!------------------  About Section ------------------>
+    <section>
+      <div class="container-fluid" style="margin-top: 50px;">
+        <div class="row" style="background: linear-gradient(to right, #a517ba,#5f1178 );"
+          width="100%">
+          <div class="col-md-12" style="background-image: linear-gradient(to right, #a517ba,#5f1178 ); color: white;">
+            <h1 style="text-align: center; background-image: linear-gradient(to right, #a517ba,#5f1178 ); color: white;"><b><font
+                  color="#333333"><font face="Alice"><font size="3"><span style="color: #ff9966;">Religions
+                        for
+                        peace</span></font></font></font></b></h1>
+            <p>
+            </p>
+            <p style="margin-bottom: 0in; background: transparent; border: none; padding: 0in; line-height: 110%; widows: 2; orphans: 2"
+              align="LEFT">
+              <strong style="color: #418a58;"><font face="Georgia, serif"><font
+                    size="3"><span style="font-style: normal"><span style="font-weight: normal"><span
+                          style="background: transparent">Separation
+                          of religion and state</span></span></span></font></font></strong></p>
+          </div>
+          <div class="col-md-6"> <img src="img/4.svg" alt="" srcset=""> </div>
+          <div class="col-md-6" data-aos="fade-left">
+            <h1 style="color: white; margin-top: 40px;" class=" ">
+            </h1>
+            <p style="margin-top: 0.1in; margin-bottom: 0.1in; border: none; padding: 0in; font-style: normal; font-weight: normal; line-height: 110%; widows: 2; orphans: 2"
+              align="LEFT">
+            </p>
+            <p style="margin-bottom: 0in; background: transparent; border: none; padding: 0in; font-style: normal; font-weight: normal; line-height: 110%; widows: 2; orphans: 2"
+              align="LEFT">
+              <span style="color: #ff9900;"><font face="Times New Roman, serif"><font
+                    size="3"><span style="background: transparent">Religion-and
+                      -voting-rights</span></font></font></span></p>
+            <p style="color: white;" class=" ">
+            </p>
+            <ul>
+              <li>
+                <p style="margin-bottom: 0.1in; border: medium none; padding: 0in; font-style: normal; font-weight: normal; text-align: justify; background-color: white;">
+                  <font color="#111111"><font face="Times New Roman, serif"><font
+                        size="3">A transition from church elections to a
+                        multi-religion electoral system in those countries that
+                        already have church elections, In other countries (USA,
+                        China, India, Iran, Israel.....) that do not have
+                        similar elections, a multi-religion electoral system is
+                        introduced.</font></font></font></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!------------------  Contact Form Section ------------------>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1> Contact Form </h1>
+            <p style="padding-bottom:50px;">Any Queries , Drop Contact Form </p>
+          </div>
+          <div class="col-md-4" style="border-radius: 6px; border: 3px  #a517ba solid;">
+            <h2 style="padding-top: 30px;">Contact Form</h2>
+            <form action="contact.php" method="post"> <label style="float: left; position: absolute; margin-top: 25px; margin-left: -160px; outline:none;">
+                Name :</label><label style="float: left; position: absolute; margin-top: 100px;  px; margin-left: -160px;">
+                Email :</label><label style="float: left; position: absolute; margin-top: 175px; margin-left: -160px;">
+                Message :</label>
+              <table>
+                <tbody>
+                  <tr>
+                    <td style="padding-top: 50px;"><input placeholder="Enter Your Name"
+                        name="txtName" type="text"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 50px;"><input required="" placeholder="Enter Your Email id "
+                        name="txtEmail" type="email"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 50px;"><textarea placeholder="Enter Your Message"
+name="txtMessage" rows="3" cols="22"></textarea></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 50px; padding-bottom: 30px;"><button
+                        class="magnifyBtn">Submit</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+          <div class="col-md-8" style="padding-left: 50px; width: 100%; padding-top: 30px;">
+            <img src="img/6.svg" alt="" srcset=""> </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container-fluid" style="margin-top: 50px;">
+        <div class="row" style="background: linear-gradient(to right, #a517ba,#5f1178 );"
+          width="100%">
+          <div class="col-md-12" style="background-image: linear-gradient(to right, #a517ba,#5f1178 ); color: white;">
+            <h1 style="text-align: center; background-image: linear-gradient(to right, #a517ba,#5f1178 ); color: white;">
+              Become Candidate</h1>
+            <p>Become a Candidate</p>
+          </div>
+          <div class="col-md-6"> <img src="img/11.svg" style="height: 400px;">
+          </div>
+          <div class="col-md-6" data-aos="fade-left">
+            <h1 style="color: white; margin-top: 40px; margin-bottom: 40px;" class=" ">Apply</h1>
+            <p style="color: white; text-align: justify;"> If you want to become
+              a candidate, then you click on the link below, then you will be
+              redirected. In the second page, by filling that, you can request
+              for a candidate After that, the administrator will approve your
+              request so you can become a candidate. </p>
+            <a href="insert_cand_year.php"><button class="magnifyBtn" style="margin-bottom: 40px;">Apply</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!------------------  Footer Section ------------------>
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <hr>
+            <div class="Footer">
+              <ul style="display: flex;">
+                <li style="list-style: none; padding: 10px; "><a href="index.html"
+                    style="text-decoration: none; color: #a517ba;">Home</a></li>
+                <li style="list-style: none; padding: 10px; "><a href="about.php"
+                    style="text-decoration: none; color: #a517ba;">About</a></li>
+                <li style="list-style: none; padding: 10px; "><a href="suggestion.html"
+                    style="text-decoration: none; color: #a517ba;">Suggestion</a></li>
+                <li style="list-style: none; padding: 10px; "><a href="https://multireligionvalsystem.eu.org/contact/"
+                    style="text-decoration: none; color: #a517ba;" title="Contact"
+                    target="_blank">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <hr>
+            <div class="social-icon">
+              <ul>
+                <li> <a href=""> </a> <br>
+                </li>
+                <li> <a href=""> </a> <br>
+                </li>
+                <li> <a href=""> </a> <br>
+                </li>
+                <li> <a href=""> </a> <br>
+                </li>
+                <li> <a href=""> </a> <br>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
