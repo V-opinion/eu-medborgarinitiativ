@@ -1,0 +1,164 @@
+/* ALERT MODAL "COOKIE POLICY" FOR EUROPARL */
+/* Component "COOKIES ALERT" */
+/* Copyright : European Parliament */
+/* ========================================================================================================================================================================== */
+/* == GENRIC STYLES ============================================================================================================================== */
+/* ========================================================================================================================================================================== */
+/*  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* STYLE GENERIQUES : Conteneurs principaux */
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy {
+  position: fixed;
+  display: block;
+  z-index: 5000;
+  /*overflow: hidden;*/
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 5px 0 0 0;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  letter-spacing: normal;
+  white-space: normal;
+  color: inherit;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy.epjs_displayed .cookie-consent-popup-container {
+  transform: translate(0, 0);
+  transition: transform 1s ease-out 0s;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy.epjs_displayed .cookie-consent-popup-container > div:focus {
+  outline: none;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container {
+  position: relative;
+  display: block;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 20px 0 10px 0;
+  transform: translate(0, 110%);
+  transition: transform 0.5s ease-out 0s;
+  background-color: rgba(51, 51, 51, 0.95);
+  color: #fff;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_tag-url {
+  margin-top: -36px;
+  margin-bottom: 20px;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_tag-url .tag-url {
+  position: relative;
+  display: inline-block;
+  padding: 4px 20px;
+  background-color: #fff;
+  color: #000;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.2);
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_title {
+  position: static;
+  display: block;
+  margin: 0;
+  padding: 0 10px 14px 10px;
+  font-family: Georgia, Garamond, serif, Palatino;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: inherit;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_text {
+  position: static;
+  display: block;
+  margin: 0;
+  padding: 0 10px 14px 10px;
+  font-weight: lighter;
+  color: inherit;
+  -webkit-font-smoothing: auto;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_text a, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_text p {
+  font-size: 0.8rem !important;
+  line-height: 1.5rem !important;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_text p {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #fff;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_text a.cc-link-default {
+  display: inline-block;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_text a.cc-link-default:hover {
+  color: #32D3FB !important;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_text a.cc-link-default:focus {
+  color: #32D3FB !important;
+  outline: 3px dotted #fff;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons {
+  position: static;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  letter-spacing: -0.3em;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons a, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons a:link, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons a:visited, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button {
+  position: static;
+  display: inline-block;
+  width: auto;
+  margin: 0 10px 10px 10px;
+  padding: 0 10px;
+  background: #fff;
+  border: 1px solid #fff;
+  outline: none;
+  cursor: pointer;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  letter-spacing: -0.3em;
+  white-space: nowrap;
+  vertical-align: middle;
+  color: #505154;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons a:before, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button:before, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons a span, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button span {
+  position: static;
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.8rem !important;
+  line-height: 1.5rem !important;
+  text-align: center;
+  letter-spacing: normal;
+  vertical-align: middle;
+  color: inherit;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons a:before, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button:before {
+  overflow: hidden;
+  width: 0;
+  height: 25px;
+  text-indent: 10px;
+  content: " ";
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons a:hover, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons a:focus, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons a:active, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button:hover, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button:focus, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button:active {
+  background: #1093cf;
+  border-color: #1093cf;
+  color: #fff;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button.epjs_agree {
+  background: #326aab;
+  border-color: #326aab;
+  color: #fff;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button.epjs_agree:hover, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button.epjs_agree:focus, body[data-jsactive] #cookie-policy.epjs_cookiepolicy .cookie-consent-popup-container .epjs_buttons button.epjs_agree:active {
+  background: #fff;
+  border-color: #b1b3b5;
+  color: #1093cf;
+}
+body[data-jsactive] #cookie-policy.epjs_cookiepolicy:focus {
+  outline: none;
+}
+/*# sourceMappingURL=privacy-policy.css.map */
