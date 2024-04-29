@@ -1,0 +1,601 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Revolutionizing Flood Management: The Innovative FloodGuard System</title>
+<meta name="generator" content="Innovative Flood Management System - https://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/owl.carousel.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/northernlights.css" rel="stylesheet">
+<link href="css/Northernlights.css" rel="stylesheet">
+<script src="jquery-1.12.4.min.js"></script>
+<script src="owl.carousel.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="skrollr.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="wb.panel.min.js"></script>
+<script src="wwb19.min.js"></script>
+<script>   
+   document.addEventListener('DOMContentLoaded', function(event)
+   {
+      var navigationMenu_dropdownToggle = document.querySelectorAll('#navigationMenu .dropdown-toggle');
+      navigationMenu_dropdownToggle.forEach(item => 
+      {
+         var dropdown = new bootstrap.Dropdown(item, {popperConfig:{placement:item.getAttribute('data-bs-placement')}});
+      });
+      var navigationMenu_dropdown = document.querySelectorAll('#navigationMenu .dropdown');
+      navigationMenu_dropdown.forEach(item => 
+      {
+         item.addEventListener('shown.bs.dropdown', function(e)
+         {
+            e.currentTarget.classList.add('show');
+         });
+         item.addEventListener('hidden.bs.dropdown', function(e)
+         {
+            e.currentTarget.classList.remove('show');
+         });
+      });
+      document.addEventListener('click', function (e)
+      {
+         var isChildOfDropdownMenu = false;
+         var target = e.target;
+         while (target !== null)
+         {
+            if (target.classList && target.classList.contains('navigationMenu-navbar-collapse') && target.classList.contains('show'))
+            {
+               isChildOfDropdownMenu = true;
+               break;
+            }
+            target = target.parentNode;
+         }
+         if (isChildOfDropdownMenu)
+         {
+            if (e.target.tagName.toLowerCase() === 'a' && !e.target.classList.contains('dropdown-toggle'))
+            {
+               const dropdownMenu = document.querySelector('.navigationMenu-navbar-collapse');
+               if (dropdownMenu)
+               {
+                  const collapseInstance = bootstrap.Collapse.getInstance(dropdownMenu);
+                  if (collapseInstance)
+                  {
+                     collapseInstance.hide();
+                  }
+               }
+            }
+         }
+      });
+      var elementwelcome_carousel = document.querySelector('#welcome-carousel');
+      elementwelcome_carousel.addEventListener('slid.bs.carousel', function(e)
+      {
+         switch(e.to)
+         {
+            case 0:
+               AnimateCss('wb_welcome-text1', 'slide-left-in', 300, 1000);
+               AnimateCss('wb_welcome-text2', 'slide-right-in', 1000, 1000);
+               AnimateCss('welcome-button1', 'swash-in', 2000, 1000);
+               break;
+            case 1:
+               AnimateCss('wb_welcome-text3', 'scale-in-horizontal-center', 300, 1000);
+               AnimateCss('wb_welcome-text4', 'scale-in-vertical-center', 1000, 1000);
+               AnimateCss('welcome-button2', 'twister-down-in', 2000, 1000);
+               break;
+            case 2:
+               AnimateCss('wb_welcome-text5', 'transform-rotate-in', 300, 1000);
+               AnimateCss('welcome-button3', 'vanish-in', 2000, 1000);
+               break;
+            case 5:
+               AnimateCss('wb_welcome-text4', 'transform-roll-in', 1000, 1000);
+               break;
+         }
+      });
+      var welcome_carousel = new bootstrap.Carousel('#welcome-carousel', {interval: 6000, pause: false});
+      var elementprojectsCarousel = document.querySelector('#projectsCarousel');
+      elementprojectsCarousel.addEventListener('slid.bs.carousel', function(e)
+      {
+         switch(e.to)
+         {
+            case 0:
+               $('#Carousel2').bootstrapcarousel(0);
+               break;
+            case 1:
+               $('#Carousel2').bootstrapcarousel(1);
+               break;
+            case 2:
+               $('#Carousel2').bootstrapcarousel(2);
+               break;
+            case 3:
+               $('#Carousel2').bootstrapcarousel(3);
+               break;
+         }
+      });
+      var projectsCarousel = new bootstrap.Carousel('#projectsCarousel', {interval: 3000, pause: false});
+   });
+</script>
+<script>   
+   $(document).ready(function()
+   {
+      $("a[href*='#header']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_header').offset().top }, 600, 'easeInSine');
+      });
+      $("a[href*='#welcome']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_welcome').offset().top }, 600, 'easeOutCubic');
+      });
+      $("a[href*='#services']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#services').offset().top }, 600, 'easeOutCubic');
+      });
+      $("a[href*='#projects']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_projects').offset().top }, 600, 'easeOutCubic');
+      });
+      $("a[href*='#reviews']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_reviews').offset().top }, 600, 'easeOutCubic');
+      });
+      $("#reviewsContainer").owlCarousel({autoplayTimeout:5000, margin: 16, autoplay: true, nav: false, loop: true, dots: true, items: 2, slideBy: 1});
+      $("a[href*='#contact']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_contact').offset().top }, 600, 'easeOutCubic');
+      });
+      $("a[href*='#contactForm']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_contactForm').offset().top }, 600, 'easeInSine');
+      });
+      function skrollrInit()
+      {
+         skrollr.init({forceHeight: false, mobileCheck: function() { return false; }, smoothScrolling: false});
+      }
+      skrollrInit();
+      $("#PanelLayer").panel({animate: true, animationDuration: 200, animationEasing: 'easeOutSine', dismissible: true, display: 'overlay', position: 'bottom'});
+   });
+</script>
+</head>
+<body>
+   <div id="wb_header">
+      <div id="header">
+         <div class="row">
+            <div class="col-1">
+               <label for="" id="headerLabel1" style="display:inline-block;width:169px;line-height:17px;z-index:0;">info@multireligionvalsystem.eu.org</label>
+            </div>
+            <div class="col-2">
+               <div id="wb_headerIcon2" style="display:inline-block;width:24px;height:33px;text-align:center;z-index:1;">
+                  
+               </div>
+               <label for="" id="headerLabel2" style="display:inline-block;width:250px;line-height:17px;z-index:2;">Three reforms that change the world</label>
+            </div>
+            <div class="col-3">
+            </div>
+            <div class="col-4">
+               <label for="" id="headerLabel3" style="display:inline-block;width:48px;line-height:17px;z-index:3;">F.D.U</label>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_navigation">
+      <div id="navigation">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_navigationHeading" style="display:block;width:100%;z-index:4;">
+                  <h1 id="navigationHeading">ISHÖ</h1>
+               </div>
+            </div>
+            <div class="col-2">
+               <nav id="wb_navigationMenu" style="display:block;width:100%;z-index:5;">
+                  <div id="navigationMenu" class="navigationMenu" style="width:100%;height:auto !important;">
+                     <div class="container">
+                        <div class="navbar-header">
+                           <button title="" type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navigationMenu-navbar-collapse">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                           </button>
+                        </div>
+                        <div class="navigationMenu-navbar-collapse collapse">
+                           <ul class="nav navbar-nav">
+                              <li class="nav-item">
+                                 <a href="#welcome" class="nav-link">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="#services" class="nav-link">About</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="#projects" class="nav-link">Innovativt system för hantering av översvämningar</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="#contact" class="nav-link">Contact</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_welcome">
+      <div id="welcome">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_welcome-carousel">
+                  <div id="welcome-carousel" class="carousel slide" data-bs-ride="carousel">
+                     <ol class="carousel-indicators">
+                        <li data-bs-target="#welcome-carousel" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#welcome-carousel" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#welcome-carousel" data-bs-slide-to="2"></li>
+                     </ol>
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="carousel-item-inner">
+                              <div id="wb_welcome-text1">
+                                 <p style="margin:0 0 8px 0;font-size:16px;line-height:18px;"><span style="font-weight:bold;">Innovativt system för hantering av översvämningar</span></p>
+                                 <p style="font-family:Arial;font-size:24px;line-height:27.5px;color:#FFFFFF;"><span style="font-size:21px;line-height:24.5px;font-weight:bold;">A cylinder-based flood management system</span></p>
+                              </div>
+                              <div id="wb_welcome-text2">
+                                 <p style="font-size:13px;line-height:16px;"><span style="font-size:27px;line-height:30px;font-weight:bold;">Three reforms that change the world</span></p>
+                              </div>
+                              <a id="welcome-button1" href="https://a-multi-religion-election-system.multireligionvalsystem.eu.org/" target="_blank" style="display:inline-block;width:141px;height:37px;z-index:8;">FDU</a>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="carousel-item-inner">
+                              <div id="wb_welcome-text3">
+                                 <p style="font-size:24px;line-height:27.5px;"><span style="font-size:21px;line-height:24.5px;">The Innovative FloodGuard System</span></p>
+                              </div>
+                              <div id="wb_welcome-text4">
+                                 <p style="font-size:13px;line-height:16px;"><span style="font-size:27px;line-height:30px;font-weight:bold;">Transparent cylinder kan revolutionera översvämningshantering</span><span style="font-size:27px;line-height:30px;font-weight:bold;">!</span><span style="font-size:27px;line-height:30px;font-weight:bold;"> Cylinderns transparenta design tjänar flera syften !</span></p>
+                              </div>
+                              <a id="welcome-button2" href="https://multireligionvalsystem.eu.org/FAQ/" target="_blank" style="display:inline-block;width:141px;height:37px;z-index:11;">EUs-medborgarinitiativ</a>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="carousel-item-inner">
+                              <div id="wb_welcome-text5">
+                                 <p style="font-size:24px;line-height:27.5px;"><span style="font-size:21px;line-height:24.5px;">Stor kapacitet för vattenlagring</span></p>
+                              </div>
+                              <div id="wb_welcome-text6">
+                                 <p style="font-size:13px;line-height:16px;"><span style="font-size:27px;line-height:30px;font-weight:bold;">Stabilitet och motståndskraft.</span></p>
+                              </div>
+                              <a id="welcome-button3" href="https://community.multireligionvalsystem.eu.org/" target="_blank" style="display:inline-block;width:141px;height:37px;z-index:14;">DPNS</a>
+                           </div>
+                        </div>
+                     </div>
+                     <a class="carousel-item-start carousel-control" href="#welcome-carousel" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span>
+                     </a>
+                     <a class="carousel-item-end carousel-control" href="#welcome-carousel" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_services">
+      <div id="services">
+         <div id="wb_servicesCard1" style="display:flex;z-index:16;" class="card">
+            <div id="servicesCard1-card-body">
+               <div id="servicesCard1-card-item0"><i class="fa fa-street-view"></i></div>
+               <div id="servicesCard1-card-item1">Anpassningsförmåga och skalbarhet</div>
+               <div id="servicesCard1-card-item2">Även om det ursprungligen utformades för stadsområden, kan konceptet med det transparenta cylinderbaserade översvämningshanteringssystemet anpassas och skalas för att passa olika geografiska platser och infrastrukturkrav. Modulära byggtekniker och flexibla designelement möjliggör anpassning baserat på specifika behov och begränsningar, vilket säkerställer användbarhet i olika miljöer utanför Dubai.</div>
+            </div>
+         </div>
+         <div id="wb_servicesCard2" style="display:flex;z-index:17;" class="card">
+            <div id="servicesCard2-card-body">
+               <div id="servicesCard2-card-item0"><i class="fa fa-leaf"></i></div>
+               <div id="servicesCard2-card-item1">Återanvändning av vatten och hållbarhet</div>
+               <div id="servicesCard2-card-item2">Förutom översvämningshantering kan det infångade vattnet i cylindern behandlas och återanvändas för olika ändamål, vilket främjar hållbarhet och resursbevarande i Dubai. Avancerade filtrerings- och reningssystem säkerställer att det återvunna vattnet uppfyller kvalitetsstandarder för icke-drickbara användningsområden som bevattning, industriella processer och brandbekämpning..</div>
+            </div>
+         </div>
+         <div id="wb_servicesCard3" style="display:flex;z-index:18;" class="card">
+            <div id="servicesCard3-card-body">
+               <div id="servicesCard3-card-item0"><i class="fa fa-recycle"></i></div>
+               <div id="servicesCard3-card-item1">FloodGuard-systemet</div>
+               <div id="servicesCard3-card-item2">FloodGuard-systemet har också en modulär infrastruktur för översvämningsskydd, inklusive utfällbara barriärer och grindar som snabbt kan aktiveras som svar på stigande vattennivåer.
+Dessa barriärer är utformade för att vara miljövänliga och icke-invasiva, vilket minimerar miljöpåverkan samtidigt som de ger ett robust skydd mot översvämningar.</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_projects">
+      <div id="projects">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_projectsCarousel">
+                     <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+                           <li data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active"></li>
+                           <li data-bs-target="#projectsCarousel" data-bs-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                           <div class="carousel-item frame-1 active">
+                              <div class="carousel-item-inner">
+                                 <div id="wb_projectsText2" class="caption">
+                                    <p style="font-size:16px;line-height:18px;"><span style="font-size:21px;line-height:24.5px;font-weight:bold;">Revolutionizing Flood Management: The Innovative FloodGuard System</span><br/><span style="font-size:15px;line-height:16.5px;">Every year, floods wreak havoc on communities around the world, causing destruction and displacing thousands. But what if there was a solution that could change the game.</span></p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="carousel-item frame-2">
+                              <div class="carousel-item-inner">
+                                 <div id="wb_projectsText3" class="caption">
+                                    <p style="font-size:16px;line-height:18px;font-weight:bold;"><span style="font-size:21px;line-height:24.5px;">A network of advanced sensors</span></p>
+                                    <p style="font-size:16px;line-height:18px;"><span style="font-size:15px;line-height:16.5px;">These sensors continuously monitor water levels, rainfall intensity, and other key parameters in real-time, providing invaluable data to predict and manage flood events more effectively.".</span></p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <a class="carousel-item-start carousel-control" href="#projectsCarousel" role="button" data-bs-slide="prev">
+                           <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-item-end carousel-control" href="#projectsCarousel" role="button" data-bs-slide="next">
+                           <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_projectsText1">
+                     <p style="font-size:17px;line-height:20px;font-weight:bold;">The FloodGuard System</p>
+                     <ul style="font-size:15px;line-height:16.5px;list-style-type:disc;">
+                        <li style="margin:0 0 0 24px;">The FloodGuard System also features a modular flood protection infrastructure,
+                        </li>
+                        <li style="margin:0 0 0 24px;"> including deployable barriers and gates that can be activated swiftly in response to rising water levels. 
+                        </li>
+                        <li style="margin:0 0 0 24px;">These barriers are designed to be eco-friendly and non-invasive, minimizing environmental impact . 
+                        </li>
+                        <li style="margin:0 0 0 24px;">while providing robust protection against flooding.
+                        </li>
+                     </ul>
+                     <p style="font-size:15px;line-height:16.5px;"><br/>In a world where climate change is exacerbating the frequency and severity of floods, innovative solutions like the FloodGuard System offer hope for a more resilient future. Together, we can build safer and more sustainable communities for generations to come</p>
+                  </div>
+                  <input type="submit" id="projectsButton" name="" value="More details" style="display:inline-block;width:141px;height:37px;z-index:23;">
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_reviews">
+      <div id="reviews">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_reviewsHeading1" style="display:block;width:100%;z-index:24;">
+                  <h2 id="reviewsHeading1">Innovativt system för hantering av översvämningar</h2>
+               </div>
+               <div id="wb_reviewsHeading2" style="display:block;width:100%;z-index:25;">
+                  <h3 id="reviewsHeading2">Clean and Modern design .Ett cylinderbaserat system för hantering av översvämningar</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_reviewsContainer">
+      <div id="reviewsContainer" class="owl-carousel owl-theme">
+         <div id="wb_reviewsCard1" style="display:flex;z-index:26;" class="card">
+            <div id="reviewsCard1-card-body">
+               <img id="reviewsCard1-card-item0" src="images/FDU-women.png" width="4000" height="2242" alt="" title="">
+               <div id="reviewsCard1-card-item1"> </div>
+            </div>
+         </div>
+         <div id="wb_Card1" style="display:flex;z-index:27;" class="card">
+            <div id="Card1-card-body">
+               <img id="Card1-card-item0" src="images/Dubai-2.jpg" width="299" height="168" alt="" title="">
+               <div id="Card1-card-item1">"Innovative Flood Management System."</div>
+            </div>
+         </div>
+         <div id="wb_reviewsCard2" style="display:flex;z-index:28;" class="card">
+            <div id="reviewsCard2-card-body">
+               <img id="reviewsCard2-card-item0" src="images/Dubai-3.jpg" width="275" height="183" alt="" title="">
+               <div id="reviewsCard2-card-item1">"Innovative Flood Management System."</div>
+            </div>
+         </div>
+         <div id="wb_reviewsCard3" style="display:flex;z-index:29;" class="card">
+            <div id="reviewsCard3-card-body">
+               <img id="reviewsCard3-card-item0" src="images/avatar_green.jpg" width="363" height="363" alt="" title="">
+               <div id="reviewsCard3-card-item1">Stabilitet och motståndskraft</div>
+               <div id="reviewsCard3-card-item2">FDU</div>
+               <div id="reviewsCard3-card-item3"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard3-card-item4"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard3-card-item5"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard3-card-item6"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard3-card-item7"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard3-card-item8">"
+The cylinder can be swiftly relocated to areas prone to flooding, allowing for strategic deployment based on real-time weather forecasts and flood predictions.."</div>
+            </div>
+         </div>
+         <div id="wb_reviewsCard4" style="display:flex;z-index:30;" class="card">
+            <div id="reviewsCard4-card-body">
+               <img id="reviewsCard4-card-item0" src="images/avatar_green.jpg" width="363" height="363" alt="" title="">
+               <div id="reviewsCard4-card-item1">Ett cylinderbaserat system för hantering </div>
+               <div id="reviewsCard4-card-item2">av översvämningar</div>
+               <div id="reviewsCard4-card-item3"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard4-card-item4"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard4-card-item5"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard4-card-item6"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard4-card-item7"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard4-card-item8">"The cylinder-based flood management system, designed with attention to stability, mobility , wildlife monitoring, renewable energy, and water holding capacity, presents a holistic solution to flood mitigation. ."</div>
+            </div>
+         </div>
+         <div id="wb_reviewsCard5" style="display:flex;z-index:31;" class="card">
+            <div id="reviewsCard5-card-body">
+               <img id="reviewsCard5-card-item0" src="images/avatar_green.jpg" width="363" height="363" alt="" title="">
+               <div id="reviewsCard5-card-item1">Pablo Carrasco</div>
+               <div id="reviewsCard5-card-item2">Developer</div>
+               <div id="reviewsCard5-card-item3"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard5-card-item4"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard5-card-item5"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard5-card-item6"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard5-card-item7"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard5-card-item8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Vivamus magna justo, lacinia eget consectetur sed, convallis."</div>
+            </div>
+         </div>
+         <div id="wb_reviewsCard6" style="display:flex;z-index:32;" class="card">
+            <div id="reviewsCard6-card-body">
+               <img id="reviewsCard6-card-item0" src="images/avatar_green.jpg" width="363" height="363" alt="" title="">
+               <div id="reviewsCard6-card-item1">Pablo Carrasco</div>
+               <div id="reviewsCard6-card-item2">Developer</div>
+               <div id="reviewsCard6-card-item3"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard6-card-item4"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard6-card-item5"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard6-card-item6"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard6-card-item7"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard6-card-item8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Vivamus magna justo, lacinia eget consectetur sed, convallis."</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_contact">
+      <div id="contact">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_contactHeading" style="display:block;width:100%;z-index:33;">
+                  <h2 id="contactHeading">GET IN TOUCH</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_contactForm">
+      <div id="contactForm-divider-top">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 20" preserveAspectRatio="none">
+            <path class="divider-fill" d="M500,20 L490,0 h20 L500,20 Z"/>
+         </svg></div>
+      <div id="contactForm">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_contactText1">
+                  <p style="font-size:13px;line-height:16px;"><span style="font-size:27px;line-height:30px;font-weight:bold;">Newsletter</span></p>
+               </div>
+               <input type="text" id="contactEmail" style="display:block;width:100%;height:35px;z-index:35;" name="email" value="" spellcheck="false" placeholder="Enter your email address">
+               <input type="submit" id="contactButton" name="" value="Submit" style="display:inline-block;width:87px;height:30px;z-index:36;">
+            </div>
+            <div class="col-2">
+               <div id="wb_contactText2">
+                  <p><span style="font-weight:bold;">Contact Us</span></p>
+                  <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                  <p style="font-size:13px;line-height:16px;">EUs-medborgarinitiativ<br/>FDU<br/>Three reforms that change the world</p>
+                  <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                  <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                  <p style="font-size:13px;line-height:16px;">Web:https://multireligionvalsystem.eu.org/ </p>
+                  <p style="font-size:13px;line-height:16px;">Email: info@multireligionvalsystem.eu.org </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="upStickyLayer" style="position:fixed;text-align:left;left:auto;right:25px;top:auto;bottom:25px;width:50px;height:50px;z-index:78;z-index:99999;" data-250-start="opacity:1;" data-start="opacity:0;">
+      <div id="wb_upIcon" style="position:absolute;left:9px;top:8px;width:24px;height:24px;text-align:center;z-index:38;">
+         <a href="#welcome"><div id="upIcon"><i class="fa fa-angle-up"></i></div></a></div>
+   </div>
+   <div id="PanelLayer" style="text-align:left;">
+      <div id="wb_links">
+         <div id="links">
+            <div class="row">
+               <div class="col-1">
+                  <div class="col-1-padding">
+                     <div id="wb_linksHeading1" style="display:block;width:100%;z-index:50;">
+                        <h3 id="linksHeading1">NAVIGATION</h3>
+                     </div>
+                     <nav id="wb_linksMenu1" style="display:block;width:100%;z-index:51;">
+                        <ul id="linksMenu1" role="menubar" class="nav">
+                           <li role="menuitem" class="nav-item firstmain"><a class="nav-link" href="" target="_self">Home</a>
+                           </li>
+                           <li role="menuitem" class="nav-item"><a class="nav-link" href="" target="_self">About</a>
+                           </li>
+                           <li role="menuitem" class="nav-item"><a class="nav-link" href="" target="_self">FloodGuard System</a>
+                           </li>
+                           <li role="menuitem" class="nav-item"><a class="nav-link" href="" target="_self">Innovativt system för hantering av översvämningar</a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+               <div class="col-2">
+                  <div class="col-2-padding">
+                     <div id="wb_linksHeading2" style="display:block;width:100%;z-index:52;">
+                        <h3 id="linksHeading2">CONNECT</h3>
+                     </div>
+                     <nav id="wb_linksMenu2" style="display:block;width:100%;z-index:53;">
+                        <ul id="linksMenu2" role="menubar" class="nav">
+                           <li role="menuitem" class="nav-item firstmain"><a class="nav-link" href="https://www.facebook.com/groups/Multireligionvalsystemet/" target="_self">Facebook</a>
+                           </li>
+                           <li role="menuitem" class="nav-item"><a class="nav-link" href="https://www.instagram.com/multireligionval/" target="_self">Instagram</a>
+                           </li>
+                           <li role="menuitem" class="nav-item"><a class="nav-link" href="https://twitter.com/DPNS" target="_self">Twitter</a>
+                           </li>
+                           <li role="menuitem" class="nav-item"><a class="nav-link" href="https://www.youtube.com/watch?v=F1SPIbW8ebk&ab_channel=Amulti-religionelectionsystem" target="_self">YouTube</a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+               <div class="col-3">
+                  <div class="col-3-padding">
+                     <div id="wb_linksHeading3" style="display:block;width:100%;z-index:54;">
+                        <h3 id="linksHeading3">MORE LINKS</h3>
+                     </div>
+                     <nav id="wb_linksMenu3" style="display:block;width:100%;z-index:55;">
+                        <ul id="linksMenu3" role="menubar" class="nav">
+                           <li role="menuitem" class="nav-item firstmain"><a class="nav-link" href="https://fdu.multireligionvalsystem.eu.org/tre-reformer-som-forandrar-varlden/Newsletter" target="_self">Newsletter</a>
+                           </li>
+                           <li role="menuitem" class="nav-item"><a class="nav-link" href="https://a-multi-religion-election-system.multireligionvalsystem.eu.org/" target="_self">A multi-religion election system</a>
+                           </li>
+                           <li role="menuitem" class="nav-item"><a class="nav-link" href="https://multireligionvalsystem.eu.org/Conflict-resolution-model/" target="_self">Conflict resolution-model</a>
+                           </li>
+                           <li role="menuitem" class="nav-item"><a class="nav-link" href="https://multireligionvalsystem.eu.org/How-to-solve-a-most-complex-and-controversial-issues-in-the-world/" target="_self">How to solve a most complex and controversial issues in the world, The Israel-Palestine conflict by transition from the church election to a multi-religion election system </a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <a href="https://multireligionvalsystem.eu.org/" target="_blank"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi-T0SRtiUC6pSKoBTNF7uDUefqT0dGaY2PwXaEvXlzGYZgFouG6vNa77PRVfVMQe0AP2UoZGPaggHu5jFU3iANzDEekIgzC6Mu4mnhXRblAb3ZjQAAeg_TKTqVUTs7k1o3lr-m5xJxE_iHuW_P7yPTs8RJ4394DCNm4sEkHGe0aqI9PU28E8V20hoNxZM/s320-rw/Multireligionval%20r%C3%B6relsen.webp" alt="EUs-medborgarinitiativ" style="position:absolute;left:441px;top:3007px;margin:0;border-width:0;z-index:250" width="88" height="31"></a>
+   <div id="wb_footer" style="z-index:10000 !important;">
+      <div id="footer">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_footerIconMenu" style="display:inline-block;width:34px;height:24px;text-align:center;z-index:63;">
+                  <a href="#" onclick="TogglePanel('PanelLayer', event);return false;"><div id="footerIconMenu"><i class="fa fa-bars"></i></div></a>
+               </div>
+            </div>
+            <div class="col-2">
+               <div id="wb_footerText">
+                  <p style="font-size:12px;line-height:13.5px;"><span style="background-color:#FFFFFF;">C</span><span style="background-color:#FFFFFF;">opyright </span><span style="background-color:#FFFFFF;">©</span><span style="background-color:#FFFFFF;"> 2023 EUs-medborgarinitiativ</span></p>
+               </div>
+            </div>
+            <div class="col-3">
+               <div id="wb_footerIcon1" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:65;">
+                  <a href="https://www.facebook.com/Multireligionval/?locale=en"><div id="footerIcon1"><i class="fa fa-facebook-square"></i></div></a>
+               </div>
+               <div id="wb_footerIcon2" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:66;">
+                  <a href="https://www.instagram.com/multireligionval/"><div id="footerIcon2"><i class="fa fa-instagram"></i></div></a>
+               </div>
+               <div id="wb_footerIcon3" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:67;">
+                  <a href="https://www.youtube.com/watch?v=F1SPIbW8ebk&ab_channel=Amulti-religionelectionsystem"><div id="footerIcon3"><i class="fa fa-youtube"></i></div></a>
+               </div>
+               <div id="wb_footerIcon4" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:68;">
+                  <a href="https://twitter.com/DPNS"><div id="footerIcon4"><i class="fa fa-twitter"></i></div></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
