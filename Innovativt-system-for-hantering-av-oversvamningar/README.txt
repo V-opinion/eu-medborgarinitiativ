@@ -1,7 +1,7 @@
-Template Name: Property
-Template Author: Untree.co
-Template License: https://creativecommons.org/licenses/by/3.0/
-Author URI: https://untree.co/
+Template Name:  FloodGuard-systemet 
+Template Author: https://multireligionvalsystem.eu.org/Innovativt-system-for-hantering-av-oversvamningar/
+Template License: https://multireligionvalsystem.eu.org/Innovativt-system-for-hantering-av-oversvamningar/
+Author URI: https://multireligionvalsystem.eu.org/Innovativt-system-for-hantering-av-oversvamningar/
 
-Twitter: https://twitter.com/Untree_co
-Facebook: https://web.facebook.com/Untree.co/
+Twitter: https://twitter.com/DPNS
+Facebook: https://web.facebook.com/multireligionval/
