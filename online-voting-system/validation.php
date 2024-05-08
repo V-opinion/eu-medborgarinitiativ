@@ -19,8 +19,8 @@ $rs =  $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>online voting system | a multi-religion election system</title>
+    <link rel="stylesheet" href="https://multireligionvalsystem.eu.org/online-voting-system/css/bootstrap.min.css">
     <style>
     .card-5{
         border: 2px black solid;
