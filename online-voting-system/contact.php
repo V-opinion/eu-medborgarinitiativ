@@ -24,8 +24,8 @@ $stmt->execute();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
       <!-- Bootstrap CSS --> 
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="https://multireligionvalsystem.eu.org/online-voting-system/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://multireligionvalsystem.eu.org/online-voting-system/css/style.css">
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <title></title>
      <style>
@@ -81,7 +81,7 @@ $stmt->execute();
                         <H1 style="margin-top: 40px;">Successfully Submitted</H1>
                        </div>
                        <div class="col-md-12">
-                           <p>Go Home Click this Link -><a href="index.html">Click Me</a></p>
+                           <p>Go Home Click this Link -><a href="https://multireligionvalsystem.eu.org/online-voting-system/index.html">Click Me</a></p>
                        </div>
                    </div>
                </div>
@@ -102,10 +102,10 @@ $stmt->execute();
                   <hr>
                   <div class="Footer">
                   <ul style="display: flex;">
-                  <li style="list-style: none; padding: 10px; "><a href="index.html" style="text-decoration: none; color: #a517ba;">Home</a></li>
-                  <li style="list-style: none; padding: 10px; "><a href="about.php" style="text-decoration: none; color: #a517ba;">About</a></li>
-                  <li style="list-style: none; padding: 10px; "><a href="suggestion.html" style="text-decoration: none; color: #a517ba;">Suggestion</a></li>
-                  <li style="list-style: none; padding: 10px; "><a href="contact_form.php" style="text-decoration: none; color: #a517ba;">Contact</a></li>
+                  <li style="list-style: none; padding: 10px; "><a href="https://multireligionvalsystem.eu.org/online-voting-system/index.html" style="text-decoration: none; color: #a517ba;">Home</a></li>
+                  <li style="list-style: none; padding: 10px; "><a href="https://multireligionvalsystem.eu.org/online-voting-system/about.php" style="text-decoration: none; color: #a517ba;">About</a></li>
+                  <li style="list-style: none; padding: 10px; "><a href="https://multireligionvalsystem.eu.org/online-voting-system/suggestion.html" style="text-decoration: none; color: #a517ba;">Suggestion</a></li>
+                  <li style="list-style: none; padding: 10px; "><a href="https://multireligionvalsystem.eu.org/online-voting-system/contact_form.php" style="text-decoration: none; color: #a517ba;">Contact</a></li>
                 </ul>
                   </div>
                 </div>
@@ -149,7 +149,7 @@ $stmt->execute();
             <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>    
-    <script src="js/bootstrap.min.js"></script>  
+    <script src="https://multireligionvalsystem.eu.org/online-voting-system/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://multireligionvalsystem.eu.org/online-voting-system/js/popper.min.js"></script>    
+    <script src="https://multireligionvalsystem.eu.org/online-voting-system/js/bootstrap.min.js"></script>  
     
