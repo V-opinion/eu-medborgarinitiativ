@@ -1,5 +1,5 @@
-multireligionval_htm_files
-multireligionval.htm
+oi
+överideologi.html
 sitemap.xml
 robots.txt
 https://multireligionvalsystem.eu.org/oi/370.png
