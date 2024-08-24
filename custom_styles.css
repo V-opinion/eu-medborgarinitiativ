@@ -1,0 +1,13 @@
+.Normal_Text {font-family:'Open Sans';font-weight:normal;font-style:normal;font-size:14px;text-decoration:none;text-transform: none;color:#6C6C6C;-webkit-text-stroke: 0px black;letter-spacing:0em;}
+.Heading_1 {font-family:'Montserrat';font-weight:normal;font-style:normal;font-size:16px;text-decoration:none;text-transform: none;color:#000000;-webkit-text-stroke: 0px black;letter-spacing:0em;}
+.Heading_2 {font-size:24px;}
+.Quote {font-family:'Open Sans';font-weight:normal;font-style:italic;font-size:24px;text-decoration:none;text-transform: none;color:#FFFFFF;-webkit-text-stroke: 0px black;letter-spacing:0em;}
+.Subheadline {font-family:'Montserrat';font-weight:normal;font-style:normal;font-size:14px;text-decoration:none;text-transform: none;color:#E5404E;-webkit-text-stroke: 0px black;letter-spacing:0em;}
+.Heading_3 {font-family:'Montserrat';font-weight:normal;font-style:normal;font-size:36px;text-decoration:none;text-transform: none;color:#000000;-webkit-text-stroke: 0px black;letter-spacing:0em;}
+.Logo_Big {font-family:'Syncopate Bold';font-weight:bold;font-style:normal;font-size:96px;text-decoration:none;text-transform: none;color:#FFFFFF;-webkit-text-stroke: 0px black;letter-spacing:0em;}
+.Light_Heading_2 {font-family:'Montserrat';font-weight:normal;font-style:normal;font-size:24px;text-decoration:none;text-transform: none;color:#FFFFFF;-webkit-text-stroke: 0px black;letter-spacing:0em;}
+. {font-family:'Montserrat';font-weight:normal;font-style:normal;text-decoration:none;text-transform: none;-webkit-text-stroke: 0px black;letter-spacing:0em;}
+.Light_Heading_3 {font-family:'Montserrat';font-weight:normal;font-style:normal;font-size:36px;text-decoration:none;text-transform: none;color:#FFFFFF;-webkit-text-stroke: 0px black;letter-spacing:0em;}
+.Light_Heading_1 {color:#FFFFFF;}
+.Button_Text {font-family:'Montserrat';font-weight:bold;font-style:normal;font-size:12px;text-decoration:none;text-transform: none;color:#6C6C6C;-webkit-text-stroke: 0px black;letter-spacing:0.057em;}
+.Normal_Text_a {font-family:'Open Sans';font-weight:normal;font-style:normal;font-size:14px;text-decoration:none;text-transform: none;color:#6C6C6C;-webkit-text-stroke: 0px black;letter-spacing:0em;}
