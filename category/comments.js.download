@@ -1,0 +1,17 @@
+var isChanged=0;d=document.domain;domain=(d.split(".").length==3)?d.substring(d.indexOf('.')):d;function setCookie(name,value,expires){document.cookie=name+'='+escape(value)+'; expires='+expires.toGMTString()+'; domain='+domain+'; path=/';}
+function getCookie(name){var key=name+'=';var c=document.cookie;var i=c.indexOf(key);if(i<0)return '';var j=c.indexOf(';',i+key.length);if(j<0)j=c.length;return unescape(c.substring(i+key.length,j));}
+function deleteCookie(name){if(getCookie(name))
+setCookie(name,'',new Date(70,0,1,0,0,1));}
+function rememberMe(frm){var now=new Date();now.setTime(now.getTime()+365*24*60*60*1000);email=frm.email?frm.email.value:frm.authoremail.value;url=frm.url?frm.url.value:frm.authorurl.value;setCookie('bdauthor',frm.author.value,now);setCookie('bdemail',email,now);setCookie('bdurl',url,now);}
+function forgetMe(){deleteCookie('bdauthor');deleteCookie('bdemail');deleteCookie('bdurl');}
+function populateFormValues(frm){if(frm){author=frm.author||{};email=frm.email?frm.email:frm.authoremail;url=frm.url?frm.url:frm.authorurl;url=url||{};email=email||{};author.value=getCookie("bdauthor");email.value=getCookie("bdemail");url.value=getCookie("bdurl");if(!author.value){url.value='http://';}}}
+function unPopulateFormValues(frm){author=frm.author;email=frm.email?frm.email:frm.authoremail;url=frm.url?frm.url:frm.authorurl;author.value='';email.value='';url.value='http://';}
+function doSubmit(frm){if(frm.remember.checked)
+rememberMe(frm);else
+forgetMe();}
+function doCheck(e){if(isChanged)return;if(e.checked)
+populateFormValues(e.form);else
+unPopulateFormValues(e.form);}
+function doChange(e){isChanged=1;}
+function doLoaded(){if(!document.commentForm)return;populateFormValues(document.commentForm);if(document.commentForm&&document.commentForm.author&&document.commentForm.author.value)document.commentForm.remember.checked=1;}
+addLoadEvent(doLoaded);

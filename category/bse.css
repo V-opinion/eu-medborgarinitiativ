@@ -1,0 +1,133 @@
+/*body {
+    padding: 100px;
+}*/
+
+#bse-not-logged-in,
+#bse-logged-in {
+    height: 30px !important;
+    min-width: 220px;
+}
+
+#bse-not-logged-in {
+    background: url(/static/img/external/bg.png) left -90px no-repeat !important;
+    padding-left: 29px !important;
+}
+
+#bse-not-logged-in:after,
+#bse-logged-in:after {
+    content: ".";
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+    display: block;
+}
+
+#bse-not-logged-in *,
+#bse-logged-in * {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    font-family: Helvetica, Arial, sans-serif !important;
+    color: #404040 !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    outline: none;
+}
+
+#bse-logged-in #bse-avatar-container {
+    float: left;
+    width: 29px;
+    height: 30px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    background: url(/static/img/external/bg.png) top left repeat-x !important;
+}
+
+    #bse-logged-in #bse-avatar-container #bse-avatar {
+        margin: 0px !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        -webkit-border-top-left-radius: 4px;
+        -webkit-border-bottom-left-radius: 4px;
+        -moz-border-radius-topleft: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    
+    .ie7 #bse-logged-in #bse-avatar-container #bse-avatar,
+    .ie8 #bse-logged-in #bse-avatar-container #bse-avatar {
+        border: 1px solid #b2b2b2 !important;
+        width: 27px !important;
+        height: 27px !important;
+    }
+    
+    #bse-logged-in #bse-avatar-container #bse-avatar-overlay {
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 29px;
+        height: 29px;
+        z-index: 1;
+        -webkit-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.5);
+        -moz-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.5);
+        -o-box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.5);
+        box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.3), inset 0px 2px 0px rgba(255, 255, 255, 0.5);
+        -webkit-border-top-left-radius: 4px;
+        -webkit-border-bottom-left-radius: 4px;
+        -moz-border-radius-topleft: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+#bse-not-logged-in #bse-login-to-sign,
+#bse-logged-in #bse-submit-signed {
+    display: block !important;
+    float: left !important;
+    border: none !important;
+    background: none !important;
+    margin: 0 !important;
+    padding: 0 5px 0 5px !important;
+    width: auto !important;
+    line-height: 30px !important;
+    height: 30px !important;
+    background: url(/static/img/external/bg.png) left -60px repeat-x !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+    overflow: visible;
+}
+
+    #bse-not-logged-in #bse-login-to-sign:active,
+    #bse-logged-in #bse-submit-signed:active {
+        background-position: left -120px !important;
+    }
+
+#bse-not-logged-in #bse-what-is-this-link,
+#bse-logged-in #bse-what-is-this-link {
+    float: left;
+    display: block;
+    width: 17px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: url(/static/img/external/bg.png)  left -30px no-repeat !important;
+}
+
+    #bse-not-logged-in #bse-what-is-this-link:active,
+    #bse-logged-in #bse-what-is-this-link:active {
+        background-position: left -150px !important;
+    }
