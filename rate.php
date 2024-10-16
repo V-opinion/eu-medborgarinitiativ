@@ -1,0 +1,6 @@
+PDRTJS_8983433.avg_rating = 0;
+PDRTJS_8983433.votes = 0;
+PDRTJS_settings_8983433= {"type":"stars","size":"sml","star_color":"green","custom_star":"","font_size":"12px","font_line_height":"20px","font_color":333333,"font_align":"left","font_position":"top","font_family":"verdana","font_bold":"bold","font_italic":"normal","text_vote":"Vote","text_votes":"Votes","text_rate_this":"Rate This","text_1_star":"Awful","text_2_star":"Poor","text_3_star":"Average","text_4_star":"Good","text_5_star":"Excellent","text_thank_you":"Thank You","text_rate_up":"Rate Up","text_rate_down":"Rate Down"};
+PDRTJS_8983433.init( {"type":"stars","size":"sml","star_color":"green","custom_star":"","font_size":"12px","font_line_height":"20px","font_color":333333,"font_align":"left","font_position":"top","font_family":"verdana","font_bold":"bold","font_italic":"normal","text_vote":"Vote","text_votes":"Votes","text_rate_this":"Rate This","text_1_star":"Awful","text_2_star":"Poor","text_3_star":"Average","text_4_star":"Good","text_5_star":"Excellent","text_thank_you":"Thank You","text_rate_up":"Rate Up","text_rate_down":"Rate Down"} );
+PDRTJS_8983433.token='07a0b400ec64a1ae62f43e6e3f9797f7';
+/*8983433,,default,1373753758,0-0*/
