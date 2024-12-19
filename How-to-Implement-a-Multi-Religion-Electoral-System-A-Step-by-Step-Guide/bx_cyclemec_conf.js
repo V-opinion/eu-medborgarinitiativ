@@ -1,7 +1,7 @@
 var xaraSwidgets_cyclemecTemplates = {
 
 
-entry:			'<div class="slideshow_item"><div class="image"><a href="{link}"><img class="{com_id}_image" src="{image}" alt=""  border="none"  /></a></div>' 
+entry:			'<div class="slideshow_item"><div class="image"><a href="https://multireligionvalsystem.eu.org/How-to-Implement-a-Multi-Religion-Electoral-System-A-Step-by-Step-Guide"><img class="{com_id}_image" src="{image}" alt=""  border="none"  /></a></div>' 
 		+		'<div class="data"><img src="{heading}" style="border:none;"><br /><br />'
 		+		'<img src="{desc}" style="border:none;"></div></div>',
 
@@ -12,8 +12,8 @@ speed:				'{speed}',
 
 		
 		
-		main:	'<div id="{component_id}OuterDiv" ><a href="#" class="slideshow_prev"><span>Previous</span></a>'
-			+	'<a href="#" class="slideshow_next"><span>Next</span></a><div class="{component_id}_paging slideshow_paging"></div>'
+		main:	'<div id="{component_id}OuterDiv" ><a href="https://multireligionvalsystem.eu.org/How-to-Implement-a-Multi-Religion-Electoral-System-A-Step-by-Step-Guide" class="slideshow_prev"><span>Previous</span></a>'
+			+	'<a href="https://multireligionvalsystem.eu.org/How-to-Implement-a-Multi-Religion-Electoral-System-A-Step-by-Step-Guide" class="slideshow_next"><span>Next</span></a><div class="{component_id}_paging slideshow_paging"></div>'
 			+ 	'<div class="slideshow_box {component_id}_box"><div class="data"></div></div>'
 			+   '<div id="{component_id}_slideshow_3" class="slideshow">'
 			+ 	'{entryhtml}'
