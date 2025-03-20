@@ -5,18 +5,18 @@ window.local_nivoslider_0_data = [
 },
 {
  caption: "Den gr\u00F6na omst\u00E4llningen",
- image: "cover_htm_files/19.jpg"
+ image: "https://multireligionvalsystem.eu.org/Enskild-motion-FDU-Riksdagen/19.jpg"
 },
 {
  caption: "H\u00E5llbar utveckling.",
- image: "cover_htm_files/55.png"
+ image: "https://multireligionvalsystem.eu.org/Enskild-motion-FDU-Riksdagen/55.png"
 },
 {
  caption: "Den svenska deokratin..",
- image: "cover_htm_files/56.jpg"
+ image: "https://multireligionvalsystem.eu.org/Enskild-motion-FDU-Riksdagen/56.jpg"
 },
 {
  caption: "Multireligiovalsystem",
- image: "cover_htm_files/57.jpg"
+ image: "https://multireligionvalsystem.eu.org/Enskild-motion-FDU-Riksdagen/57.jpg"
 }
 ];
