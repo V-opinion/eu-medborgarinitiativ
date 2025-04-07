@@ -166,3 +166,17 @@ document.querySelector(".chat-window button.close")
     document.querySelector("body").classList.remove("chat-open");
 });
 
+async function main() {
+  const image = await openai.images.generate(
+    {
+      model: "imagen-3.0-generate-002",
+      prompt: "a portrait of a sheepadoodle wearing a cape",
+      response_format: "b64_json",
+      n: 1,
+    }
+  );
+
+  console.log(image.data);
+}
+
+main();
