@@ -79,6 +79,8 @@ Example: "Thank you for reaching out! Please let us know if you need further ass
 `;
 
 const API_KEY = "AIzaSyB-LVH9fM7ofenDV0GmtEjMceG2WGPN1FM";
+ baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/",
+});
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ 
     model: "gemini-1.5-pro",
