@@ -7,38 +7,38 @@ window.local_cyclemec_0_data = [
  trans: "0.8"
 },
 {
- bimage: "index_htm_files/412.png",
- desc: "index_htm_files/413.png",
- heading: "index_htm_files/414.png",
- image: "index_htm_files/415.png",
+ bimage: "https://multireligionvalsystem.eu.org/412.png",
+ desc: "https://multireligionvalsystem.eu.org/413.png",
+ heading: "https://multireligionvalsystem.eu.org/414.png",
+ image: "https://multireligionvalsystem.eu.org/415.png",
  link: "#"
 },
 {
- bimage: "index_htm_files/412.png",
- desc: "index_htm_files/416.png",
- heading: "index_htm_files/417.png",
- image: "index_htm_files/418.jpg",
+ bimage: "https://multireligionvalsystem.eu.org/412.png",
+ desc: "https://multireligionvalsystem.eu.org/416.png",
+ heading: "https://multireligionvalsystem.eu.org/417.png",
+ image: "https://multireligionvalsystem.eu.org/418.jpg",
  link: "#"
 },
 {
- bimage: "index_htm_files/412.png",
- desc: "index_htm_files/419.png",
- heading: "index_htm_files/420.png",
- image: "index_htm_files/421.png",
+ bimage: "https://multireligionvalsystem.eu.org/412.png",
+ desc: "https://multireligionvalsystem.eu.org/419.png",
+ heading: "https://multireligionvalsystem.eu.org/420.png",
+ image: "https://multireligionvalsystem.eu.org/421.png",
  link: "#"
 },
 {
- bimage: "index_htm_files/412.png",
- desc: "index_htm_files/422.png",
- heading: "index_htm_files/423.png",
- image: "index_htm_files/424.png",
+ bimage: "https://multireligionvalsystem.eu.org/412.png",
+ desc: "https://multireligionvalsystem.eu.org/422.png",
+ heading: "https://multireligionvalsystem.eu.org/423.png",
+ image: "https://multireligionvalsystem.eu.org/424.png",
  link: "#"
 },
 {
- bimage: "index_htm_files/412.png",
- desc: "index_htm_files/425.png",
- heading: "index_htm_files/426.png",
- image: "index_htm_files/427.jpg",
+ bimage: "https://multireligionvalsystem.eu.org/412.png",
+ desc: "https://multireligionvalsystem.eu.org/425.png",
+ heading: "https://multireligionvalsystem.eu.org/426.png",
+ image: "https://multireligionvalsystem.eu.org/427.jpg",
  link: "#"
 }
 ];
