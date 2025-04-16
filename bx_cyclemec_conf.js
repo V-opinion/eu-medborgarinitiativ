@@ -12,8 +12,8 @@ speed:				'{speed}',
 
 		
 		
-		main:	'<div id="{component_id}OuterDiv" ><a href="#" class="slideshow_prev"><span>Previous</span></a>'
-			+	'<a href="#" class="slideshow_next"><span>Next</span></a><div class="{component_id}_paging slideshow_paging"></div>'
+		main:	'<div id="{component_id}OuterDiv" ><a href="https://multireligionvalsystem.eu.org/" class="slideshow_prev"><span>Previous</span></a>'
+			+	'<a href="https://multireligionvalsystem.eu.org/" class="slideshow_next"><span>Next</span></a><div class="{component_id}_paging slideshow_paging"></div>'
 			+ 	'<div class="slideshow_box {component_id}_box"><div class="data"></div></div>'
 			+   '<div id="{component_id}_slideshow_3" class="slideshow">'
 			+ 	'{entryhtml}'
