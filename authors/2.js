@@ -4,39 +4,39 @@ window.local_simpleGallery3Columns_1_data = [
  showshadow: "Y"
 },
 {
- image: "author_htm_files/471.jpg",
- thumbnail: "author_htm_files/490.jpg"
+ image: "https://multireligionvalsystem.eu.org/authors/71.jpg",
+ thumbnail: "https://multireligionvalsystem.eu.org/authors/490.jpg"
 },
 {
- image: "author_htm_files/473.jpg",
- thumbnail: "author_htm_files/491.jpg"
+ image: "https://multireligionvalsystem.eu.org/authors/473.jpg",
+ thumbnail: "https://multireligionvalsystem.eu.org/authors/491.jpg"
 },
 {
- image: "author_htm_files/475.jpg",
- thumbnail: "author_htm_files/492.jpg"
+ image: "https://multireligionvalsystem.eu.org/authors/475.jpg",
+ thumbnail: "https://multireligionvalsystem.eu.org/authors/492.jpg"
 },
 {
- image: "author_htm_files/477.jpg",
- thumbnail: "author_htm_files/493.jpg"
+ image: "https://multireligionvalsystem.eu.org/authors/477.jpg",
+ thumbnail: "https://multireligionvalsystem.eu.org/authors/493.jpg"
 },
 {
- image: "author_htm_files/479.jpg",
- thumbnail: "author_htm_files/494.jpg"
+ image: "https://multireligionvalsystem.eu.org/authors/479.jpg",
+ thumbnail: "https://multireligionvalsystem.eu.org/authors/494.jpg"
 },
 {
- image: "author_htm_files/481.jpg",
- thumbnail: "author_htm_files/495.jpg"
+ image: "https://multireligionvalsystem.eu.org/authors/481.jpg",
+ thumbnail: "https://multireligionvalsystem.eu.org/authors/495.jpg"
 },
 {
- image: "author_htm_files/483.jpg",
- thumbnail: "author_htm_files/496.jpg"
+ image: "https://multireligionvalsystem.eu.org/authors/483.jpg",
+ thumbnail: "https://multireligionvalsystem.eu.org/authors/496.jpg"
 },
 {
- image: "author_htm_files/485.jpg",
- thumbnail: "author_htm_files/497.jpg"
+ image: "https://multireligionvalsystem.eu.org/authors/485.jpg",
+ thumbnail: https://multireligionvalsystem.eu.org/authors//497.jpg"
 },
 {
- image: "author_htm_files/487.jpg",
- thumbnail: "author_htm_files/498.jpg"
+ image: "https://multireligionvalsystem.eu.org/authors/487.jpg",
+ thumbnail: "https://multireligionvalsystem.eu.org/authors/498.jpg"
 }
 ];
