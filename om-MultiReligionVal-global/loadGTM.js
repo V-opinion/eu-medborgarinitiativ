@@ -4,10 +4,10 @@
         dataLayer.push(arguments);
     }
     gtag("js", new Date());
-    gtag("config", "G-L2VMFHD9ZB");
+    gtag("config", "G-ZEYBPG1S4Y");
 
     var script = document.createElement("script");
     script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-L2VMFHD9ZB";
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZEYBPG1S4Y";
     document.body.appendChild(script);
 })();
