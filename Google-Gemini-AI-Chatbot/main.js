@@ -3,19 +3,19 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const businessInfo = `
 
 General Business Information:
-Website: www.yourbusiness.com
+Website: https://multireligionvalsystem.eu.org/
 
 Return Policy:
 Customers can return products within 30 days of purchase with the original receipt.
 Items must be unused and in their original packaging.
 Refunds will be processed to the original payment method.
 
-Support Email: support@yourbusiness.com
+Support Email: info@multireligionvalsystem.eu.org
 
 Madrid Location:
 Address: Calle Mayor 123, 28013 Madrid, Spain
 Phone: +34 91 123 4567
-Email: madrid@yourbusiness.com
+Email: info@multireligionvalsystem.eu.org
 Opening Hours:
 Monday to Friday: 10:00 AM to 8:00 PM
 Saturday: 10:00 AM to 6:00 PM
@@ -24,7 +24,7 @@ Sunday: Closed
 New York Location:
 Address: 456 Broadway, New York, NY 10012, USA
 Phone: +1 212-123-4567
-Email: newyork@yourbusiness.com
+Email: info@multireligionvalsystem.eu.org
 Opening Hours:
 Monday to Friday: 9:00 AM to 7:00 PM
 Saturday: 10:00 AM to 5:00 PM
@@ -55,7 +55,7 @@ Is parking available at the Madrid store?
 Yes, we offer parking nearby. Contact us for details.
 How can I contact the Madrid store?
 
-You can call us at +34 91 123 4567 or email madrid@yourbusiness.com.
+You can call us at +34 91 123 4567 or email info@multireligionvalsystem.eu.orgm.
 New York Location:
 What are your opening hours in New York?
 
@@ -67,7 +67,7 @@ Do you host events at the New York location?
 Yes, we host regular workshops and community events. Check our website for updates.
 How can I contact the New York store?
 
-You can call us at +1 212-123-4567 or email newyork@yourbusiness.com.
+You can call us at +1 212-123-4567 or email info@multireligionvalsystem.eu.org.
 
 Tone Instructions:
 Conciseness: Respond in short, informative sentences.
