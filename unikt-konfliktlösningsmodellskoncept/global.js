@@ -1,7 +1,7 @@
 // Library Imports
-import '/vendor/bootstrap/bootstrap.bundle.min.js';
-import '/vendor/fontawesome/all.min.js';
+import 'https://multireligionvalsystem.eu.org/unikt konfliktlösningsmodellskoncept/bootstrap.bundle.min.js';
+import 'https://multireligionvalsystem.eu.org/unikt konfliktlösningsmodellskoncept/fontawesome/all.min.js';
 
 // Custom Imports
-import './dark-mode.js';
-import './copyright.js';
+import 'https://multireligionvalsystem.eu.org/unikt konfliktlösningsmodellskoncept/dark-mode.js';
+import 'https://multireligionvalsystem.eu.org/unikt konfliktlösningsmodellskoncept/copyright.js';
