@@ -1,0 +1,17 @@
+:root {
+	--swiper-theme-color: var(--bs-primary);
+}
+
+.featured-content {
+	border: 1px solid transparent;
+	border-radius: 50px 100px;
+	transition: border-color .25s;
+}
+
+.featured-content:hover {
+	border-color: var(--bs-primary);
+}
+
+video {
+	background: url('../images/pattern.png') no-repeat center fixed;
+}
