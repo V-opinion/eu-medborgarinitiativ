@@ -1,7 +1,7 @@
 https://multireligionvalsystem.eu.org/Det-svenska-hemliga-valet-sep-2025
-vote.htm
-sitemap.xml
-robots.txt
+https://multireligionvalsystem.eu.org/Det-svenska-hemliga-valet-sep-2025/vote.htm
+https://multireligionvalsystem.eu.org/Det-svenska-hemliga-valet-sep-2025/sitemap.xml
+https://multireligionvalsystem.eu.org/Det-svenska-hemliga-valet-sep-2025/robots.txt
 https://multireligionvalsystem.eu.org/Det-svenska-hemliga-valet-sep-2025/64.png
 https://multireligionvalsystem.eu.org/Det-svenska-hemliga-valet-sep-2025/64@2x.png
 https://multireligionvalsystem.eu.org/Det-svenska-hemliga-valet-sep-2025/65.png
