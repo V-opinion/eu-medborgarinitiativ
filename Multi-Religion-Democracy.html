@@ -1,0 +1,185 @@
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Introducing Multi-Religion Democracy: From Church Elections to Inclusive Systems</title>
+<meta name="google-site-verification" content="WdnsMxOviwQTsK0Dxo8FqJ2spmgqYOGkSwh6Nl-4wZk" />
+  <meta name="description" content="Explore how democracy granted religious freedom and why transitioning from church elections to multi-religion electoral systems matters worldwide." />
+  <style>
+    :root{--max-w:900px;--accent:#007bff;--muted:#666;--tag-radius:999px}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:#fff;color:#111;line-height:1.5}
+    .container{max-width:var(--max-w);margin:0 auto;padding:20px}
+    header h1{font-size:1.6rem;margin:0}
+    .tags{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+    .tag{padding:6px 14px;border-radius:var(--tag-radius);color:#fff;font-size:0.95rem}
+    .green{background:#28a745}
+    .blue{background:#007bff}
+    .orange{background:#fd7e14}
+    .purple{background:#6f42c1}
+    .red{background:#dc3545}
+    article{margin-top:12px}
+    .like-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:8px 12px;border-radius:999px;border:0;cursor:pointer}
+    .like-btn:active{transform:translateY(1px)}
+    /* SERP panel styles */
+    .serp { margin-top:22px; border-top:1px solid #eee; padding-top:18px; }
+    .serp .search-row{display:flex;gap:8px;align-items:center}
+    .serp input[type="search"]{flex:1;padding:10px;border:1px solid #ddd;border-radius:8px;font-size:1rem}
+    .serp button{padding:10px 12px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+    .results{margin-top:14px;display:grid;gap:12px}
+    .result{display:flex;gap:12px;padding:12px;border-radius:10px;border:1px solid #f0f0f0}
+    .result .thumb{width:120px;flex:0 0 120px;border-radius:8px;overflow:hidden}
+    .result .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .result .content{flex:1}
+    .result a{color:var(--accent);font-weight:600;text-decoration:none}
+    .result .meta{font-size:0.85rem;color:var(--muted);margin-bottom:6px}
+    .loading{font-style:italic;color:var(--muted)}
+    @media (max-width:600px){header h1{font-size:1.25rem}.result{flex-direction:column}.result .thumb{width:100%;height:160px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Introducing Multi-Religion Democracy: From Church Elections to Inclusive Systems</h1>
+      <div class="tags" aria-hidden="true">
+        <div class="tag green">Democracy</div>
+        <div class="tag blue">Religious Freedom</div>
+        <div class="tag orange">Multi-Faith Governance</div>
+        <div class="tag purple">Church Reform</div>
+        <div class="tag red">Global Perspective</div>
+      </div>
+    </header>
+
+    <article>
+      <h2>Democracy and Religious Freedom</h2>
+      <p>Democracy has historically spearheaded the expansion of <strong>religious freedom</strong>, enabling diverse faith groups to practice openly and equally. Across nations, democratic ideals have been central to ensuring that no religious community is excluded from public life and governance.</p>
+
+      <h2>Why Transition from Church Elections to Multi-Religion election Systems?</h2>
+      <p>In countries such as Sweden, the Church of Sweden has held democratic church elections since 2000. These elections are open, inclusive, and offer multilingual, postal, and accessible voting options.</p>
+      <p>Globally, most countries do not have similar mechanisms. A <strong>multi-religion election system</strong> would allow different faith communities to democratically select leadership, ensuring that democracy permeates every religious institution—whether in the USA, UK, China, India, Iran, or Israel.</p>
+
+      <h2>What Is a Multi-Religion Election System?</h2>
+      <p>It is an inclusive voting framework where all recognized religious communities participate in structured, fair elections to choose their representatives or leaders. This could be implemented at local, national, or interfaith levels.</p>
+
+      <h3>Benefits:</h3>
+      <ul>
+        <li>Promotes equality across faiths</li>
+        <li>Encourages transparency in leadership</li>
+        <li>Strengthens religious and civic harmony</li>
+        <li>Ensures accountability within religious institutions</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>Democracy has long been the engine that grants religious freedom. Evolving from church-specific elections—like in Sweden—to inclusive multi-religion election systems can ensure that all faith and belief communities engage democratically. Embracing such a model would affirm democracy’s role not just in the state, but deeply within the world’s religious institutions.</p>
+
+      <div style="margin-top:18px">
+        <button id="likeBtn" class="like-btn" aria-pressed="false">
+          <span aria-hidden="true">👍</span>
+          <span id="likeLabel">Like</span>
+          <span style="opacity:.85;">(<span id="likeCount">0</span>)</span>
+        </button>
+      </div>
+
+      <!-- Real-time SERP section -->
+      <section class="serp" aria-labelledby="serpTitle">
+        <h3 id="serpTitle">Related live search (SERP)</h3>
+
+        <div class="search-row">
+          <input id="serpQuery" type="search" placeholder="Search related topics (e.g. 'church elections Sweden', 'religious freedom multi-faith elections')" aria-label="Search related topics" />
+          <button id="serpSearchBtn">Search</button>
+        </div>
+
+        <div id="serpStatus" class="loading" role="status" aria-live="polite" style="display:none">Loading...</div>
+        <div id="serpResults" class="results" aria-live="polite"></div>
+        <div style="margin-top:10px;display:flex;gap:8px;justify-content:center;align-items:center">
+          <button id="loadMoreBtn" style="display:none;padding:8px 12px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer">Load more</button>
+        </div>
+      </section>
+
+    </article>
+
+    <footer style="margin-top:28px;color:#888;font-size:0.9rem">&copy; 2025 Initiative for democracy within multiple religions</footer>
+  </div>
+
+<script>
+/* Like button: uses optional server endpoint /api/like if available, falls back to localStorage */
+(async function(){
+  const btn = document.getElementById('likeBtn');
+  const countSpan = document.getElementById('likeCount');
+  const storageKey = 'mrdi_like_count_v1';
+
+  // try to fetch server count
+  async function fetchCount(){
+    try{
+      const r = await fetch('/api/like');
+      if(r.ok){
+        const j = await r.json();
+        if(typeof j.count === 'number'){
+          countSpan.textContent = j.count;
+          return;
+        }
+      }
+    }catch(e){ /* ignore */ }
+    // fallback to localStorage
+    const local = parseInt(localStorage.getItem(storageKey) || '0',10);
+    countSpan.textContent = local;
+  }
+
+  await fetchCount();
+
+  btn.addEventListener('click', async ()=>{
+    // optimistic UI
+    let current = parseInt(countSpan.textContent || '0',10);
+    current++;
+    countSpan.textContent = current;
+
+    // save locally
+    localStorage.setItem(storageKey, String(current));
+
+    // try persist to server if endpoint exists
+    try{
+      await fetch('/api/like', {method:'POST'});
+    }catch(e){ /* ignore */ }
+  });
+})();
+
+/* SERP client: queries /api/search?q=... */
+(function(){
+  const queryInput = document.getElementById('serpQuery');
+  const btn = document.getElementById('serpSearchBtn');
+  const resultsDiv = document.getElementById('serpResults');
+  const status = document.getElementById('serpStatus');
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  let nextPage = null;
+  let lastQuery = '';
+
+  function renderResults(items){
+    if(!items || items.length===0){
+      resultsDiv.innerHTML = '<div class="result">No results found.</div>';
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    items.forEach(it=>{
+      const el = document.createElement('div');
+      el.className = 'result';
+      const thumbHtml = it.thumbnail ? `<div class="thumb"><img src="${it.thumbnail}" alt="" loading="lazy"></div>` : '';
+      const site = it.displayUrl || it.displayLink || (new URL(it.url||'#')).hostname;
+      const title = it.name || it.title || it.headline || it.title || '';
+      const snippet = it.snippet || it.snippetText || it.description || '';
+      const url = it.url || it.link || it.webUrl || it.formattedUrl || '#';
+      el.innerHTML = `${thumbHtml}<div class="content"><div class="meta">${escapeHtml(site)}</div><div class="title"><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(title)}</a></div><div class="snippet">${escapeHtml(snippet)}</div></div>`;
+      frag.appendChild(el);
+    });
+    resultsDiv.appendChild(frag);
+  }
+
+  function escapeHtml(s){ if(!s) return ''; return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;'); }
+
+  async function doSearch(q, pageToken){
+    if(!q || q.trim().length<2) return;
+    status.style.display = 'block'; status.textContent = 'Loading...';
+    if(!pageToken) { resultsDiv.innerHTML = ''; loadMoreBtn.style.display = 'none'; }
+    try{
+      const url = `/api/search?q=${encodeURIComponent(q)}${pageToken?`&offset=${pageToken}`:''}`;
+      const res = await fetch(url, {cache: 'no-store'});
+      if(!res.ok){ throw new Error('Search request failed'); }
+      const data = await res.json();
+      const items = data.items || data.webPages || data.value || [];
