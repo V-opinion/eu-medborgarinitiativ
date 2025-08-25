@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /cgi-bin/
+Allow: /
 Sitemap: https://multireligionvalsystem.eu.org/sitemap.xml
-
+Sitemap: http://political-practices-in-exile.local/sitemap.xml
+Sitemap: http://political-practices-in-exile.local/sitemap.rss
 
