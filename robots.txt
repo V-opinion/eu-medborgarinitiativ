@@ -1,8 +1,6 @@
-User-agent: *
+User-agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-searchBot/10; +https://openai.com/searchbot
 Allow: /
-Disallow: /cgi-bin/
-Allow: /
-Sitemap: https://multireligionvalsystem.eu.org/sitemap.xml
-Sitemap: http://political-practices-in-exile.local/sitemap.xml
-Sitemap: http://political-practices-in-exile.local/sitemap.rss
+
+user-agent: *
+sitemap: https://multireligionvalsystem.eu.org/sitemap_index.xml
 
