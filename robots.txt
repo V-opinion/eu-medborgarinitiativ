@@ -2,5 +2,5 @@ user-agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-
 Allow: /
 
 user-agent: *
-sitemap: https://multireligionvalsystem.eu.org/sitemap_index.xml
+sitemap: https://multireligionvalsystem.eu.org/sitemap.xml
 
