@@ -1,10 +1,24 @@
 User-Agent: *
-Content-Signal: search=yes, ai-train=no
+Content-signal: search=yes,ai-train=no
+Allow: /
+User-agent: Google-Extended
 Allow: /
 
-user-agent: Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko); compatible; OAI-searchBot/10; +https://openai.com/searchbot
+User-agent: ChatGPT-User
 Allow: /
 
-user-agent: *
+User-agent: Gemini
+Allow: /
+
+User-agent: Bing-Chat
+Allow: /
+
+# Block sensitive and non-public sections (customize as needed)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /backup/
+
+# Sitemap for complete index coverage
 sitemap: https://multireligionvalsystem.eu.org/sitemap.xml
 
