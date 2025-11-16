@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi-Religion Election System | Democratic Religious Reform 🌸</title>
+    <meta name="description" content="Discover democratic religious reform—multi-religion election systems for peace and pluralism. Inclusive, transparent, interfaith democracy.">
+    <meta name="keywords" content="multi-religion election, interfaith democracy, religious pluralism, peace, conflict resolution, church-state separation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* ... All previous styles ... */
+        .form-success {color: #2a7e39; font-weight: 500; margin-top: 10px;}
+        .form-error {color: #c41531; font-weight: 500; margin-top: 10px;}
+        .newsletter-box {background: #e6fcec;border: 1px solid #afe9c1;border-radius: 10px;padding: 18px 14px;margin-top: 22px;}
+        .newsletter-box label {font-weight: 500;}
+        .newsletter-box input[type="email"] {width: 70%;padding:6px;margin-left:12px;}
+        .newsletter-box button {background:#7e5fa2;color:#fff;padding:6px 22px;border-radius:8px;border:none;}
+    </style>
+</head>
+<body>
+    <!-- ... header, nav, other sections ... -->
+    <section id="contact" class="tab-content">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:info@multireligionvalsystem.eu.org">info@multireligionvalsystem.eu.org</a></p>
+
+          <section id="contact" class="tab-content">
+    <h2>Contact Us</h2>
+    <form id="contactForm" action="https://formspree.io/f/mzzyvwvn" method="POST">
+        <label>Your Name:<input type="text" name="name" required></label>
+        <label>Your Email:<input type="email" name="email" required></label>
+        <label>Message:<textarea name="message" required></textarea></label>
+        <button type="submit">Send</button>
+    </form>
+    <div id="formThanks" style="display:none; color:#2a7e39; margin-top:18px;">Thank you! We have received your message.</div>
+
+    <div class="newsletter-box" style="margin-top:32px;">
+        <form id="newsletterForm"
+            action="https://multireligionvalsystem.eu.org/subscribe/post?u=XXXXXX&amp;id=YYYYYY"
+            method="post"
+            target="_blank"
+            novalidate>
+            <label>Sign up for our Newsletter:</label>
+            <input type="email" name="EMAIL" placeholder="your@email.com" required>
+            <button type="submit">Subscribe</button>
+            <span id="newsletterMsg" style="margin-left:10px; color:#2a7e39;"></span>
+        </form>
+    </div>
+</section>
+
+<script>
+    // Contact form AJAX feedback
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        var f = this;
+        fetch(f.action, { method: "POST", body: new FormData(f), headers: { 'Accept': 'application/json' } })
+            .then(response => {
+                if (response.ok) {
+                    f.style.display = "none";
+                    document.getElementById("formThanks").style.display = "block";
+                } else {
+                    alert("Oops! Please try again.");
+                }
+            });
+    });
+
+    // Newsletter Mailchimp success feedback (works for most Mailchimp embed forms; won't show if Mailchimp redirects to their own thank you page)
+    document.getElementById('newsletterForm').addEventListener('submit', function(e){
+        var msg = document.getElementById('newsletterMsg');
+        setTimeout(function(){
+            msg.textContent = "Thank you for subscribing!";
+        }, 1500);
+    });
+</script>
+
+    <script>
+        // Tab navigation (as before)
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(s => s.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            document.querySelector('nav a[href="#' + tabId + '"]').classList.add('active');
+            window.location.hash = tabId;
+        }
+        window.addEventListener('load', function() {
+            var hash = window.location.hash.replace('#','');
+            if(hash && document.getElementById(hash)) {
+                showTab(hash);
+            }
+        });
+        window.addEventListener('hashchange', function() {
+            var hash = window.location.hash.replace('#','');
+            if(hash && document.getElementById(hash)) {
+                showTab(hash);
+            }
+        });
+
+        // Contact form validation & local-only submission feedback
+        document.getElementById('contactForm').onsubmit = function(e){
+            e.preventDefault();
+            var name = this.name.value.trim();
+            var email = this.email.value.trim();
+            var message = this.message.value.trim();
+            var feedback = document.getElementById('formMsg');
+            feedback.classList.remove('form-success','form-error');
+            if(name && email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/) && message){
+                feedback.textContent = "Message sent! We'll respond as soon as possible.";
+                feedback.classList.add('form-success');
+                this.reset();
+                // TODO: Integrate with backend (PHP, Node.js, etc.) or service endpoint
+            } else {
+                feedback.textContent = "Please fill in all fields correctly.";
+                feedback.classList.add('form-error');
+            }
+        };
+
+        // Newsletter form logic (local demo, easy to connect to Mailchimp/etc.)
+        document.getElementById('newsletterForm').onsubmit = function(e){
+            e.preventDefault();
+            var email = this.newsEmail.value.trim();
+            var msg = document.getElementById('newsletterMsg');
+            msg.classList.remove('form-success','form-error');
+            if(email.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)){
+                msg.textContent = "Thank you for subscribing!";
+                msg.classList.add('form-success');
+                this.reset();
+                // TODO: Connect with newsletter backend or service API
+            } else {
+                msg.textContent = "Please enter a valid email address.";
+                msg.classList.add('form-error');
+            }
+        };
+    </script>
+
+</body>
+</html>
