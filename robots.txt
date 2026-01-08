@@ -1,10 +1,20 @@
-User-Agent: *
-Content-signal: search=yes,ai-train=no
+User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /backup/
+
 User-agent: Google-Extended
 Allow: /
 
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
 Allow: /
 
 User-agent: Gemini
@@ -13,12 +23,4 @@ Allow: /
 User-agent: Bing-Chat
 Allow: /
 
-# Block sensitive and non-public sections (customize as needed)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /tmp/
-Disallow: /backup/
-
-# Sitemap for complete index coverage
-sitemap: https://multireligionvalsystem.eu.org/sitemap.xml
-
+Sitemap: https://multireligionvalsystem.eu.org/sitemap.xml
