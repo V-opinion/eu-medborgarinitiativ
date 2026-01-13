@@ -1,3 +1,13 @@
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0033cc">
+
+<!-- För iOS (Safari) -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="De Nya Svenskarna">
+<link rel="apple-touch-icon" href="/icons/dns-192.png">
+
+
 {
   "name": "De Nya Svenskarna",
   "short_name": "DNS",
