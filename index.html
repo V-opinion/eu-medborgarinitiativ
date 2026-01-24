@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <!-- STRUKTURERAD DATA: ETT JSON-LD-BLOCK -->
@@ -128,7 +129,7 @@ Fullständig separation är därför svår att genomföra på grund av djupa his
     ]
   }
 
-    
+
   </script>
 
   <!-- GOOGLE TAG MANAGER -->
@@ -161,7 +162,7 @@ Fullständig separation är därför svår att genomföra på grund av djupa his
         vad är Multireligionvalsystem, Multireligionvalsystem vs kyrkovalet och chaplain ,om Multireligionvalsystem,
         frågor & svar om multireligionvalsystem, about Multireligionvalsystem">
 
-  
+
 
   <!-- IKONER (behåll gärna dina befintliga) -->
   <link rel="icon" href="https://rfp.multireligionvalsystem.eu.org/assets/img/thumbnails/trossamfund.webp?h=dd526fbc875cf237b82b503347a6fb3b-32x32.png" sizes="32x32">
@@ -272,15 +273,16 @@ Fullständig separation är därför svår att genomföra på grund av djupa his
         <p>
             Welcome to the <strong>Multireligionvalsystem</strong>—a garden where faith and democracy blossom side by side.
             We nurture democratic religious reform by inviting every community to plant the seeds of peace through inclusive elections.
-         
+
         </p>
         <div class="tags" aria-hidden="true">
-        <div class="tag green"><a href="https://multireligionvalsystem.eu.org/demokratin/" title="Miljömodellen för demokrati, demokrati från teori till praktik, vilar på  ett multireligionvalsystem"><span style="color: #FFFFFF">Democracy</span></a></div>
-        <div class="tag blue"><a href="https://frc.multireligionvalsystem.eu.org/" title="Ditt land och din religionsfrihet"><span style="color: #FFFFFF">Religious Freedom</span></a></div>
-        <div class="tag orange"><a href="https://rfp.multireligionvalsystem.eu.org/rfp-rekvisit" title="rekvisit"><span style="color: #FFFFFF">Multi-Faith Governance</span></a></div>
-        <div class="tag purple"><a href="https://multireligionvalsystem.eu.org/Overview-of-the-Four-Major-Religions.html" title="Overview of the Four Major Religions"><span style="color: #FFFFFF">Church Reform</span></a></div>
-        <div class="tag red"><a href="https://multireligionvalsystem.eu.org/comparison/catholics-vs-protestants.html" title="catholics-vs-protestants"><span style="color: #FFFFFF">Global Perspective</span></a></div>
+        <div class="tag green"><a href="https://multireligionvalsystem.eu.org/demokratin/" title="Miljömodellen för demokrati, demokrati från teori till praktik, vilar på  ett multireligionvalsystem"><span style="color: #FFFFFF"><span style="color: #36CC45">Democracy</span></span></a></div>
+        <div class="tag blue"><a href="https://frc.multireligionvalsystem.eu.org/" title="Ditt land och din religionsfrihet"><span style="color: #FFFFFF"><span style="color: #CC2642"><span style="color: #8ACC53">Religious Freedom</span></span></span></a></div>
+        <div class="tag orange"><a href="https://rfp.multireligionvalsystem.eu.org/rfp-rekvisit" title="rekvisit"><span style="color: #FFFFFF"><span style="color: #69B5CC">Multi-Faith Governance</span></span></a></div>
+        <div class="tag purple"><a href="https://multireligionvalsystem.eu.org/Overview-of-the-Four-Major-Religions.html" title="Overview of the Four Major Religions"><span style="color: #FFFFFF"><span style="color: #40CC65">Church Reform</span></span></a></div>
+        <div class="tag red"><a href="https://multireligionvalsystem.eu.org/comparison/catholics-vs-protestants.html" title="catholics-vs-protestants"><span style="color: #FFFFFF"><span style="color: #4ACCC2">Global Perspective</span></span></a></div>
       </div>
+
   </header>
 <script src="/1.js"></script>
 <script>
@@ -312,6 +314,94 @@ Fullständig separation är därför svår att genomföra på grund av djupa his
 ofullbordade separationen mellan stat och kyrka samt religion och politik
     </p>
   </section>
+
+<script>
+                document.addEventListener("DOMContentLoaded", function() {
+
+var canvas = document.createElement('canvas');
+canvas.width = 200;
+canvas.height = 200;
+document.body.appendChild(canvas);
+var ctx = canvas.getContext('2d');
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+    drawFace(ctx, radius);
+    drawNumbers(ctx, radius);
+    drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+    var grad;
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    grad = ctx.createRadialGradient(0, 0, radius * 0.95, 0, 0, radius * 1.05);
+    grad.addColorStop(0, '#333');
+    grad.addColorStop(0.5, 'orange');
+    grad.addColorStop(1, '#333');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = radius * 0.1;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+    ctx.fillStyle = '#333';
+    ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+    var ang;
+    var num;
+    ctx.font = radius * 0.15 + "px arial";
+    ctx.textBaseline = "middle";
+    ctx.textAlign = "center";
+    for (num = 1; num < 13; num++) {
+        ang = num * Math.PI / 6;
+        ctx.rotate(ang);
+        ctx.translate(0, -radius * 0.85);
+        ctx.rotate(-ang);
+        ctx.fillText(num.toString(), 0, 0);
+        ctx.rotate(ang);
+        ctx.translate(0, radius * 0.85);
+        ctx.rotate(-ang);
+    }
+}
+
+function drawTime(ctx, radius) {
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour = hour % 12;
+    hour = (hour * Math.PI / 6) +
+        (minute * Math.PI / (6 * 60)) +
+        (second * Math.PI / (360 * 60));
+    drawHand(ctx, hour, radius * 0.5, radius * 0.07);
+    //minute
+    minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+    drawHand(ctx, minute, radius * 0.8, radius * 0.07);
+    // second
+    second = (second * Math.PI / 30);
+    drawHand(ctx, second, radius * 0.9, radius * 0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0, 0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+});
+                </script>
 <section id="about-short">
   <h2>About De Nya Svenskarna</h2>
   <p>
@@ -580,7 +670,7 @@ ofullbordade separationen mellan stat och kyrka samt religion och politik
     <p>
       A multi-religion election system – a research framework on religion,
       democracy and conflict resolution in multireligious societies. In my work, I explore <a href=" https://multireligionvalsystem.eu.org/researchers.html">
-a multi-religion election system</a> as a conflict-resolution model in multireligious societies.How to solve a most complex and controversial issues in the world, The Israel-Palestine conflict by transition from the church election to a multi-religion  election system ?
+a multi-religion election system</a> as a conflict-resolution model in multireligious societies.How to solve a most complex and controversial issues in the world, The Israel-Palestine conflict by transition from the church election to a multi-religion  election system ?
 <br>We start from the principle that it is democracy that has given all religious communities freedom of religion, and that democracy be introduced in all religions, without exception. A transition from church elections to a multi-religion election system in those countries that already have church elections, In other countries (USA, UK, China, India, Iran, Israel…..) that do not have similar elections, a multi-religion electoral system is introduced. !
 <br>The Faith Representatives Chamber (FRC) , Trosrepresentanternas kammare, is free from the political parties and politicians and replaces the General Synod. The FRC is the highest body of all faiths, it is elected in Multi-Faith Elections. Multi-Religion Elections is the practical application of the Multi-Religion Election System
 <br>– Multi-Religion Support – The financial model that replaces the SST Foundation and the corresponding party support, but regardless of tax revenue.
@@ -716,3 +806,9 @@ Konflikten på Nordirland mellan katoliker och protestanter var också en religi
 </p>
 </body>
 </html>
+
+
+
+
+
+
