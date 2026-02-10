@@ -614,7 +614,128 @@ function drawHand(ctx, pos, length, width) {
     (works like an installed app).
   </p>
 </section>
+<!-- Search Section -->
+<section class="search-section">
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="articleSearch" placeholder="Search articles... (e.g., 'electoral systems', 'conflict resolution')">
+            <button id="searchButton">🔍</button>
+        </div>
+        <div class="search-filters">
+            <div class="search-filter-group">
+                <label><input type="checkbox" name="category" value="all" checked> All Categories</label>
+                <label><input type="checkbox" name="category" value="electoral"> Electoral Systems</label>
+                <label><input type="checkbox" name="category" value="conflict"> Conflict Resolution</label>
+                <label><input type="checkbox" name="category" value="democracy"> Democracy & Religion</label>
+                <label><input type="checkbox" name="category" value="case-study"> Case Studies</label>
+            </div>
+            <div class="search-filter-group">
+                <select id="sortBy">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="title">Title A-Z</option>
+                    <option value="popular">Most Viewed</option>
+                    <option value="read-time">Shortest Read</option>
+                </select>
+            </div>
+        </div>
+        <div id="searchResults" class="search-results"></div>
+        <div id="searchStats" class="search-stats"></div>
+    </div>
+</section>
 
+<style>
+    .search-section {
+        background: #f8f9fa;
+        padding: 2rem 1rem;
+        border-bottom: 1px solid #eaeaea;
+    }
+    .search-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .search-box {
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto 1.5rem;
+        border: 2px solid #3498db;
+        border-radius: 50px;
+        overflow: hidden;
+        background: white;
+    }
+    #articleSearch {
+        flex-grow: 1;
+        padding: 1rem 1.5rem;
+        border: none;
+        font-size: 1rem;
+        outline: none;
+    }
+    #searchButton {
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 0 1.5rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: background 0.3s;
+    }
+    #searchButton:hover {
+        background: #2980b9;
+    }
+    .search-filters {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    .search-filter-group {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .search-filter-group label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+    .search-filter-group label:hover {
+        background: rgba(52, 152, 219, 0.1);
+    }
+    #sortBy {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: white;
+    }
+    .search-results {
+        min-height: 100px;
+    }
+    .search-stats {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+    .highlight {
+        background: #fff3cd;
+        padding: 0 2px;
+        border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+        .search-filters {
+            flex-direction: column;
+        }
+        .search-filter-group {
+            justify-content: center;
+        }
+    }
+</style>
 <hr style="max-width: 700px; margin: 2rem auto; border: 0; border-top: 1px solid #ddd;">
 
 <!-- ANDROID APK DOWNLOAD (OPTIONAL INSTALL) -->
