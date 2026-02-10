@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Articles | Multireligionvalsystem</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/articles.css">
+    <style>
+        /* Inline styles for immediate use */
+        .articles-hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(52, 152, 219, 0.8));
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-bottom: 3rem;
+        }
+        .articles-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        .articles-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        .article-filters {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            padding: 0 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid #3498db;
+            background: white;
+            color: #3498db;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #3498db;
+            color: white;
+        }
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 1rem;
+        }
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .article-image {
+            height: 200px;
+            background: #ecf0f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+        }
+        .article-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-category {
+            display: inline-block;
+            background: #e8f4fc;
+            color: #3498db;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+            align-self: flex-start;
+        }
+        .article-title {
+            font-size: 1.4rem;
+            margin: 0 0 0.75rem 0;
+            line-height: 1.4;
+        }
+        .article-title a {
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        .article-title a:hover {
+            color: #3498db;
+        }
+        .article-excerpt {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        .read-time {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 3rem auto;
+            max-width: 1200px;
+            padding: 0 1rem;
+        }
+        .page-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .page-btn.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        .subscribe-box {
+            background: #f8f9fa;
+            border: 2px dashed #bdc3c7;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+        .subscribe-btn {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
+        .subscribe-btn:hover {
+            background: #3498db;
+        }
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            .articles-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Copy your site's header/navigation here -->
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/articles/" class="active">Articles</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="articles-hero">
+            <h1>Research & Insights</h1>
+            <p>Explore in-depth analysis on multi-religion election systems, democratic reform, and conflict resolution in diverse societies.</p>
+        </section>
+
+        <!-- Filter Buttons -->
+        <div class="article-filters">
+            <button class="filter-btn active" data-filter="all">All Topics</button>
+            <button class="filter-btn" data-filter="electoral">Electoral Systems</button>
+            <button class="filter-btn" data-filter="conflict">Conflict Resolution</button>
+            <button class="filter-btn" data-filter="democracy">Democracy & Religion</button>
+            <button class="filter-btn" data-filter="case-study">Case Studies</button>
+        </div>
+
+        <!-- Articles Grid -->
+        <section class="articles-grid">
+            <!-- Article 1 -->
+            <article class="article-card" data-category="electoral">
+                <div class="article-image">
+                    <!-- Replace with actual image -->
+                    <div style="width:100%;height:100%;background:#3498db;color:white;display:flex;align-items:center;justify-content:center;">
+                        Electoral Systems
+                    </div>
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Electoral Systems</span>
+                    <h2 class="article-title">
+                        <a href="/articles/understanding-multi-religion-elections.html">Understanding Multi-Religion Election Systems</a>
+                    </h2>
+                    <p class="article-excerpt">A comprehensive framework for designing electoral systems that acknowledge religious diversity while preventing sectarian dominance in political institutions.</p>
+                    <div class="article-meta">
+                        <span class="date">March 15, 2024</span>
+                        <span class="read-time">📚 8 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="article-card" data-category="conflict">
+                <div class="article-image">
+                    <div style="width:100%;height:100%;background:#e74c3c;color:white;display:flex;align-items:center;justify-content:center;">
+                        Peacebuilding
+                    </div>
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Conflict Resolution</span>
+                    <h2 class="article-title">
+                        <a href="/articles/democratic-religious-reform.html">Democratic Religious Reform as Peacebuilding</a>
+                    </h2>
+                    <p class="article-excerpt">How internal democratic elections within religious communities can contribute to larger peace processes in conflict-affected regions.</p>
+                    <div class="article-meta">
+                        <span class="date">March 10, 2024</span>
+                        <span class="read-time">📚 6 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card" data-category="democracy">
+                <div class="article-image">
+                    <div style="width:100%;height:100%;background:#2ecc71;color:white;display:flex;align-items:center;justify-content:center;">
+                        Democracy
+                    </div>
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Democracy & Religion</span>
+                    <h2 class="article-title">
+                        <a href="/articles/separation-state-religion.html">Beyond Separation: New Models of State-Religion Relations</a>
+                    </h2>
+                    <p class="article-excerpt">Examining alternatives to strict secularism that maintain democratic principles while acknowledging religious identities in public life.</p>
+                    <div class="article-meta">
+                        <span class="date">March 5, 2024</span>
+                        <span class="read-time">📚 10 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card" data-category="case-study">
+                <div class="article-image">
+                    <div style="width:100%;height:100%;background:#9b59b6;color:white;display:flex;align-items:center;justify-content:center;">
+                        Nordic Model
+                    </div>
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Case Studies</span>
+                    <h2 class="article-title">
+                        <a href="/articles/nordic-church-elections.html">Nordic Church Elections: Lessons for Multi-Religious Societies</a>
+                    </h2>
+                    <p class="article-excerpt">Analyzing the Swedish and Norwegian church election models and their potential adaptation for religiously diverse contexts.</p>
+                    <div class="article-meta">
+                        <span class="date">February 28, 2024</span>
+                        <span class="read-time">📚 7 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="article-card" data-category="electoral">
+                <div class="article-image">
+                    <div style="width:100%;height:100%;background:#f39c12;color:white;display:flex;align-items:center;justify-content:center;">
+                        Representation
+                    </div>
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Electoral Systems</span>
+                    <h2 class="article-title">
+                        <a href="/articles/quotas-reserved-seats.html">Quotas and Reserved Seats: Balancing Representation in Divided Societies</a>
+                    </h2>
+                    <p class="article-excerpt">Evaluating different mechanisms for ensuring minority representation without entrenching sectarian divisions.</p>
+                    <div class="article-meta">
+                        <span class="date">February 20, 2024</span>
+                        <span class="read-time">📚 9 min read</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="article-card" data-category="conflict">
+                <div class="article-image">
+                    <div style="width:100%;height:100%;background:#1abc9c;color:white;display:flex;align-items:center;justify-content:center;">
+                        SDGs
+                    </div>
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Conflict Resolution</span>
+                    <h2 class="article-title">
+                        <a href="/articles/religion-sdgs.html">Religion, Electoral Systems, and the Sustainable Development Goals</a>
+                    </h2>
+                    <p class="article-excerpt">Connecting democratic religious governance with broader development objectives and peacebuilding initiatives.</p>
+                    <div class="article-meta">
+                        <span class="date">February 15, 2024</span>
+                        <span class="read-time">📚 11 min read</span>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span>...</span>
+            <button class="page-btn">5</button>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <section class="subscribe-box">
+            <h3>Stay Updated with Research</h3>
+            <p>Get notified when new articles are published on multi-religion election systems and democratic reform.</p>
+            <button class="subscribe-btn">Subscribe to Research Updates</button>
+            <p style="font-size:0.9rem;color:#7f8c8d;margin-top:0.5rem;">No spam. Unsubscribe anytime.</p>
+        </section>
+    </main>
+
+    <!-- Copy your site's footer here -->
+    <footer>
+        <p>&copy; 2024 Multireligionvalsystem. Research for democratic religious reform.</p>
+    </footer>
+
+    <!-- Filtering JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const articleCards = document.querySelectorAll('.article-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filter = button.dataset.filter;
+                    
+                    // Filter articles
+                    articleCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Subscription button
+            document.querySelector('.subscribe-btn').addEventListener('click', function() {
+                const email = prompt('Enter your email to subscribe:');
+                if (email) {
+                    alert('Thank you! You will receive research updates.');
+                    // Here you would typically send this to a server
+                }
+            });
+            
+            // Pagination buttons
+            document.querySelectorAll('.page-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    alert('Page ' + this.textContent + ' would load more articles');
+                    // In practice, you would load new articles here
+                });
+            });
+        });
+    </script>
+</body>
+</html>
