@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+    <title>Multireligionvalsystem Research Articles</title>
+    <link>https://multireligionvalsystem.eu.org/articles/</link>
+    <atom:link href="https://multireligionvalsystem.eu.org/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Latest research on multi-religion election systems, democratic reform, and conflict resolution</description>
+    <language>en</language>
+    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+    <pubDate>${new Date().toUTCString()}</pubDate>
+    <generator>Multireligionvalsystem</generator>
+    <copyright>Creative Commons Attribution-NonCommercial 4.0 International License</copyright>
+    
+    <!-- Add RSS link to your articles listing page -->
+    <item>
+        <title>Understanding Multi-Religion Election Systems</title>
+        <link>https://multireligionvalsystem.eu.org/articles/understanding-multi-religion-elections.html</link>
+        <guid>https://multireligionvalsystem.eu.org/articles/understanding-multi-religion-elections.html</guid>
+        <description>A comprehensive framework for designing electoral systems that acknowledge religious diversity while preventing sectarian dominance in political institutions.</description>
+        <pubDate>Fri, 15 Mar 2024 00:00:00 GMT</pubDate>
+        <category>Electoral Systems</category>
+        <author>research@multireligionvalsystem.eu.org</author>
+    </item>
+    
+    <item>
+        <title>Democratic Religious Reform as Peacebuilding</title>
+        <link>https://multireligionvalsystem.eu.org/articles/democratic-religious-reform.html</link>
+        <guid>https://multireligionvalsystem.eu.org/articles/democratic-religious-reform.html</guid>
+        <description>How internal democratic elections within religious communities can contribute to larger peace processes in conflict-affected regions.</description>
+        <pubDate>Sun, 10 Mar 2024 00:00:00 GMT</pubDate>
+        <category>Conflict Resolution</category>
+        <author>research@multireligionvalsystem.eu.org</author>
+    </item>
+    
+    <item>
+        <title>Beyond Separation: New Models of State-Religion Relations</title>
+        <link>https://multireligionvalsystem.eu.org/articles/separation-state-religion.html</link>
+        <guid>https://multireligionvalsystem.eu.org/articles/separation-state-religion.html</guid>
+        <description>Examining alternatives to strict secularism that maintain democratic principles while acknowledging religious identities in public life.</description>
+        <pubDate>Tue, 05 Mar 2024 00:00:00 GMT</pubDate>
+        <category>Democracy & Religion</category>
+        <author>research@multireligionvalsystem.eu.org</author>
+    </item>
+    
+    <item>
+        <title>Nordic Church Elections: Lessons for Multi-Religious Societies</title>
+        <link>https://multireligionvalsystem.eu.org/articles/nordic-church-elections.html</link>
+        <guid>https://multireligionvalsystem.eu.org/articles/nordic-church-elections.html</guid>
+        <description>Analyzing the Swedish and Norwegian church election models and their potential adaptation for religiously diverse contexts.</description>
+        <pubDate>Wed, 28 Feb 2024 00:00:00 GMT</pubDate>
+        <category>Case Studies</category>
+        <author>research@multireligionvalsystem.eu.org</author>
+    </item>
+    
+    <item>
+        <title>Quotas and Reserved Seats: Balancing Representation in Divided Societies</title>
+        <link>https://multireligionvalsystem.eu.org/articles/quotas-reserved-seats.html</link>
+        <guid>https://multireligionvalsystem.eu.org/articles/quotas-reserved-seats.html</guid>
+        <description>Evaluating different mechanisms for ensuring minority representation without entrenching sectarian divisions.</description>
+        <pubDate>Tue, 20 Feb 2024 00:00:00 GMT</pubDate>
+        <category>Electoral Systems</category>
+        <author>research@multireligionvalsystem.eu.org</author>
+    </item>
+    
+    <item>
+        <title>Religion, Electoral Systems, and the Sustainable Development Goals</title>
+        <link>https://multireligionvalsystem.eu.org/articles/religion-sdgs.html</link>
+        <guid>https://multireligionvalsystem.eu.org/articles/religion-sdgs.html</guid>
+        <description>Connecting democratic religious governance with broader development objectives and peacebuilding initiatives.</description>
+        <pubDate>Thu, 15 Feb 2024 00:00:00 GMT</pubDate>
+        <category>Conflict Resolution</category>
+        <author>research@multireligionvalsystem.eu.org</author>
+    </item>
+</channel>
+</rss>
