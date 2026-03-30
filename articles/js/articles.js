@@ -2,7 +2,7 @@
 const articlesData = [
     {
         id: 1,
-        title: "Understanding Multi-Religion Election Systems",
+        title: "Understanding Multi-Religion Election Systems :MES",
         excerpt: "A comprehensive framework for designing electoral systems that acknowledge religious diversity while preventing sectarian dominance in political institutions.",
         category: "electoral",
         date: "2024-03-15",
@@ -41,7 +41,7 @@ const articlesData = [
         date: "2024-02-28",
         readTime: 7,
         views: 765,
-        url: "/articles/nordic-church-elections.html",
+        url: "https://multireligionvalsystem.eu.org/articles/nordic-church-elections.html",
         tags: ["case-study", "nordic", "models"]
     },
     {
@@ -52,7 +52,7 @@ const articlesData = [
         date: "2024-02-20",
         readTime: 9,
         views: 943,
-        url: "/articles/quotas-reserved-seats.html",
+        url: "https://multireligionvalsystem.eu.org/articles/quotas-reserved-seats.html",
         tags: ["electoral", "quotas", "representation"]
     },
     {
@@ -63,7 +63,7 @@ const articlesData = [
         date: "2024-02-15",
         readTime: 11,
         views: 687,
-        url: "/articles/religion-sdgs.html",
+        url: "https://multireligionvalsystem.eu.org/articles/religion-sdgs.html",
         tags: ["conflict", "sdgs", "development"]
     }
 ];
