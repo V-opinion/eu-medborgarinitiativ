@@ -9,7 +9,7 @@
   <title>Religion & Democracy - An Exploration</title>
   <meta name="description"
     content="Exploring the relationship between religion and democracy, Christian parties in European politics, and the incomplete separation between state and church.">
-  <link rel="canonical" href="https://agent-implementation-roadmap.b12sites.com/">
+  <link rel="canonical" href="https://multireligionvalsystem.eu.org/demokratin/agent-implementation-roadmap/">
   <script>(function () {
       const clientUid = "pUZ8Kn50";
       const productUrl = "https://multireligionvalsystem.eu.org/democracy-and-Religion/";
@@ -544,6 +544,21 @@
           type="module">function g(e) { return A(e)?.length !== 0 } function A(e) { return e.querySelector(".g-recaptcha-response")?.value || "" } function R(e) { document.querySelectorAll(`#b12-recaptcha-error-${e}`).forEach(t => t.style.display = "none") } function E(e) { const t = document.querySelector(`#b12-form-error-${e}`); if (!t) return; const o = `b12-recaptcha-error-${e}`; let n = document.querySelector(`#${o}`); n || (n = t.cloneNode(!0), n.id = o, n.textContent = "Please complete the reCAPTCHA verification.", t.insertAdjacentElement("afterend", n)), n.style.display = "block" } const u = { isValid: g, getResponseElementValue: A, clearError: R, highlightError: E }; function C(e, t) { const o = Object.assign(document.createElement("input"), { type: "hidden", name: "google_recaptcha_token", value: e }); t.appendChild(o) } const I = 3, O = { recaptcha_version: I }, T = typeof __PRODUCT_URL__ > "u" ? "https://b12.io" : __PRODUCT_URL__, f = `${T}/contact/send/`; function w(e, t, o) { o && (e.textContent = o), e.style.display = "block", e.scrollIntoView({ behavior: "smooth", block: "center" }) } function P(e) { e.method = "POST", e.action = f; const t = e.dataset.formId || "", o = document.createElement("input"); o.type = "hidden", o.name = "form_id", o.value = t; const n = document.createElement("input"); n.type = "text", n.style.display = "none", n.name = "sweet_auth_token", n.setAttribute("aria-hidden", "true"), n.setAttribute("aria-label", "Auth token"); const r = document.createElement("input"); r.type = "hidden", r.style.display = "none", r.name = "next_page", r.value = window.location.href, e.appendChild(r), e.appendChild(o), e.appendChild(n); const i = document.createElement("input"); i.type = "hidden", i.name = "ajax", i.value = "true", e.appendChild(i); const b = e.getAttribute("action") || f, m = e.querySelector('button[type="submit"]'), d = parseInt(O.recaptcha_version); if (d === 2) { const l = Object.assign(document.createElement("input"), { type: "hidden", name: "recaptcha_version", value: String(d) }); e.appendChild(l) } e.addEventListener("submit", function (l) { if (l.preventDefault(), d === 2 && (u.clearError(t), !u.isValid(e))) { u.highlightError(t); return } d === 2 ? (C(u.getResponseElementValue(e), e), p()) : typeof grecaptcha < "u" ? grecaptcha.ready(() => { grecaptcha.execute("6Ld1R8kUAAAAAGEYGyd1RXFcdSGY03uF4y_yN40A", {}).then(h => { C(h, e), p() }) }) : (console.info("grecaptcha undefined"), p()); function p() { const h = new FormData(e), y = document.querySelector(`#b12-form-done-${t}`), _ = document.querySelector(`#b12-form-error-${t}`); m.disabled = !0; const a = {}; h.forEach((c, s) => { a[s] ? a[s] = `${a[s]},${c}` : a[s] = c }); const S = new URLSearchParams(a).toString(); fetch(b, { method: "POST", headers: { "X-API-VERSION": "2", "Content-Type": "application/x-www-form-urlencoded" }, body: S }).then(function (c) { if (!c.ok) throw new Error("Network response was not ok"); return c.json() }).then(function (c) { if (c && c.redirect) { window.location.href = c.redirect; return } _.style.display = "none", y && (e.style.display = "none", w(y, e, c?.success_message)) }).catch(function () { _.style.display = "block" }).finally(function () { m.disabled = !1 }) } }) } function v() { document.querySelectorAll("form").forEach(e => { const t = e.getAttribute("action") || ""; !e.dataset.formId || t && t !== f || P(e) }) } document.addEventListener("DOMContentLoaded", v);</script>
         <script src="https://www.google.com/recaptcha/api.js?render=6Ld1R8kUAAAAAGEYGyd1RXFcdSGY03uF4y_yN40A"
           async="true"></script>
+        <footer>
+  <div class="footer-links">
+    <h4>Our Network</h4>
+    <ul>
+      <li><a href="https://multireligionvalsystem.eu.org">Religion Comparisons</a></li>
+      <li><a href="https://multireligionvalsystem.eu.org/kyrkovalsreformen/Riksdagen_EU-parlamentet-och-kyrkovalet/">EU och kyrkovalets</a></li>
+     <li><a href=" https://multireligionvalsystem.eu.org/Det-svenska-hemliga-valet-sep-2025/religion-for-fred//">Religion för fred</a></li</a></li>
+     <li><a href="https://a-multi-religion-election-system.multireligionvalsystem.eu.org/den-judisk-kristna-politiska-alliansen/">Political conflict resolution model</a></li>
+      <li><a href="https://clawdbot.multireligionvalsystem.eu.org">Clawdbot AI</a></li>
+
+     
+    </ul>
+  </div>
+</footer>
+
 </body>
 
 </html>
