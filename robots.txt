@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /insert_cand_year.html
+Disallow: /suggestion.html
+
+Sitemap: https://multireligionvalsystem.eu.org/sitemap-index.xml
