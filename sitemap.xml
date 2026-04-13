@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="https://multireligionvalsystem.eu.org/sitemap.xsl"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- HOMEPAGE - Highest priority -->
+  <!-- ============================================
+       IMPORTANT: Replace these with YOUR actual pages
+       ============================================ -->
+
   <url>
     <loc>https://multireligionvalsystem.eu.org/</loc>
     <lastmod>2025-01-15</lastmod>
@@ -10,156 +14,29 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- CORE PAGES - High priority -->
   <url>
-    <loc>https://multireligionvalsystem.eu.org/folkmord/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/Conflict-resolution-model/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/FRED/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/FAQ/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/EU/</loc>
+    <loc>https://multireligionvalsystem.eu.org/#about</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://multireligionvalsystem.eu.org/articles/</loc>
+    <loc>https://multireligionvalsystem.eu.org/#difference</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ADD MORE URLS FOR EVERY SECTION/PAGE YOU HAVE -->
+  <!-- Example if you have separate pages: -->
+  <!--
+  <url>
+    <loc>https://multireligionvalsystem.eu.org/blog/</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- USE about.html as canonical, remove /about duplicate -->
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/about.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/researchers.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- EXPLANATORY PAGES - Medium priority -->
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/What-is-a-multi-religion-election-system.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/Overview-of-the-Four-Major-Religions.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/How-to-Implement-a-Multi-Religion-Electoral-System-A-Step-by-Step-Guide/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/How-to-solve-a-most-complex-and-controversial-issues-in-the-world/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/tillampning-av-MRES.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- SWEDISH CONTENT - Medium priority -->
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/milj%C3%B6modellen-f%C3%B6r-demokratin-demokratin-fr%C3%A5n-terori-till-praktik-Multireligionvalsystem/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/kyrkovalsreformen/Riksdagen_EU-parlamentet-och-kyrkovalet/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/talmannens-%C3%A4mbete/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/Det-svenska-hemliga-valet-sep-2025/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/Framtiden-f%C3%B6r-milj%C3%B6v%C3%A4nliga-begravningsmetoder/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- SUBPAGES - Lower priority -->
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/Conflict-resolution-model/ul%C3%A4ndernas-ccTLDs.html</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/Political-Practices-in-Exile/</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://multireligionvalsystem.eu.org/comparison/hinduism-vs-buddhism</loc>
-    <lastmod>2025-01-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
+  -->
 
 </urlset>
