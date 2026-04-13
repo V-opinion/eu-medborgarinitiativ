@@ -1,0 +1,3 @@
+# .htaccess - Serve sitemap from a PHP file instead
+# (PHP files are usually not injected into)
+RewriteRule ^sitemap\.xml$ /sitemap-generator.php [L]
