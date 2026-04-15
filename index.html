@@ -86,6 +86,9 @@
         }
     </script>
 
+    <!-- Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
     <!-- ========== JSON-LD: WebSite Schema ========== -->
     <script type="application/ld+json">
     {
@@ -251,6 +254,205 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* MRES Definition Section Styling */
+        #mres-definition {
+            padding: 5rem 1.5rem;
+            max-width: 72rem;
+            margin: 0 auto;
+            color: #a3a3a3;
+            font-size: 0.875rem;
+            line-height: 1.75;
+            font-weight: 300;
+        }
+        #mres-definition h2 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            font-size: 1.875rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+        #mres-definition h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4d4d4;
+            font-size: 1.25rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        #mres-definition p {
+            margin-bottom: 1rem;
+        }
+        #mres-definition ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+        #mres-definition ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #mres-definition ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 4px;
+            height: 4px;
+            background: #525252;
+            border-radius: 50%;
+        }
+
+        /* FRC Section Styling */
+        #frc-explained {
+            padding: 5rem 1.5rem;
+            max-width: 72rem;
+            margin: 0 auto;
+            color: #a3a3a3;
+            font-size: 0.875rem;
+            line-height: 1.75;
+            font-weight: 300;
+        }
+        #frc-explained h2 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            font-size: 1.875rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.025em;
+        }
+        #frc-explained h3 {
+            font-family: 'Playfair Display', serif;
+            color: #d4d4d4;
+            font-size: 1.25rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        #frc-explained p {
+            margin-bottom: 1rem;
+        }
+        .highlight-box {
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid #525252;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0 2px 2px 0;
+        }
+        .primary-link {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            transition: border-color 0.15s;
+        }
+        .primary-link:hover {
+            border-color: #ffffff;
+        }
+        .comparison-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1.5rem;
+        }
+        .comparison-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .comparison-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 4px;
+            height: 4px;
+            background: #525252;
+            border-radius: 50%;
+        }
+
+        /* Social Media Styling */
+        .social-signals {
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .social-signals h3 {
+            color: #737373;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.125rem;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.025em;
+        }
+        .social-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .social-list li {
+            margin-bottom: 0.5rem;
+        }
+        .social-list a {
+            color: #525252;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 300;
+            transition: color 0.15s;
+        }
+        .social-list a:hover {
+            color: #ffffff;
+        }
+        .social-list i {
+            margin-right: 0.5rem;
+            font-size: 1.1em;
+            width: 1.25rem;
+            text-align: center;
+        }
+
+        /* Network Footer Styling */
+        .footer-links {
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .footer-links h4 {
+            color: #525252;
+            font-size: 0.675rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+        }
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem 1.5rem;
+        }
+        .footer-links a {
+            color: #525252;
+            text-decoration: none;
+            font-size: 0.8125rem;
+            font-weight: 300;
+            transition: color 0.15s;
+        }
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Audio Player Styling */
+        #wb_MediaPlayer1 {
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 0;
+        }
+        #wb_MediaPlayer1 audio {
+            width: 100%;
+            height: 36px;
+            border-radius: 2px;
+        }
     </style>
 </head>
 
@@ -273,6 +475,10 @@
             <div class="hidden md:flex items-center gap-8">
                 <a href="#framework"
                     class="text-neutral-400 hover:text-white transition-colors duration-150 text-sm font-light tracking-wide">Framework</a>
+                <a href="#difference"
+                    class="text-neutral-400 hover:text-white transition-colors duration-150 text-sm font-light tracking-wide">Modules</a>
+                <a href="#support-section"
+                    class="text-neutral-400 hover:text-white transition-colors duration-150 text-sm font-light tracking-wide">Support</a>
                 <a href="#religions"
                     class="text-neutral-400 hover:text-white transition-colors duration-150 text-sm font-light tracking-wide">Religions</a>
                 <a href="#methodology"
@@ -295,6 +501,10 @@
         <div id="mobile-menu" aria-hidden="true" class="md:hidden hidden bg-[#0a0a0a]/95 backdrop-blur-md px-6 pb-6">
             <a href="#framework"
                 class="block py-3 text-neutral-400 hover:text-white transition-colors text-sm">Framework</a>
+            <a href="#difference"
+                class="block py-3 text-neutral-400 hover:text-white transition-colors text-sm">Modules</a>
+            <a href="#support-section"
+                class="block py-3 text-neutral-400 hover:text-white transition-colors text-sm">Support</a>
             <a href="#religions"
                 class="block py-3 text-neutral-400 hover:text-white transition-colors text-sm">Religions</a>
             <a href="#methodology"
@@ -399,199 +609,347 @@
                 </figure>
             </div>
         </section>
-<section id="mres-definition" style="padding: 20px; font-family: Arial, sans-serif; line-height: 1.6;">
-    
-    <h2>What is the Multi-Religion Election System (MRES)?</h2>
-    <p>The Multi-Religion Election System is a Swedish term (<em>Multireligionvalsystem</em>) for the English Multi-Religion Election System (MRES). It is a reform based on research on the religious election, the Church Election, which is applied only in the Nordic countries such as Sweden, Norway, Denmark and Finland. Hereinafter referred to as the Church Election Reform.</p>
-    
-    <p>Through research and analysis of the Church Election, we found both advantages and disadvantages; however, the disadvantages outweigh the advantages.</p>
 
-    <h3>The Positive Aspects of the Church Election</h3>
-    <ul>
-        <li>That only the Christian Protestant denominations have introduced democracy into their denominations through the church election, i.e. they have democratized their denominations.</li>
-        <li>The church election has made it possible for a woman to become an archbishop.</li>
-        <li>That only natives or those who have converted to Protestantism and have reached the age of 16 are allowed to practice democracy two years before the general election or the election to the European Parliament.</li>
-    </ul>
+        <!-- ===== MRES DEFINITION ===== -->
+        <section id="mres-definition" aria-labelledby="mres-heading">
+            <h2 id="mres-heading">What is the Multi-Religion Election System (MRES)?</h2>
+            <p>The Multi-Religion Election System is a Swedish term (<em>Multireligionvalsystem</em>) for the English Multi-Religion Election System (MRES). It is a reform based on research on the religious election, the Church Election, which is applied only in the Nordic countries such as Sweden, Norway, Denmark and Finland. Hereinafter referred to as the Church Election Reform.</p>
+            <p>Through research and analysis of the Church Election, we found both advantages and disadvantages; however, the disadvantages outweigh the advantages.</p>
 
-    <h3>The Negative Aspects of the Church Election</h3>
-    <ul>
-        <li>The church election is not applied among other faith communities such as Jews, Muslims, Buddhists, Hindus and others who are not Protestant. Nor is it applied among Christian Catholics and Orthodox who are Swedish citizens, even though these faith communities include people who have fled their countries and come as refugees to the Nordic countries and who oppose the introduction of democracy in their faith communities that the Nordic churches have introduced.</li>
-        <li>These non-Protestant religious communities deprive their young members who have reached the age of 16 and attend the same high school as the 16-year-old Protestant students of the right to practice democracy two years before the general election or the election to the European Parliament.</li>
-        <li>These denominations that are not Protestant also deprive their female members of the ability to become priests like those governed by the Pope.</li>
-        <li>Those religious communities that have not introduced democracy into their religious communities, including the Protestant ones in the Nordic countries that have introduced democracy into their religious communities, have made it more difficult to separate the state from the church and religion from politics.</li>
-        <li>The church election leads to exclusionary politics, when the parliamentary parties participate in the church election in which only native Protestants who have reached the age of 16 and who are members of the parliamentary parties' youth and student unions are allowed to participate and vote, while others end up outside, i.e. are not allowed to follow their party's lines.</li>
-        <li>The negative consequence of the church election is that in the Swedish parliament there is a religious Christian party, KD, corresponding to the religious parties that are in the EU parliament and that make laws.</li>
-        <li>Only a few countries within the EU, such as Sweden, Denmark and Finland, apply democracy in their religious communities, while other EU countries lack corresponding elections.</li>
-        <li>These religious Christian parties provide great support to Israel, which prevents peace and in principle even a two-state solution. Accusations of anti-Semitism and Islamophobia are increasing both in schools, religious education and even outside these areas.</li>
-        <li>That a Syrian Orthodox woman abandoned her faith and converted to Protestantism in order to be accepted as a priest. The question is should all women convert or remain in their faiths and work to introduce democracy in these faiths.</li>
-    </ul>
+            <h3>The Positive Aspects of the Church Election</h3>
+            <ul>
+                <li>That only the Christian Protestant denominations have introduced democracy into their denominations through the church election, i.e. they have democratized their denominations.</li>
+                <li>The church election has made it possible for a woman to become an archbishop.</li>
+                <li>That only natives or those who have converted to Protestantism and have reached the age of 16 are allowed to practice democracy two years before the general election or the election to the European Parliament.</li>
+            </ul>
 
-    <h3>The Goal of the Multi-Religion Election System (MRES)</h3>
-    <p>The goal of the Multi-Religion Election System (MRES) is to introduce democracy in all religious communities without exception, starting with the Nordic countries that already have church elections within the EU and eventually in other countries, the USA, Israel, Iran, India, China, Great Britain, Germany, Brazil and France, etc. To achieve a complete separation between state and church and between religion and politics.</p>
-    
-    <p>We start from the principle that it is democracy that has given all religious communities freedom of religion, and that democracy be introduced in all religions, without exception. A transition from church elections to a multi-religion election system in those countries that already have church elections. In other countries (USA, UK, China, India, Iran, Israel.....) that do not have similar elections, a multi-religion election system is introduced.</p>
+            <h3>The Negative Aspects of the Church Election</h3>
+            <ul>
+                <li>The church election is not applied among other faith communities such as Jews, Muslims, Buddhists, Hindus and others who are not Protestant. Nor is it applied among Christian Catholics and Orthodox who are Swedish citizens, even though these faith communities include people who have fled their countries and come as refugees to the Nordic countries and who oppose the introduction of democracy in their faith communities that the Nordic churches have introduced.</li>
+                <li>These non-Protestant religious communities deprive their young members who have reached the age of 16 and attend the same high school as the 16-year-old Protestant students of the right to practice democracy two years before the general election or the election to the European Parliament.</li>
+                <li>These denominations that are not Protestant also deprive their female members of the ability to become priests like those governed by the Pope.</li>
+                <li>Those religious communities that have not introduced democracy into their religious communities, including the Protestant ones in the Nordic countries that have introduced democracy into their religious communities, have made it more difficult to separate the state from the church and religion from politics.</li>
+                <li>The church election leads to exclusionary politics, when the parliamentary parties participate in the church election in which only native Protestants who have reached the age of 16 and who are members of the parliamentary parties' youth and student unions are allowed to participate and vote, while others end up outside, i.e. are not allowed to follow their party's lines.</li>
+                <li>The negative consequence of the church election is that in the Swedish parliament there is a religious Christian party, KD, corresponding to the religious parties that are in the EU parliament and that make laws.</li>
+                <li>Only a few countries within the EU, such as Sweden, Denmark and Finland, apply democracy in their religious communities, while other EU countries lack corresponding elections.</li>
+                <li>These religious Christian parties provide great support to Israel, which prevents peace and in principle even a two-state solution. Accusations of anti-Semitism and Islamophobia are increasing both in schools, religious education and even outside these areas.</li>
+                <li>That a Syrian Orthodox woman abandoned her faith and converted to Protestantism in order to be accepted as a priest. The question is should all women convert or remain in their faiths and work to introduce democracy in these faiths.</li>
+            </ul>
 
-    <h3>Core Values and Principles</h3>
-    <p>Despite major differences between the Church Election and the Multi-Religion Election, they still have the same basic value: to introduce democracy into their religious communities and that those who have reached the age of 16 have the right to vote. This means that democracy is introduced into all religious communities, without exception.</p>
-    <ul>
-        <li><strong>Modernization:</strong> A modernization of religious influence in Nordic democracy and religious neutrality.</li>
-        <li><strong>Democratic Framework:</strong> To replace the current church elections in the Nordic countries with a system that includes all faith communities on equal terms.</li>
-        <li><strong>Equal Representation:</strong> To create a more equal religious representation in a secular and multicultural society.</li>
-        <li><strong>Religious Neutrality:</strong> That the state should not treat any individual community differently, but give all religions the same democratic platform.</li>
-    </ul>
+            <h3>The Goal of the Multi-Religion Election System (MRES)</h3>
+            <p>The goal of the Multi-Religion Election System (MRES) is to introduce democracy in all religious communities without exception, starting with the Nordic countries that already have church elections within the EU and eventually in other countries, the USA, Israel, Iran, India, China, Great Britain, Germany, Brazil and France, etc. To achieve a complete separation between state and church and between religion and politics.</p>
+            <p>We start from the principle that it is democracy that has given all religious communities freedom of religion, and that democracy be introduced in all religions, without exception. A transition from church elections to a multi-religion election system in those countries that already have church elections. In other countries (USA, UK, China, India, Iran, Israel.....) that do not have similar elections, a multi-religion election system is introduced.</p>
 
-</section>
-        <!-- Section: What is the difference between MRVS, MRV and Multi-religion support -->
-<section id="difference" class="py-20 px-6 bg-[#f5f5f7]">
-  <div class="max-w-5xl mx-auto">
+            <h3>Core Values and Principles</h3>
+            <p>Despite major differences between the Church Election and the Multi-Religion Election, they still have the same basic value: to introduce democracy into their religious communities and that those who have reached the age of 16 have the right to vote. This means that democracy is introduced into all religious communities, without exception.</p>
+            <ul>
+                <li><strong>Modernization:</strong> A modernization of religious influence in Nordic democracy and religious neutrality.</li>
+                <li><strong>Democratic Framework:</strong> To replace the current church elections in the Nordic countries with a system that includes all faith communities on equal terms.</li>
+                <li><strong>Equal Representation:</strong> To create a more equal religious representation in a secular and multicultural society.</li>
+                <li><strong>Religious Neutrality:</strong> That the state should not treat any individual community differently, but give all religions the same democratic platform.</li>
+            </ul>
+        </section>
 
-    <!-- Section Header -->
-    <div class="text-center mb-16">
-      <span class="inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-[#86868b] mb-4">Understanding the Framework</span>
-      <h2 class="text-3xl md:text-5xl font-semibold text-[#1d1d1f] tracking-tight leading-tight">
-        What is the difference between<br class="hidden md:block"> MRVS, MRV and Multi-Religion Support?
-      </h2>
-    </div>
+        <!-- ===== DIFFERENCE BETWEEN MRVS, MRV & SUPPORT ===== -->
+        <section id="difference" class="py-20 px-6 bg-[#f5f5f7]">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-[#86868b] mb-4">Understanding the Framework</span>
+                    <h2 class="text-3xl md:text-5xl font-semibold text-[#1d1d1f] tracking-tight leading-tight font-serif">
+                        What is the difference between<br class="hidden md:block"> MRVS, MRV and Multi-Religion Support?
+                    </h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#d2d2d7]/30 hover:shadow-md transition-shadow duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-[#0071e3]/10 flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2 tracking-tight">MRVS</h3>
+                        <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#0071e3] mb-3">Theoretical Application</p>
+                        <p class="text-sm text-[#86868b] leading-relaxed">
+                            Multi-Religion Election System — the overarching theoretical framework that defines the conceptual model for separating religion from political governance.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#d2d2d7]/30 hover:shadow-md transition-shadow duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-[#0071e3]/10 flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2 tracking-tight">MRV</h3>
+                        <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#0071e3] mb-3">Practical Application</p>
+                        <p class="text-sm text-[#86868b] leading-relaxed">
+                            Multi-Religion Election — the operational, on-the-ground implementation of MRVS, where the theoretical model is put into concrete electoral practice.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#d2d2d7]/30 hover:shadow-md transition-shadow duration-300">
+                        <div class="w-14 h-14 rounded-2xl bg-[#0071e3]/10 flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2 tracking-tight">Multi-Religion Support</h3>
+                        <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#0071e3] mb-3">Financial Application</p>
+                        <p class="text-sm text-[#86868b] leading-relaxed">
+                            The financial arm that provides the economic resources and funding mechanisms necessary to sustain and operationalize both MRVS and MRV.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-4 mb-12 flex-wrap">
+                    <span class="px-4 py-2 bg-[#0071e3] text-white text-xs font-bold uppercase tracking-wider rounded-full">MRVS</span>
+                    <svg class="w-5 h-5 text-[#d2d2d7]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    <span class="px-4 py-2 bg-[#0071e3] text-white text-xs font-bold uppercase tracking-wider rounded-full">MRV</span>
+                    <svg class="w-5 h-5 text-[#d2d2d7]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    <span class="px-4 py-2 bg-[#0071e3] text-white text-xs font-bold uppercase tracking-wider rounded-full">Multi-Religion Support</span>
+                </div>
+                <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-[#d2d2d7]/30 mb-8">
+                    <div class="flex items-start gap-4">
+                        <div class="hidden md:flex w-1 min-h-full bg-[#0071e3] rounded-full flex-shrink-0 mt-1"></div>
+                        <div>
+                            <p class="text-base md:text-lg text-[#1d1d1f] leading-relaxed mb-4">
+                                Previously, we have defined the <strong class="font-semibold">Multi-Religion Election System (MRVS)</strong> which is the theoretical application, consisting of <strong class="font-semibold">Multi-Religion Election (MRV)</strong> which is the practical application of MRVS, and <strong class="font-semibold">Multi-Religion Support</strong> which is the financial application.
+                            </p>
+                            <p class="text-base md:text-lg text-[#1d1d1f] leading-relaxed mb-4">
+                                It is these three modules — MRVS, MRV and Multi-Religion Support — that the <strong class="font-semibold">environmental model for democracy</strong>, democracy from theory to practice, rests on.
+                            </p>
+                            <p class="text-base md:text-lg text-[#1d1d1f] leading-relaxed">
+                                Only through this can a <strong class="font-semibold">complete separation between state and church</strong> and <strong class="font-semibold">between religion and politics</strong> be completed — which in turn enables the 78-year-old conflict between Israel and Palestine to be resolved in an effective and rapid manner, and thus avoid the conflict being passed on to the next generation.
+                            </p>
+                            <div class="mt-6 p-4 bg-[#f5f5f7] rounded-xl border-l-4 border-[#0071e3]">
+                                <p class="text-sm text-[#1d1d1f] leading-relaxed">
+                                    This is called a <strong class="font-semibold">sustainable policy</strong> that enables <strong class="font-semibold">sustainable development</strong> based on the war constituting a threat to humanity and the environment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-2 justify-center">
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#MRVS</span>
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#MRV</span>
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#MultiReligionSupport</span>
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#SeparationOfChurchAndState</span>
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#EnvironmentalModelForDemocracy</span>
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#SustainablePolicy</span>
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#SustainableDevelopment</span>
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#IsraelPalestineConflict</span>
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#ReligionAndPolitics</span>
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#DemocracyFromTheoryToPractice</span>
+                    <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#ThreatToHumanity</span>
+                </div>
+            </div>
+        </section>
 
-    <!-- Three Module Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <!-- ============================================================ -->
+        <!-- ===== NEW: MULTI-RELIGION SUPPORT DEEP DIVE SECTION ===== -->
+        <!-- ============================================================ -->
+        <section id="support-section" aria-labelledby="support-heading" class="py-24 md:py-32 px-6 md:px-12 border-t border-white/5">
+            <div class="max-w-6xl mx-auto">
 
-      <!-- MRVS Card -->
-      <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#d2d2d7]/30 hover:shadow-md transition-shadow duration-300">
-        <div class="w-14 h-14 rounded-2xl bg-[#0071e3]/10 flex items-center justify-center mb-6">
-          <svg class="w-7 h-7 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2 tracking-tight">MRVS</h3>
-        <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#0071e3] mb-3">Theoretical Application</p>
-        <p class="text-sm text-[#86868b] leading-relaxed">
-          Multi-Religion Election System — the overarching theoretical framework that defines the conceptual model for separating religion from political governance.
-        </p>
-      </div>
+                <!-- Section Intro: What it does -->
+                <div class="max-w-3xl mb-20">
+                    <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mb-4">Financial Module</p>
+                    <h2 id="support-heading" class="font-serif text-3xl md:text-4xl tracking-tight mb-8">
+                        What the Multi-Religion<br><em class="text-neutral-300">Support Does & How It Works</em>
+                    </h2>
+                    <p class="text-neutral-300 font-light text-sm leading-loose mb-6">
+                        The Multi-Religion Support is the financial module within the Multi-Religion Election System (MRVS) and is independent of the funding support system for religious communities that introduce democracy in their religious communities.
+                    </p>
+                    <p class="text-neutral-400 font-light text-sm leading-loose">
+                        The Multi-Religion Support replaces the current SST Foundation, a government grant that is dependent on tax funds.
+                    </p>
+                </div>
 
-      <!-- MRV Card -->
-      <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#d2d2d7]/30 hover:shadow-md transition-shadow duration-300">
-        <div class="w-14 h-14 rounded-2xl bg-[#0071e3]/10 flex items-center justify-center mb-6">
-          <svg class="w-7 h-7 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2 tracking-tight">MRV</h3>
-        <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#0071e3] mb-3">Practical Application</p>
-        <p class="text-sm text-[#86868b] leading-relaxed">
-          Multi-Religion Election — the operational, on-the-ground implementation of MRVS, where the theoretical model is put into concrete electoral practice.
-        </p>
-      </div>
+                <!-- SST Foundation Disadvantages -->
+                <div class="mb-20">
+                    <div class="flex items-center gap-4 mb-12">
+                        <div class="h-px flex-1 bg-white/5"></div>
+                        <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500">SST Foundation Disadvantages</p>
+                        <div class="h-px flex-1 bg-white/5"></div>
+                    </div>
 
-      <!-- Multi-Religion Support Card -->
-      <div class="bg-white rounded-2xl p-8 shadow-sm border border-[#d2d2d7]/30 hover:shadow-md transition-shadow duration-300">
-        <div class="w-14 h-14 rounded-2xl bg-[#0071e3]/10 flex items-center justify-center mb-6">
-          <svg class="w-7 h-7 text-[#0071e3]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-          </svg>
-        </div>
-        <h3 class="text-lg font-semibold text-[#1d1d1f] mb-2 tracking-tight">Multi-Religion Support</h3>
-        <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-[#0071e3] mb-3">Financial Application</p>
-        <p class="text-sm text-[#86868b] leading-relaxed">
-          The financial arm that provides the economic resources and funding mechanisms necessary to sustain and operationalize both MRVS and MRV.
-        </p>
-      </div>
+                    <div class="space-y-0">
+                        <!-- Disadvantage 1 -->
+                        <div class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
+                            <div class="flex items-start gap-6">
+                                <span class="text-neutral-600 font-serif text-2xl mt-1">01</span>
+                                <div>
+                                    <h3 class="font-serif text-lg tracking-tight mb-3">Undemocratic Tax Funding Without Conditions</h3>
+                                    <p class="text-neutral-400 font-light text-sm leading-loose">
+                                        The SST Foundation pays contributions to all registered religious communities in Sweden and they are taken from tax funds without the requirement of being independent and if they have introduced democracy in their religious communities.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-    </div>
+                        <!-- Disadvantage 2 -->
+                        <div class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
+                            <div class="flex items-start gap-6">
+                                <span class="text-neutral-600 font-serif text-2xl mt-1">02</span>
+                                <div>
+                                    <h3 class="font-serif text-lg tracking-tight mb-3">No Distinction Between Communities</h3>
+                                    <p class="text-neutral-400 font-light text-sm leading-loose">
+                                        The SST Foundation makes no distinction between the Protestant Swedish Church, which has its own budget that is independent of tax funds, and other religious communities whose budgets are partly dependent on tax funds and partly on the anonymous contributions that religious communities — Catholics, Orthodox, Jews, Muslims, Buddhists and Hindus — receive, which influences and governs these religious communities. If Christians and Jews in the Nordic countries receive anonymous contributions from Christian Americans in the USA and from Israel, other religious communities also receive anonymous contributions from other countries that belong to the same religion.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Connector Diagram -->
-    <div class="flex items-center justify-center gap-4 mb-12 flex-wrap">
-      <span class="px-4 py-2 bg-[#0071e3] text-white text-xs font-bold uppercase tracking-wider rounded-full">MRVS</span>
-      <svg class="w-5 h-5 text-[#d2d2d7]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-      <span class="px-4 py-2 bg-[#0071e3] text-white text-xs font-bold uppercase tracking-wider rounded-full">MRV</span>
-      <svg class="w-5 h-5 text-[#d2d2d7]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-      <span class="px-4 py-2 bg-[#0071e3] text-white text-xs font-bold uppercase tracking-wider rounded-full">Multi-Religion Support</span>
-    </div>
+                        <!-- Disadvantage 3 -->
+                        <div class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
+                            <div class="flex items-start gap-6">
+                                <span class="text-neutral-600 font-serif text-2xl mt-1">03</span>
+                                <div>
+                                    <h3 class="font-serif text-lg tracking-tight mb-3">Foreign Influence Through Financial Dependence</h3>
+                                    <p class="text-neutral-400 font-light text-sm leading-loose">
+                                        This financial dependence naturally influences and controls these religious communities. This is what makes it more difficult to resolve, among other things, the 78-year-long Israel-Palestine conflict.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Explanatory Text -->
-    <div class="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-[#d2d2d7]/30 mb-8">
-      <div class="flex items-start gap-4">
-        <div class="hidden md:flex w-1 min-h-full bg-[#0071e3] rounded-full flex-shrink-0 mt-1"></div>
-        <div>
-          <p class="text-base md:text-lg text-[#1d1d1f] leading-relaxed mb-4">
-            Previously, we have defined the <strong class="font-semibold">Multi-Religion Election System (MRVS)</strong> which is the theoretical application, consisting of <strong class="font-semibold">Multi-Religion Election (MRV)</strong> which is the practical application of MRVS, and <strong class="font-semibold">Multi-Religion Support</strong> which is the financial application.
-          </p>
-          <p class="text-base md:text-lg text-[#1d1d1f] leading-relaxed mb-4">
-            It is these three modules — MRVS, MRV and Multi-Religion Support — that the <strong class="font-semibold">environmental model for democracy</strong>, democracy from theory to practice, rests on.
-          </p>
-          <p class="text-base md:text-lg text-[#1d1d1f] leading-relaxed">
-            Only through this can a <strong class="font-semibold">complete separation between state and church</strong> and <strong class="font-semibold">between religion and politics</strong> be completed — which in turn enables the 78-year-old conflict between Israel and Palestine to be resolved in an effective and rapid manner, and thus avoid the conflict being passed on to the next generation.
-          </p>
-          <div class="mt-6 p-4 bg-[#f5f5f7] rounded-xl border-l-4 border-[#0071e3]">
-            <p class="text-sm text-[#1d1d1f] leading-relaxed">
-              This is called a <strong class="font-semibold">sustainable policy</strong> that enables <strong class="font-semibold">sustainable development</strong> based on the war constituting a threat to humanity and the environment.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+                        <!-- Disadvantage 4 -->
+                        <div class="py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
+                            <div class="flex items-start gap-6">
+                                <span class="text-neutral-600 font-serif text-2xl mt-1">04</span>
+                                <div>
+                                    <h3 class="font-serif text-lg tracking-tight mb-3">Unfair Resource Asymmetry With Political Parties</h3>
+                                    <p class="text-neutral-400 font-light text-sm leading-loose">
+                                        The Nordic Protestant churches have church elections and run an election campaign in which politicians and parliamentary parties participate. These enormous resources can come from political parties that receive party support with the aim of keeping them away from the influence of other countries and making them independent in their politics.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Tags -->
-    <div class="flex flex-wrap items-center gap-2 justify-center">
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#MRVS</span>
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#MRV</span>
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#MultiReligionSupport</span>
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#SeparationOfChurchAndState</span>
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#EnvironmentalModelForDemocracy</span>
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#SustainablePolicy</span>
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#SustainableDevelopment</span>
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#IsraelPalestineConflict</span>
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#ReligionAndPolitics</span>
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#DemocracyFromTheoryToPractice</span>
-      <span class="px-3 py-1.5 bg-white border border-[#d2d2d7] rounded-full text-[11px] font-medium text-[#86868b] hover:border-[#0071e3] hover:text-[#0071e3] transition-colors duration-200 cursor-default">#ThreatToHumanity</span>
-    </div>
+                <!-- Why Multi-Religion Support Is Necessary -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mb-4">The Solution</p>
+                        <h3 class="font-serif text-2xl md:text-3xl tracking-tight mb-8">
+                            Why a new funding<br><em class="text-neutral-300">policy is necessary</em>
+                        </h3>
+                        <p class="text-neutral-300 font-light text-sm leading-loose mb-6">
+                            Against this background, it is important that a new independent funding policy, Multi-Religion Support, is introduced — one that eliminates the structural disadvantages of the SST Foundation.
+                        </p>
+                        <p class="text-neutral-400 font-light text-sm leading-loose mb-8">
+                            Multi-Religion Support ensures that financial assistance to religious communities is transparent, fair, and conditional upon the introduction of democratic governance structures — free from foreign influence and tax dependency.
+                        </p>
+                        <a href="https://multi-religion-support.multireligionvalsystem.eu.org" target="_blank" rel="noopener noreferrer"
+                            class="group inline-flex items-center gap-2 border border-white/20 rounded-sm px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-300">
+                            Read More
+                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                            </svg>
+                        </a>
+                    </div>
 
-  </div>
-</section>
-        <section id="frc-explained" class="content-section">
-    
-    <h2>What is the difference between FRC, church meeting, synod, conclave, election of patriarch or parliament?</h2>
-    
-    <div class="highlight-box">
-        <p>A significant difference between the FRC and the others is that through the democratically elected representatives of different religions to the FRC to resolve the 78-year-long conflict between Israel and Palestine so that it is not handed down to future generations and that neither the church council, parliament and conclave nor the election of a patriarch have succeeded in resolving. Through the FRC, the conflict can be resolved that politics has not succeeded in resolving.</p>
-    </div>
+                    <!-- Key Principles Visual -->
+                    <div class="space-y-0">
+                        <div class="border-b border-white/10 py-6 px-4 -mx-4">
+                            <div class="flex items-start gap-4">
+                                <div class="mt-0.5 flex-shrink-0">
+                                    <svg class="w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white mb-1">Independent of Tax Funds</h4>
+                                    <p class="text-neutral-500 font-light text-xs leading-relaxed">Replaces the SST Foundation's tax-dependent model with a self-sustaining financial structure.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-b border-white/10 py-6 px-4 -mx-4">
+                            <div class="flex items-start gap-4">
+                                <div class="mt-0.5 flex-shrink-0">
+                                    <svg class="w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white mb-1">Democracy as a Requirement</h4>
+                                    <p class="text-neutral-500 font-light text-xs leading-relaxed">Funding is conditional upon the introduction of democratic governance within religious communities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-b border-white/10 py-6 px-4 -mx-4">
+                            <div class="flex items-start gap-4">
+                                <div class="mt-0.5 flex-shrink-0">
+                                    <svg class="w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white mb-1">No Foreign Influence</h4>
+                                    <p class="text-neutral-500 font-light text-xs leading-relaxed">Eliminates the structural vulnerability to anonymous foreign contributions that govern religious communities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-b border-white/10 py-6 px-4 -mx-4">
+                            <div class="flex items-start gap-4">
+                                <div class="mt-0.5 flex-shrink-0">
+                                    <svg class="w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white mb-1">Fair Distinction Between Communities</h4>
+                                    <p class="text-neutral-500 font-light text-xs leading-relaxed">Treats self-funded communities differently from those dependent on external contributions, ensuring equity.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-6 px-4 -mx-4">
+                            <div class="flex items-start gap-4">
+                                <div class="mt-0.5 flex-shrink-0">
+                                    <svg class="w-5 h-5 text-neutral-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-medium text-white mb-1">Supports Conflict Resolution</h4>
+                                    <p class="text-neutral-500 font-light text-xs leading-relaxed">By removing foreign financial leverage, creates conditions for resolving conflicts like Israel-Palestine.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <h3>What is FRC and how is it chosen?</h3>
-    <p><a href="https://frc.multireligionvalsystem.eu.org" target="_blank" rel="noopener noreferrer" class="primary-link">Read more about the FRC here &rarr;</a></p>
-    
-    <p>The <strong>Faith Representatives Chamber (FRC)</strong> is elected through the Multi-Religion Election, which is the practical application of the Multi-Religion Election System.</p>
-    
-    <p>Only the three positive parts of the church election are applied in the election of the FRC, which has been mentioned earlier. However, the FRC fundamentally improves upon the traditional church election model in several key ways:</p>
+            </div>
+        </section>
+        <!-- ============================================================ -->
+        <!-- ===== END: MULTI-RELIGION SUPPORT SECTION ===== -->
+        <!-- ============================================================ -->
 
-    <ul class="comparison-list">
-        <li>
-            <strong>Universal Voting Rights:</strong> In the church election, only those who belong to the Nordic churches (Protestant denominations) who are 16 years of age and older are allowed to vote. The FRC expands the right to vote to include <em>all</em> Swedish citizens who have reached the age of 16, regardless of religion.
-        </li>
-        <li>
-            <strong>True Gender Equality in Leadership:</strong> Unlike the church election, which allows only a Protestant woman to become an archbishop, the Multi-Religion Election includes all women, regardless of religion, having the same opportunity to be elected to the highest religious position.
-        </li>
-        <li>
-            <strong>Democratizing All Faiths:</strong> Unlike the church election, which only makes it possible to democratize the Protestant faith communities in the Nordic countries, the Multi-Religion Election democratizes <em>all</em> religions without exception.
-        </li>
-        <li>
-            <strong>Complete Separation of Church and State:</strong> The church election allows politicians and parliamentary parties to participate. These politicians are elected at the church council, which prevents the separation of state and church, and religion from politics. In contrast to the church election, the Multi-Religion Election <strong>prohibits</strong> parliamentary parties from participating, with the explicit goal of completing the separation of state and church, and religion and politics.
-        </li>
-    </ul>
+        <!-- ===== FRC EXPLAINED ===== -->
+        <section id="frc-explained" aria-labelledby="frc-heading">
+            <h2 id="frc-heading">What is the difference between FRC, church meeting, synod, conclave, election of patriarch or parliament?</h2>
+            <div class="highlight-box">
+                <p>A significant difference between the FRC and the others is that through the democratically elected representatives of different religions to the FRC to resolve the 78-year-long conflict between Israel and Palestine so that it is not handed down to future generations and that neither the church council, parliament and conclave nor the election of a patriarch have succeeded in resolving. Through the FRC, the conflict can be resolved that politics has not succeeded in resolving.</p>
+            </div>
+            <h3>What is FRC and how is it chosen?</h3>
+            <p><a href="https://frc.multireligionvalsystem.eu.org" target="_blank" rel="noopener noreferrer" class="primary-link">Read more about the FRC here &rarr;</a></p>
+            <p>The <strong>Faith Representatives Chamber (FRC)</strong> is elected through the Multi-Religion Election, which is the practical application of the Multi-Religion Election System.</p>
+            <p>Only the three positive parts of the church election are applied in the election of the FRC, which has been mentioned earlier. However, the FRC fundamentally improves upon the traditional church election model in several key ways:</p>
+            <ul class="comparison-list">
+                <li><strong>Universal Voting Rights:</strong> In the church election, only those who belong to the Nordic churches (Protestant denominations) who are 16 years of age and older are allowed to vote. The FRC expands the right to vote to include <em>all</em> Swedish citizens who have reached the age of 16, regardless of religion.</li>
+                <li><strong>True Gender Equality in Leadership:</strong> Unlike the church election, which allows only a Protestant woman to become an archbishop, the Multi-Religion Election includes all women, regardless of religion, having the same opportunity to be elected to the highest religious position.</li>
+                <li><strong>Democratizing All Faiths:</strong> Unlike the church election, which only makes it possible to democratize the Protestant faith communities in the Nordic countries, the Multi-Religion Election democratizes <em>all</em> religions without exception.</li>
+                <li><strong>Complete Separation of Church and State:</strong> The church election allows politicians and parliamentary parties to participate. These politicians are elected at the church council, which prevents the separation of state and church, and religion from politics. In contrast to the church election, the Multi-Religion Election <strong>prohibits</strong> parliamentary parties from participating, with the explicit goal of completing the separation of state and church, and religion and politics.</li>
+            </ul>
+        </section>
 
-</section>
         <!-- ===== STATISTICS (Social Proof / E-E-A-T) ===== -->
-        <section aria-label="Key statistics about the Multi-Religion Valuation System *MRVS(" class="border-y border-white/5">
+        <section aria-label="Key statistics about the Multi-Religion Valuation System" class="border-y border-white/5">
             <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4">
                 <div class="p-8 md:p-12 text-center border-r border-white/5">
                     <p class="font-serif text-3xl md:text-4xl tracking-tight">9+</p>
-                    <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mt-2">Religions Analyzed
-                    </p>
+                    <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mt-2">Religions Analyzed</p>
                 </div>
                 <div class="p-8 md:p-12 text-center md:border-r border-white/5">
                     <p class="font-serif text-3xl md:text-4xl tracking-tight">7</p>
-                    <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mt-2">Analytical
-                        Dimensions</p>
+                    <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mt-2">Analytical Dimensions</p>
                 </div>
                 <div class="p-8 md:p-12 text-center border-r border-white/5 border-t md:border-t-0">
                     <p class="font-serif text-3xl md:text-4xl tracking-tight">EU</p>
@@ -608,8 +966,7 @@
         <section id="religions" aria-labelledby="religions-heading" class="py-24 md:py-32 px-6 md:px-12">
             <div class="max-w-6xl mx-auto">
                 <div class="max-w-2xl mb-16">
-                    <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mb-4">Traditions Studied
-                    </p>
+                    <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mb-4">Traditions Studied</p>
                     <h2 id="religions-heading" class="font-serif text-3xl md:text-4xl tracking-tight mb-6">
                         World Religions in<br><em class="text-neutral-300">Comparative Perspective</em>
                     </h2>
@@ -618,11 +975,8 @@
                         in comparative study. Select a tradition to explore its valuation profile.
                     </p>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Card 1 -->
-                    <article
-                        class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
+                    <article class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
                         <div class="overflow-hidden">
                             <img src="https://picsum.photos/seed/christianity-cathedral/600/400.jpg"
                                 alt="Gothic cathedral interior with stained glass windows representing the Christian tradition's architectural and artistic heritage"
@@ -631,110 +985,76 @@
                         </div>
                         <div class="p-6">
                             <h3 class="font-serif text-xl tracking-tight mb-2">Christianity</h3>
-                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Examining 2,000 years of
-                                theological development, from early church fathers through Reformation to contemporary
-                                global movements.</p>
-                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">2.4 Billion
-                                Adherents</span>
+                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Examining 2,000 years of theological development, from early church fathers through Reformation to contemporary global movements.</p>
+                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">2.4 Billion Adherents</span>
                         </div>
                     </article>
-
-                    <!-- Card 2 -->
-                    <article
-                        class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
+                    <article class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
                         <div class="overflow-hidden">
                             <img src="https://picsum.photos/seed/islam-mosque-architecture/600/400.jpg"
-                                alt="Intricate Islamic mosque architecture featuring geometric patterns and calligraphy representing Islamic artistic and spiritual traditions"
+                                alt="Intricate Islamic mosque architecture featuring geometric patterns and calligraphy"
                                 class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy" width="600" height="400">
                         </div>
                         <div class="p-6">
                             <h3 class="font-serif text-xl tracking-tight mb-2">Islam</h3>
-                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Analyzing the unity of
-                                tawhid, Quranic revelation, Sharia ethics, and the diversity across Sunni, Shia, and
-                                Sufi traditions.</p>
-                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">1.9 Billion
-                                Adherents</span>
+                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Analyzing the unity of tawhid, Quranic revelation, Sharia ethics, and the diversity across Sunni, Shia, and Sufi traditions.</p>
+                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">1.9 Billion Adherents</span>
                         </div>
                     </article>
-
-                    <!-- Card 3 -->
-                    <article
-                        class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
+                    <article class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
                         <div class="overflow-hidden">
                             <img src="https://picsum.photos/seed/hinduism-temple-colorful/600/400.jpg"
-                                alt="Colorful Hindu temple with intricate carvings and devotees representing the rich visual and devotional traditions of Hinduism"
+                                alt="Colorful Hindu temple with intricate carvings and devotees"
                                 class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy" width="600" height="400">
                         </div>
                         <div class="p-6">
                             <h3 class="font-serif text-xl tracking-tight mb-2">Hinduism</h3>
-                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Exploring dharma, karma,
-                                moksha, and the vast tapestry of Vedic, Upanishadic, and Bhakti traditions across
-                                millennia.</p>
-                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">1.2 Billion
-                                Adherents</span>
+                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Exploring dharma, karma, moksha, and the vast tapestry of Vedic, Upanishadic, and Bhakti traditions across millennia.</p>
+                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">1.2 Billion Adherents</span>
                         </div>
                     </article>
-
-                    <!-- Card 4 -->
-                    <article
-                        class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
+                    <article class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
                         <div class="overflow-hidden">
                             <img src="https://picsum.photos/seed/buddhism-zen-meditation/600/400.jpg"
-                                alt="Serene Buddhist meditation setting with incense and statue representing the mindfulness and inner peace practices of Buddhism"
+                                alt="Serene Buddhist meditation setting with incense and statue"
                                 class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy" width="600" height="400">
                         </div>
                         <div class="p-6">
                             <h3 class="font-serif text-xl tracking-tight mb-2">Buddhism</h3>
-                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Studying the Four Noble
-                                Truths, Eightfold Path, and the divergence of Theravada, Mahayana, and Vajrayana
-                                streams.</p>
-                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">520 Million
-                                Adherents</span>
+                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Studying the Four Noble Truths, Eightfold Path, and the divergence of Theravada, Mahayana, and Vajrayana streams.</p>
+                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">520 Million Adherents</span>
                         </div>
                     </article>
-
-                    <!-- Card 5 -->
-                    <article
-                        class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
+                    <article class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
                         <div class="overflow-hidden">
                             <img src="https://picsum.photos/seed/judaism-torah-scroll/600/400.jpg"
-                                alt="Ancient Torah scroll with traditional silver ornaments representing the foundational texts and rituals of Judaism"
+                                alt="Ancient Torah scroll with traditional silver ornaments"
                                 class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy" width="600" height="400">
                         </div>
                         <div class="p-6">
                             <h3 class="font-serif text-xl tracking-tight mb-2">Judaism</h3>
-                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Tracing covenant
-                                theology, Halakhic ethics, Talmudic reasoning, and the evolution from Temple period to
-                                diaspora.</p>
-                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">15 Million
-                                Adherents</span>
+                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Tracing covenant theology, Halakhic ethics, Talmudic reasoning, and the evolution from Temple period to diaspora.</p>
+                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">15 Million Adherents</span>
                         </div>
                     </article>
-
-                    <!-- Card 6 -->
-                    <article
-                        class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
+                    <article class="group border border-white/10 rounded-sm overflow-hidden hover:border-neutral-600 transition-all duration-150">
                         <div class="overflow-hidden">
                             <img src="https://picsum.photos/seed/sikhism-golden-temple/600/400.jpg"
-                                alt="The Golden Temple in Amritsar surrounded by sacred water representing the Sikh principles of equality, service, and devotion"
+                                alt="The Golden Temple in Amritsar surrounded by sacred water"
                                 class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500"
                                 loading="lazy" width="600" height="400">
                         </div>
                         <div class="p-6">
                             <h3 class="font-serif text-xl tracking-tight mb-2">Sikhism</h3>
-                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Examining the Guru
-                                Granth Sahib, seva ethics, the Khalsa tradition, and Sikhism's unique synthesis of
-                                devotional and martial principles.</p>
-                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">30 Million
-                                Adherents</span>
+                            <p class="text-neutral-400 font-light text-sm leading-relaxed mb-4">Examining the Guru Granth Sahib, seva ethics, the Khalsa tradition, and Sikhism's unique synthesis of devotional and martial principles.</p>
+                            <span class="text-xs uppercase tracking-[0.2em] text-neutral-500">30 Million Adherents</span>
                         </div>
                     </article>
                 </div>
-
                 <p class="text-neutral-500 font-light text-sm mt-10 text-center">
                     Additional traditions including Taoism, Jainism, and the Bahá'í Faith are under active analysis.
                 </p>
@@ -742,8 +1062,7 @@
         </section>
 
         <!-- ===== METHODOLOGY (H2) ===== -->
-        <section id="methodology" aria-labelledby="methodology-heading"
-            class="py-24 md:py-32 px-6 md:px-12 border-t border-white/5">
+        <section id="methodology" aria-labelledby="methodology-heading" class="py-24 md:py-32 px-6 md:px-12 border-t border-white/5">
             <div class="max-w-6xl mx-auto">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     <div>
@@ -758,101 +1077,72 @@
                         </p>
                         <figure class="relative">
                             <img src="https://picsum.photos/seed/academic-research-books/800/600.jpg"
-                                alt="Academic research environment with open books and notes representing the scholarly methodology behind the Multi-Religion Valuation System"
-                                class="w-full aspect-[4/3] object-cover rounded-sm" loading="lazy" width="800"
-                                height="600">
-                            <figcaption class="mt-3 text-xs text-neutral-600 font-light">Scholarly methodology ensures
-                                academic rigor and objectivity</figcaption>
+                                alt="Academic research environment with open books and notes"
+                                class="w-full aspect-[4/3] object-cover rounded-sm" loading="lazy" width="800" height="600">
+                            <figcaption class="mt-3 text-xs text-neutral-600 font-light">Scholarly methodology ensures academic rigor and objectivity</figcaption>
                         </figure>
                     </div>
                     <div class="space-y-0">
-                        <!-- Dimension 1 -->
-                        <div
-                            class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
+                        <div class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
                             <div class="flex items-start gap-6">
                                 <span class="text-neutral-600 font-serif text-2xl mt-1">01</span>
                                 <div>
                                     <h3 class="font-serif text-lg tracking-tight mb-2">Theological Framework</h3>
-                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Core beliefs about
-                                        the divine, cosmic order, ultimate reality, and the nature of existence as
-                                        articulated by each tradition.</p>
+                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Core beliefs about the divine, cosmic order, ultimate reality, and the nature of existence.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Dimension 2 -->
-                        <div
-                            class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
+                        <div class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
                             <div class="flex items-start gap-6">
                                 <span class="text-neutral-600 font-serif text-2xl mt-1">02</span>
                                 <div>
                                     <h3 class="font-serif text-lg tracking-tight mb-2">Ethical Systems</h3>
-                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Moral philosophy,
-                                        codes of conduct, concepts of virtue and vice, and the relationship between
-                                        ethics and spiritual practice.</p>
+                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Moral philosophy, codes of conduct, concepts of virtue and vice, and the relationship between ethics and spiritual practice.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Dimension 3 -->
-                        <div
-                            class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
+                        <div class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
                             <div class="flex items-start gap-6">
                                 <span class="text-neutral-600 font-serif text-2xl mt-1">03</span>
                                 <div>
                                     <h3 class="font-serif text-lg tracking-tight mb-2">Historical Development</h3>
-                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Origins, key
-                                        transformations, schisms, reform movements, and the historical context that
-                                        shaped each tradition over time.</p>
+                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Origins, key transformations, schisms, reform movements, and the historical context that shaped each tradition.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Dimension 4 -->
-                        <div
-                            class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
+                        <div class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
                             <div class="flex items-start gap-6">
                                 <span class="text-neutral-600 font-serif text-2xl mt-1">04</span>
                                 <div>
                                     <h3 class="font-serif text-lg tracking-tight mb-2">Scriptural Traditions</h3>
-                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Sacred texts, oral
-                                        traditions, hermeneutical methods, and the role of scripture in authority and
-                                        daily life.</p>
+                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Sacred texts, oral traditions, hermeneutical methods, and the role of scripture in authority and daily life.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Dimension 5 -->
-                        <div
-                            class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
+                        <div class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
                             <div class="flex items-start gap-6">
                                 <span class="text-neutral-600 font-serif text-2xl mt-1">05</span>
                                 <div>
                                     <h3 class="font-serif text-lg tracking-tight mb-2">Ritual & Practice</h3>
-                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Worship forms,
-                                        sacraments, meditation practices, festivals, lifecycle rituals, and embodied
-                                        spirituality.</p>
+                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Worship forms, sacraments, meditation practices, festivals, lifecycle rituals, and embodied spirituality.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Dimension 6 -->
-                        <div
-                            class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
+                        <div class="border-b border-white/10 py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
                             <div class="flex items-start gap-6">
                                 <span class="text-neutral-600 font-serif text-2xl mt-1">06</span>
                                 <div>
                                     <h3 class="font-serif text-lg tracking-tight mb-2">Social Impact</h3>
-                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Contributions to
-                                        education, healthcare, social justice, community building, and influence on law
-                                        and governance.</p>
+                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Contributions to education, healthcare, social justice, community building, and influence on law and governance.</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Dimension 7 -->
                         <div class="py-8 group hover:bg-neutral-900/20 transition-colors duration-150 px-4 -mx-4">
                             <div class="flex items-start gap-6">
                                 <span class="text-neutral-600 font-serif text-2xl mt-1">07</span>
                                 <div>
                                     <h3 class="font-serif text-lg tracking-tight mb-2">Philosophical Contributions</h3>
-                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Impact on
-                                        metaphysics, epistemology, aesthetics, and philosophical discourse within and
-                                        beyond the tradition.</p>
+                                    <p class="text-neutral-400 font-light text-sm leading-relaxed">Impact on metaphysics, epistemology, aesthetics, and philosophical discourse within and beyond the tradition.</p>
                                 </div>
                             </div>
                         </div>
@@ -865,56 +1155,45 @@
         <section aria-labelledby="principles-heading" class="py-24 md:py-32 px-6 md:px-12 bg-neutral-900/30">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center max-w-2xl mx-auto mb-16">
-                    <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mb-4">Guiding Principles
-                    </p>
+                    <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mb-4">Guiding Principles</p>
                     <h2 id="principles-heading" class="font-serif text-3xl md:text-4xl tracking-tight">
                         Built on <em class="text-neutral-300">Academic Integrity</em>
                     </h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <article class="text-center p-8 border border-white/5 rounded-sm">
-                        <div
-                            class="w-12 h-12 mx-auto mb-6 flex items-center justify-center border border-white/10 rounded-full">
+                        <div class="w-12 h-12 mx-auto mb-6 flex items-center justify-center border border-white/10 rounded-full">
                             <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
                         </div>
                         <h3 class="font-serif text-lg tracking-tight mb-3">Non-Sectarian</h3>
-                        <p class="text-neutral-400 font-light text-sm leading-relaxed">No religious tradition is
-                            privileged or disadvantaged. All are approached with equal scholarly respect and rigor.</p>
+                        <p class="text-neutral-400 font-light text-sm leading-relaxed">No religious tradition is privileged or disadvantaged. All are approached with equal scholarly respect and rigor.</p>
                     </article>
                     <article class="text-center p-8 border border-white/5 rounded-sm">
-                        <div
-                            class="w-12 h-12 mx-auto mb-6 flex items-center justify-center border border-white/10 rounded-full">
+                        <div class="w-12 h-12 mx-auto mb-6 flex items-center justify-center border border-white/10 rounded-full">
                             <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                             </svg>
                         </div>
                         <h3 class="font-serif text-lg tracking-tight mb-3">Evidence-Based</h3>
-                        <p class="text-neutral-400 font-light text-sm leading-relaxed">All analyses draw on primary
-                            sources, peer-reviewed scholarship, and verifiable historical data.</p>
+                        <p class="text-neutral-400 font-light text-sm leading-relaxed">All analyses draw on primary sources, peer-reviewed scholarship, and verifiable historical data.</p>
                     </article>
                     <article class="text-center p-8 border border-white/5 rounded-sm">
-                        <div
-                            class="w-12 h-12 mx-auto mb-6 flex items-center justify-center border border-white/10 rounded-full">
+                        <div class="w-12 h-12 mx-auto mb-6 flex items-center justify-center border border-white/10 rounded-full">
                             <svg class="w-5 h-5 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                             </svg>
                         </div>
                         <h3 class="font-serif text-lg tracking-tight mb-3">Culturally Sensitive</h3>
-                        <p class="text-neutral-400 font-light text-sm leading-relaxed">Frameworks account for cultural
-                            context, avoiding the imposition of one tradition's categories onto another.</p>
+                        <p class="text-neutral-400 font-light text-sm leading-relaxed">Frameworks account for cultural context, avoiding the imposition of one tradition's categories onto another.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- ===== FAQ SECTION (H2 — Supports FAQ Schema) ===== -->
+        <!-- ===== FAQ SECTION (H2) ===== -->
         <section id="faq" aria-labelledby="faq-heading" class="py-24 md:py-32 px-6 md:px-12">
             <div class="max-w-3xl mx-auto">
                 <div class="text-center mb-16">
@@ -923,90 +1202,60 @@
                         Frequently <em class="text-neutral-300">Asked</em>
                     </h2>
                 </div>
-
                 <div class="space-y-0 border-t border-white/10">
-                    <!-- FAQ 1 -->
                     <details class="group border-b border-white/10">
                         <summary class="flex items-center justify-between py-6 cursor-pointer list-none">
-                            <h3 class="font-serif text-lg tracking-tight pr-8">What is the Multi-Religion Valuation
-                                System?</h3>
-                            <svg class="w-5 h-5 text-neutral-500 shrink-0 group-open:rotate-180 transition-transform"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M19 9l-7 7-7-7" />
+                            <h3 class="font-serif text-lg tracking-tight pr-8">What is the Multi-Religion Valuation System?</h3>
+                            <svg class="w-5 h-5 text-neutral-500 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
                             </svg>
                         </summary>
                         <div class="pb-6 text-neutral-400 font-light text-sm leading-loose">
-                            The Multi-Religion Valuation System *MRVS(is an academic, non-sectarian framework that provides
-                            structured, objective analysis of the world's major religions across dimensions including
-                            theology, ethics, historical development, and social impact. It does not rank or judge
-                            religions — it illuminates them.
+                            The Multi-Religion Valuation System (MRVS) is an academic, non-sectarian framework that provides structured, objective analysis of the world's major religions across dimensions including theology, ethics, historical development, and social impact. It does not rank or judge religions — it illuminates them.
                         </div>
                     </details>
-                    <!-- FAQ 2 -->
                     <details class="group border-b border-white/10">
                         <summary class="flex items-center justify-between py-6 cursor-pointer list-none">
-                            <h3 class="font-serif text-lg tracking-tight pr-8">Is the system affiliated with any
-                                religion?</h3>
-                            <svg class="w-5 h-5 text-neutral-500 shrink-0 group-open:rotate-180 transition-transform"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M19 9l-7 7-7-7" />
+                            <h3 class="font-serif text-lg tracking-tight pr-8">Is the system affiliated with any religion?</h3>
+                            <svg class="w-5 h-5 text-neutral-500 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
                             </svg>
                         </summary>
                         <div class="pb-6 text-neutral-400 font-light text-sm leading-loose">
-                            No. The system is completely independent and non-sectarian. It does not promote, endorse, or
-                            rank any religion above another. Its purpose is purely educational and analytical, adhering
-                            to the highest standards of academic integrity.
+                            No. The system is completely independent and non-sectarian. It does not promote, endorse, or rank any religion above another. Its purpose is purely educational and analytical.
                         </div>
                     </details>
-                    <!-- FAQ 3 -->
                     <details class="group border-b border-white/10">
                         <summary class="flex items-center justify-between py-6 cursor-pointer list-none">
                             <h3 class="font-serif text-lg tracking-tight pr-8">Which religions are covered?</h3>
-                            <svg class="w-5 h-5 text-neutral-500 shrink-0 group-open:rotate-180 transition-transform"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M19 9l-7 7-7-7" />
+                            <svg class="w-5 h-5 text-neutral-500 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
                             </svg>
                         </summary>
                         <div class="pb-6 text-neutral-400 font-light text-sm leading-loose">
-                            The system currently covers Christianity, Islam, Hinduism, Buddhism, Judaism, Sikhism,
-                            Taoism, Jainism, and the Bahá'í Faith. Additional traditions and indigenous belief systems
-                            are under active research for future inclusion.
+                            The system currently covers Christianity, Islam, Hinduism, Buddhism, Judaism, Sikhism, Taoism, Jainism, and the Bahá'í Faith. Additional traditions are under active research.
                         </div>
                     </details>
-                    <!-- FAQ 4 -->
                     <details class="group border-b border-white/10">
                         <summary class="flex items-center justify-between py-6 cursor-pointer list-none">
                             <h3 class="font-serif text-lg tracking-tight pr-8">How is each religion evaluated?</h3>
-                            <svg class="w-5 h-5 text-neutral-500 shrink-0 group-open:rotate-180 transition-transform"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M19 9l-7 7-7-7" />
+                            <svg class="w-5 h-5 text-neutral-500 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
                             </svg>
                         </summary>
                         <div class="pb-6 text-neutral-400 font-light text-sm leading-loose">
-                            Each religion is analyzed across seven standardized dimensions: theological framework,
-                            ethical systems, historical development, scriptural traditions, ritual practices, social
-                            impact, and philosophical contributions. No dimension is weighted above another — the goal
-                            is comprehensive, balanced understanding.
+                            Each religion is analyzed across seven standardized dimensions: theological framework, ethical systems, historical development, scriptural traditions, ritual practices, social impact, and philosophical contributions.
                         </div>
                     </details>
-                    <!-- FAQ 5 -->
                     <details class="group">
                         <summary class="flex items-center justify-between py-6 cursor-pointer list-none">
                             <h3 class="font-serif text-lg tracking-tight pr-8">Who can use this system?</h3>
-                            <svg class="w-5 h-5 text-neutral-500 shrink-0 group-open:rotate-180 transition-transform"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M19 9l-7 7-7-7" />
+                            <svg class="w-5 h-5 text-neutral-500 shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
                             </svg>
                         </summary>
                         <div class="pb-6 text-neutral-400 font-light text-sm leading-loose">
-                            The system is designed for educators, students of religious studies, researchers, interfaith
-                            organizations, policymakers, journalists, and any individual seeking a structured, objective
-                            understanding of world religions. All resources are freely accessible.
+                            The system is designed for educators, students, researchers, interfaith organizations, policymakers, journalists, and any individual seeking a structured, objective understanding of world religions.
                         </div>
                     </details>
                 </div>
@@ -1014,16 +1263,14 @@
         </section>
 
         <!-- ===== CONTACT / CTA (H2) ===== -->
-        <section id="contact" aria-labelledby="contact-heading"
-            class="py-24 md:py-32 px-6 md:px-12 border-t border-white/5">
+        <section id="contact" aria-labelledby="contact-heading" class="py-24 md:py-32 px-6 md:px-12 border-t border-white/5">
             <div class="max-w-3xl mx-auto text-center">
                 <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mb-4">Get Involved</p>
                 <h2 id="contact-heading" class="font-serif text-3xl md:text-4xl tracking-tight mb-6">
                     Join the <em class="text-neutral-300">Conversation</em>
                 </h2>
                 <p class="text-neutral-400 font-light text-sm leading-loose mb-10 max-w-xl mx-auto">
-                    Whether you're a scholar, educator, or interested individual — we welcome contributions, feedback,
-                    and collaboration. Help us build a more nuanced understanding of the world's religious traditions.
+                    Whether you're a scholar, educator, or interested individual — we welcome contributions, feedback, and collaboration.
                 </p>
                 <form id="contact-form" aria-label="Contact form" class="max-w-md mx-auto space-y-4">
                     <div>
@@ -1056,51 +1303,31 @@
     <footer aria-label="Site footer" class="border-t border-white/5 py-12 px-6 md:px-12">
         <div class="max-w-6xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                <!-- Brand -->
                 <div>
                     <p class="text-sm font-medium tracking-widest uppercase mb-4">MRVS</p>
                     <p class="text-neutral-500 font-light text-sm leading-relaxed">
-                        Multi-Religion Valuation System (MRVS). An independent, academic platform for comparative religious
-                        analysis.
+                        Multi-Religion Valuation System (MRVS). An independent, academic platform for comparative religious analysis.
                     </p>
                 </div>
-                <!-- Navigation -->
                 <nav aria-label="Footer navigation">
                     <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mb-4">Navigation</p>
                     <ul class="space-y-2">
-                        <li><a href="#framework"
-                                class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Framework</a>
-                        </li>
-                        <li><a href="#religions"
-                                class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Religions</a>
-                        </li>
-                        <li><a href="#methodology"
-                                class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Methodology</a>
-                        </li>
-                        <li><a href="#faq"
-                                class="text-neutral-400 hover:text-white transition-colors text-sm font-light">FAQ</a>
-                        </li>
-                        <li><a href="#contact"
-                                class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Contact</a>
-                        </li>
+                        <li><a href="#framework" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Framework</a></li>
+                        <li><a href="#difference" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Modules</a></li>
+                        <li><a href="#support-section" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Multi-Religion Support</a></li>
+                        <li><a href="#religions" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Religions</a></li>
+                        <li><a href="#methodology" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Methodology</a></li>
+                        <li><a href="#faq" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">FAQ</a></li>
+                        <li><a href="#contact" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Contact</a></li>
                     </ul>
                 </nav>
-                <!-- Legal / SEO links -->
                 <div>
                     <p class="text-xs font-medium uppercase tracking-[0.2em] text-neutral-500 mb-4">Legal</p>
                     <ul class="space-y-2">
-                        <li><a href="/privacy"
-                                class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Privacy
-                                Policy</a></li>
-                        <li><a href="/terms"
-                                class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Terms of
-                                Use</a></li>
-                        <li><a href="/accessibility"
-                                class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Accessibility</a>
-                        </li>
-                        <li><a href="/sitemap.xml"
-                                class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Sitemap</a>
-                        </li>
+                        <li><a href="/privacy" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Privacy Policy</a></li>
+                        <li><a href="/terms" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Terms of Use</a></li>
+                        <li><a href="/accessibility" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Accessibility</a></li>
+                        <li><a href="/sitemap.xml" class="text-neutral-400 hover:text-white transition-colors text-sm font-light">Sitemap</a></li>
                     </ul>
                 </div>
             </div>
@@ -1114,6 +1341,43 @@
             </div>
         </div>
     </footer>
+
+    <!-- ========== AUDIO PLAYER ========== -->
+    <div id="wb_MediaPlayer1" style="display:block;width:100%;z-index:10;">
+        <audio id="MediaPlayer1" autoplay controls>
+            <source src="https://multireligionvalsystem.eu.org/FAQ/TRK.m4a" type="audio/wav">
+        </audio>
+    </div>
+
+    <!-- ========== SOCIAL MEDIA SIGNALS ========== -->
+    <div class="social-signals">
+        <h3>Follow & Join the Conversation</h3>
+        <ul class="social-list">
+            <li><a href="https://www.facebook.com/amultireligionelectionsystem" target="_blank" title="Facebook: Multi-Religion Election System"><i class="fab fa-facebook-square"></i> Facebook Page</a></li>
+            <li><a href="https://www.facebook.com/demokratin" target="_blank" title="Facebook: Demokratin"><i class="fab fa-facebook-square"></i> Demokratin (Facebook)</a></li>
+            <li><a href="http://se.linkedin.com/in/solidarity" target="_blank" title="LinkedIn: Solidarity"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="http://www.pinterest.com/denyasvenskarna/" target="_blank" title="Pinterest: Denya Svenskarna"><i class="fab fa-pinterest-square"></i> Pinterest</a></li>
+            <li><a href="https://www.instagram.com/multireligionval/" target="_blank" title="Instagram: MultiReligionVal"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://twitter.com/DPNS" target="_blank" title="Twitter: DPNS"><i class="fab fa-twitter"></i> Twitter/X</a></li>
+            <li><a href="https://www.tiktok.com/@multireligionvalsystem?lang=en" target="_blank" title="TikTok: MultiReligionValSystem"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.youtube.com/@faith-representatives" target="_blank" title="YouTube: Faith Representatives"><i class="fab fa-youtube"></i> YouTube</a></li>
+            <li><a href="https://mastodon.social/@multireligionval" target="_blank" title="Mastodon: MultiReligionVal"><i class="fab fa-mastodon"></i> Mastodon</a></li>
+        </ul>
+    </div>
+
+    <!-- ========== NETWORK FOOTER ========== -->
+    <div class="footer-links">
+        <h4>Our Network</h4>
+        <ul>
+            <li><a href="https://multireligionvalsystem.eu.org">Religion Comparisons</a></li>
+            <li><a href="https://mres.multireligionvalsystem.eu.org/">MRES — Political Conflict Resolution Model</a></li>
+            <li><a href="https://mre.multireligionvalsystem.eu.org">MRE</a></li>
+            <li><a href="https://multireligionvalsystem.eu.org/miljömodellen-för-demokratin-demokratin-från-terori-till-praktik-Multireligionvalsystem">Miljömodellen för Demokratin</a></li>
+            <li><a href="https://frc.multireligionvalsystem.eu.org">FRC</a></li>
+            <li><a href="https://multi-religion-support.multireligionvalsystem.eu.org">Multi-Religion Support</a></li>
+            <li><a href="https://clawdbot.multireligionvalsystem.eu.org">Clawdbot AI</a></li>
+        </ul>
+    </div>
 
     <!-- ========== JAVASCRIPT ========== -->
     <script>
@@ -1155,7 +1419,6 @@
                 return;
             }
 
-            // Simulate submission
             const btn = form.querySelector('button[type="submit"]');
             btn.textContent = 'Sending...';
             btn.disabled = true;
@@ -1190,7 +1453,7 @@
         });
 
         // Intersection Observer for fade-in animations (CLS-safe)
-        const observeElements = document.querySelectorAll('section, article');
+        const observeElements = document.querySelectorAll('main > section, main > header');
         observeElements.forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
@@ -1213,91 +1476,6 @@
         document.querySelector('header').style.opacity = '1';
         document.querySelector('header').style.transform = 'none';
     </script>
- <div id="wb_MediaPlayer1" style="display:block;width:100%;z-index:10;">
-                     <audio id="MediaPlayer1" autoplay controls>
-                        <source src="https://multireligionvalsystem.eu.org/FAQ/TRK.m4a" type="audio/wav">
-                     </audio>
-                  </div>
-     <!-- Social Media Signals Block -->
-<div class="social-signals">
-    <h3>Follow & Join the Conversation</h3>
-    <ul class="social-list">
-        <li>
-            <a href="https://www.facebook.com/amultireligionelectionsystem" target="_blank" title="Facebook: Multi-Religion Election System">
-                <i class="fab fa-facebook-square"></i> Facebook Page
-            </a>
-        </li>
-        <li>
-            <a href="https://www.facebook.com/demokratin" target="_blank" title="Facebook: Demokratin">
-                <i class="fab fa-facebook-square"></i> Demokratin (Facebook)
-            </a>
-        </li>
-        <li>
-            <a href="http://se.linkedin.com/in/solidarity" target="_blank" title="LinkedIn: Solidarity">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-        </li>
-        <li>
-            <a href="http://www.pinterest.com/denyasvenskarna/" target="_blank" title="Pinterest: Denya Svenskarna">
-                <i class="fab fa-pinterest-square"></i> Pinterest
-            </a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/multireligionval/" target="_blank" title="Instagram: MultiReligionVal">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
-        </li>
-        <li>
-            <a href="https://twitter.com/DPNS" target="_blank" title="Twitter: DPNS">
-                <i class="fab fa-twitter"></i> Twitter/X
-            </a>
-        </li>
-        <li>
-            <a href="https://www.tiktok.com/@multireligionvalsystem?lang=en" target="_blank" title="TikTok: MultiReligionValSystem">
-                <i class="fab fa-tiktok"></i> TikTok
-            </a>
-        </li>
-        <li>
-            <a href="https://www.youtube.com/@faith-representatives" target="_blank" title="YouTube: Faith Representatives">
-                <i class="fab fa-youtube"></i> YouTube
-            </a>
-        </li>
-        <li>
-            <a href="https://mastodon.social/@multireligionval" target="_blank" title="Mastodon: MultiReligionVal">
-                <i class="fab fa-mastodon"></i> Mastodon
-            </a>
-        </li>
-    </ul>
-</div>
 
-<!-- Font Awesome CDN for icons (add in <head>) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-<!-- Add CSS for visual style -->
-<style>
-    .social-signals h3{color:#4167b0;margin-bottom:9px;}
-    .social-list{list-style:none;padding:0;margin:0;}
-    .social-list li{margin-bottom:7px;}
-    .social-list a{
-        color:#33739e; text-decoration:none; font-size:1.09em;
-        transition:color 0.17s;
-    }
-    .social-list a:hover{color:#d47147;}
-    .social-list i{margin-right:8px; font-size:1.23em;}
-</style>
-<footer>
-  <div class="footer-links">
-    <h4>Our Network</h4>
-    <ul>
-      <li><a href="https://multireligionvalsystem.eu.org">Religion Comparisons</a></li>
-      <li><a href="https://mres.multireligionvalsystem.eu.org/">MRES -Political conflict resolution model</a></li>
-          <li><a href="https://mre.multireligionvalsystem.eu.org">MRE</a></li>
-           <li><a href=" https://multireligionvalsystem.eu.org/miljömodellen-för-demokratin-demokratin-från-terori-till-praktik-Multireligionvalsystem
-">miljömodellen för demokratin demokratin från terori till praktik med Multireligionvalsystem som grund</a></li>
-      <li><a href="https://frc.multireligionvalsystem.eu.org">FRC</a></li>
-        <li><a href="https://clawdbot.multireligionvalsystem.eu.org">Clawdbot AI</a></li>
-    </ul>
-  </div>
-</footer>
 </body>
-
 </html>
