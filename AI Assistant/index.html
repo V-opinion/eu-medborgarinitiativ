@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRVS-MRV AI Peace Model</title>
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #c53030;
+            --bg: #f0f4f8;
+            --text: #2d3748;
+            --light-text: #718096;
+            --card-bg: #ffffff;
+            --ai-bg: #ebf8ff;
+            --user-bg: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 40px;
+            white-space: nowrap;
+        }
+
+        nav .nav-links { display: flex; gap: 20px; }
+
+        nav .nav-link {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        nav .nav-link:hover, nav .nav-link.active {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        /* Main Container */
+        .app-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .page { display: none; animation: fadeIn 0.4s ease-in; }
+        .page.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Page 1: Article Styles */
+        .article-card {
+            background: var(--card-bg);
+            padding: 40px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 { color: var(--primary); font-size: 2rem; margin-bottom: 10px; }
+        h2 { color: var(--secondary); margin: 30px 0 15px; font-size: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
+        h3 { color: var(--primary); margin: 25px 0 10px; font-size: 1.2rem; }
+        p { margin-bottom: 15px; color: var(--light-text); }
+        ul { margin-left: 20px; margin-bottom: 20px; color: var(--light-text); }
+        li { margin-bottom: 10px; }
+        strong { color: var(--primary); }
+        .highlight-box {
+            background: var(--ai-bg);
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        /* Page 2: AI Assistant Styles */
+        .chat-container {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: var(--secondary);
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-box {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f7fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 18px;
+            border-radius: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .message.ai {
+            background: var(--card-bg);
+            border: 1px solid #e2e8f0;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .message.user {
+            background: var(--secondary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        .chat-input-area {
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .chat-input-area input:focus { border-color: var(--secondary); }
+
+        .chat-input-area button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .chat-input-area button:hover { background: var(--accent); }
+
+        /* Page 3: Simulator Styles */
+        .sim-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .form-group select, .form-group button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .form-group button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        .form-group button:hover { background: #9b2c2c; }
+
+        .sim-result {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--ai-bg);
+            border-left: 5px solid var(--primary);
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .sim-result h3 { margin-top: 0; color: var(--secondary); }
+        .sim-result p { color: var(--text); margin-bottom: 10px; }
+
+        .typing-indicator { font-style: italic; color: var(--light-text); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            nav { flex-direction: column; gap: 10px; }
+            nav .nav-links { width: 100%; justify-content: center; }
+            .article-card { padding: 20px; }
+            h1 { font-size: 1.6rem; }
+            .message { max-width: 95%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">MRVS-MRV Peace Model</div>
+        <div class="nav-links">
+            <div class="nav-link active" onclick="showPage('overview')">Overview Article</div>
+            <div class="nav-link" onclick="showPage('assistant')">AI Assistant</div>
+            <div class="nav-link" onclick="showPage('simulator')">Policy Simulator</div>
+        </div>
+    </nav>
+
+    <div class="app-container">
+
+        <!-- PAGE 1: OVERVIEW ARTICLE -->
+        <div id="overview" class="page active">
+            <div class="article-card">
+                <h1>Breaking the 78-Year Cycle</h1>
+                <p style="font-size: 1.1rem; color: var(--accent); font-weight:600;">A Sustainable MRVS-MRV Conflict Resolution Model for Israel and Palestine</p>
+                
+                <p>For 78 years, traditional conflict resolution models have failed because they rely on secular, zero-sum political frameworks, ignoring the deeply entrenched spiritual arteries binding these two peoples to the same soil.</p>
+                
+                <div class="highlight-box">Sustainable development can only be achieved through sustainable policies.</div>
+
+                <h2>The New Paradigm</h2>
+                <p>We must adopt a revolutionary framework built upon <strong>MRVS</strong> (Multi-Religious Value System), <strong>MRV</strong> (Mutual Recognition and Validation), and <strong>Multi-Religion Support</strong>.</p>
+
+                <h3>1. MRV: Mutual Recognition and Validation</h3>
+                <ul>
+                    <li><strong>For Israelis:</strong> Validating the Palestinian narrative of the <em>Nakba</em> and their right to self-determination.</li>
+                    <li><strong>For Palestinians:</strong> Recognizing the Jewish people’s ancient, unbroken historical and spiritual connection to the land.</li>
+                </ul>
+                <p>MRV outlaws the political weaponization of denial in educational curricula.</p>
+
+                <h3>2. MRVS: Multi-Religious Value System</h3>
+                <p>Extracting the shared ethical cores of Judaism (<em>Tikkun Olam</em>), Islam (<em>Salam</em>), and Christianity to form a constitutional "Council of Abrahamic Values." Resource allocation (like water) is governed by shared religious imperatives, not military might.</p>
+
+                <h3>3. Multi-Religion Support</h3>
+                <p>Establishes an Interfaith Peacebuilding Corps. When tensions rise over holy sites, political leaders step back, and deployed Rabbis, Imams, and Clerics manage de-escalation.</p>
+
+                <h2>Sustainable Policies</h2>
+                <ul>
+                    <li><strong>Joint Economic Zones (JEZs):</strong> Merging high-tech innovation with demographic dividends.</li>
+                    <li><strong>Environmental Stewardship:</strong> Jointly managed water/solar grids protected by religious mandate.</li>
+                    <li><strong>Generational Trauma Healing:</strong> Dual-narrative mental health centers to stop inherited trauma.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PAGE 2: AI ASSISTANT -->
+        <div id="assistant" class="page">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <span>🤖</span> MRVS-MRV Knowledge Assistant
+                    <span style="margin-left:auto; font-size:0.8rem; font-weight:normal; opacity:0.8;">(Simulated AI)</span>
+                </div>
+                <div class="chat-box" id="chatBox">
+                    <div class="message ai">
+                        Hello. I am an AI assistant trained specifically on the MRVS-MRV Conflict Resolution Model. Ask me about MRV, MRVS, why past models failed, or how sustainable development is achieved here.
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="userInput" placeholder="e.g., How does MRV handle the Nakba?" onkeypress="handleEnter(event)">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 3: POLICY SIMULATOR -->
+        <div id="simulator" class="page">
+            <div class="sim-card">
+                <h2 style="margin-top:0;">Conflict Scenario Simulator</h2>
+                <p>Select a hypothetical crisis scenario to see how the MRVS-MRV model theoretically responds compared to traditional politics.</p>
+
+                <div class="form-group">
+                    <label for="scenario">Select a Crisis Scenario:</label>
+                    <select id="scenario">
+                        <option value="holy_site">Violent Clashes Erupt at Temple Mount / Al-Aqsa Mosque</option>
+                        <option value="water">Severe Drought and Water Shortage in the West Bank</option>
+                        <option value="education">Textbooks found denying the other's historical connection</option>
+                        <option value="extremism">Rise of Religious Extremism on Both Sides</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button onclick="runSimulation()">Run Policy Simulation</button>
+                </div>
+
+                <div class="sim-result" id="simResult">
+                    <h3>AI Simulated Response:</h3>
+                    <p id="simText"></p>
+                    <p id="simContrast" style="margin-top:15px; font-size:0.9rem; color:var(--accent);"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- PAGE NAVIGATION ---
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            
+            document.getElementById(pageId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // --- AI ASSISTANT LOGIC ---
+        const knowledgeBase = [
+            {
+                keywords: ['mrv', 'mutual recognition', 'validation', 'narrative'],
+                response: "MRV (Mutual Recognition and Validation) requires both sides to accept the other's trauma and history. For Israelis, this means validating the Palestinian narrative of the Nakba. For Palestinians, it means validating the Jewish historical connection to the land and the trauma of global persecution. It outlaws the political weaponization of denial."
+            },
+            {
+                keywords: ['mrvs', 'multi-religious value', 'value system', 'abrahamic'],
+                response: "MRVS (Multi-Religious Value System) extracts the shared ethics of Judaism, Islam, and Christianity (like Tikkun Olam, Salam, and peacemaking) to form a constitutional value system. It creates a 'Council of Abrahamic Values' to ensure policies align with these shared tenets, particularly regarding resource allocation like water."
+            },
+            {
+                keywords: ['multi-religion support', 'interfaith', 'corps', 'clergy'],
+                response: "Multi-Religion Support establishes an officially recognized Interfaith Peacebuilding Corps. When tensions rise—especially over holy sites—political leaders step back, and trained Rabbis, Imams, and Clerics step in to de-escalate. This neutralizes religious extremism by making moderates the defenders of peace."
+            },
+            {
+                keywords: ['fail', 'failed', 'past', 'oslo', 'camp david', 'previous'],
+                response: "Previous models failed because they used Westphalian, secular, zero-sum political frameworks. They treated the Holy Land as mere real estate, focusing on borders and security while sidelining religion and historical trauma. Any agreement that ignores deeply held spiritual convictions is a house built on sand."
+            },
+            {
+                keywords: ['sustainable', 'development', 'policy', 'policies'],
+                response: "Sustainable development requires sustainable policies. The model achieves this through Joint Economic Zones (JEZs) combining Israeli tech with Palestinian demographics, jointly managed Environmental Stewardship grids (water/solar) protected by religious mandate, and Generational Trauma Healing centers to stop inherited trauma."
+            },
+            {
+                keywords: ['water', 'resource', 'environment'],
+                response: "Under the MRVS framework, water and resources cannot be allocated by military might or political leverage. Because Judaism, Islam, and Christianity all mandate protecting the innocent and being stewards of the earth, water grids are jointly owned and managed, making them immune to political targeting."
+            },
+            {
+                keywords: ['next generation', 'children', '78', 'cycle', 'trauma'],
+                response: "To break the 78-year cycle, the model stops the transmission of inherited trauma. MRV mandates educational curricula teach the validated narrative of the neighbor, while dual-narrative mental health centers treat psychological wounds. This ensures the next generation inherits peace, not the keys to another war."
+            }
+        ];
+
+        function getAIResponse(input) {
+            input = input.toLowerCase();
+            for (const item of knowledgeBase) {
+                if (item.keywords.some(keyword => input.includes(keyword))) {
+                    return item.response;
+                }
+            }
+            return "I am specialized in the MRVS-MRV model. I can answer questions regarding MRV (Mutual Recognition), MRVS (Value Systems), Multi-Religion Support, why past models failed, or sustainable development policies in this framework. Please try asking about one of those topics.";
+        }
+
+        function addMessage(text, isUser) {
+            const chatBox = document.getElementById('chatBox');
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${isUser ? 'user' : 'ai'}`;
+            msgDiv.textContent = text;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const chatBox = document.getElementById('chatBox');
+            const typing = document.createElement('div');
+            typing.className = 'message ai typing-indicator';
+            typing.id = 'typingIndicator';
+            typing.textContent = 'Analyzing MRVS-MRV framework...';
+            chatBox.appendChild(typing);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        function sendMessage() {
+            const inputField = document.getElementById('userInput');
+            const text = inputField.value.trim();
+            if (!text) return;
+
+            addMessage(text, true);
+            inputField.value = '';
+
+            addTypingIndicator();
+
+            // Simulate AI processing time
+            setTimeout(() => {
+                removeTypingIndicator();
+                const response = getAIResponse(text);
+                addMessage(response, false);
+            }, 800 + Math.random() * 700);
+        }
+
+        function handleEnter(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        // --- SIMULATOR LOGIC ---
+        const simulations = {
+            holy_site: {
+                text: "Under the Multi-Religion Support pillar, political leaders immediately step back. The Interfaith Peacebuilding Corps is deployed. Joint teams of Rabbis, Imams, and Clerics physically intervene to de-escalate violence. The site transitions to a multi-religion cooperative management system, removing the disputed sovereign monopoly that caused the clash.",
+                contrast: "Traditional Model: Military police intervene, leading to casualties, international condemnation, and retaliatory rocket fire."
+            },
+            water: {
+                text: "The MRVS (Multi-Religious Value System) automatically triggers shared ethical governance. The Council of Abrahamic Values overrides political leverage. Jointly managed desalination and solar energy grids—established under the Environmental Stewardship policy—are activated equally for both populations, citing the shared religious imperative to protect the innocent.",
+                contrast: "Traditional Model: The dominant military power restricts water access to pressure the other side, leading to humanitarian crisis and infrastructure sabotage."
+            },
+            education: {
+                text: "The MRV (Mutual Recognition and Validation) framework immediately flags this as a violation. The educational curricula are constitutionally required to teach the validated narrative of the neighbor. An MRV oversight committee mandates the immediate revision of the textbooks to include the other's historical trauma and connection to the land.",
+                contrast: "Traditional Model: Each side uses the textbooks as proof that the other cannot be trusted, collapsing peace talks and hardening segregation."
+            },
+            extremism: {
+                text: "By institutionalizing Multi-Religion Support, religious leaders are given a seat at the highest tables of governance. When fringe extremism rises, these officially recognized, funded moderate religious leaders use their internal theological authority to publicly debunk and isolate the extremists, positioning them as traitors to the shared Abrahamic values.",
+                contrast: "Traditional Model: Secular politicians attempt to crack down militarily on religious extremists, which ironically fuels their martyrdom narrative and boosts recruitment."
+            }
+        };
+
+        function runSimulation() {
+            const scenario = document.getElementById('scenario').value;
+            const simData = simulations[scenario];
+            
+            const resultDiv = document.getElementById('simResult');
+            const textP = document.getElementById('simText');
+            const contrastP = document.getElementById('simContrast');
+
+            // Reset and show loading state
+            resultDiv.style.display = 'none';
+            textP.textContent = 'Calculating policy response...';
+            contrastP.textContent = '';
+
+            setTimeout(() => {
+                textP.textContent = simData.text;
+                contrastP.textContent = simData.contrast;
+                resultDiv.style.display = 'block';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
