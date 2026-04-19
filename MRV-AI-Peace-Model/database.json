@@ -8,3 +8,11 @@
     "response": "Under the MRVS framework, Jerusalem is managed as a shared Abrahamic zone..."
   }
 ]
+let knowledgeBase = [];
+
+// Fetch the external database when the page loads
+fetch('database.json')
+    .then(response => response.json())
+    .then(data => {
+        knowledgeBase = data; // Now the AI uses the external file
+    });
