@@ -1,11 +1,47 @@
 [
   {
-    "keywords": ["mrv", "mutual recognition"],
-    "response": "MRV requires both sides to accept the other's trauma..."
+    "keywords": ["mrv", "mutual recognition", "validation", "narrative", "trauma", "nakba", "holocaust", "persecution"],
+    "response": "MRV (Mutual Recognition and Validation) requires both sides to accept the other's trauma and history. For Israelis, this means validating the Palestinian narrative of the Nakba. For Palestinians, it means validating the Jewish historical connection to the land and the trauma of global persecution. It outlaws the political weaponization of denial."
   },
   {
-    "keywords": ["jerusalem"],
-    "response": "Under the MRVS framework, Jerusalem is managed as a shared Abrahamic zone..."
+    "keywords": ["mrvs", "multi-religious value", "value system", "abrahamic", "ethics", "council"],
+    "response": "MRVS (Multi-Religious Value System) extracts the shared ethics of Judaism, Islam, and Christianity (like Tikkun Olam, Salam, and peacemaking) to form a constitutional value system. It creates a 'Council of Abrahamic Values' to ensure policies align with these shared tenets, particularly regarding resource allocation like water."
+  },
+  {
+    "keywords": ["multi-religion support", "interfaith", "corps", "clergy", "rabbis", "imams", "priests"],
+    "response": "Multi-Religion Support establishes an officially recognized Interfaith Peacebuilding Corps. When tensions rise—especially over holy sites—political leaders step back, and trained Rabbis, Imams, and Clerics step in to de-escalate. This neutralizes religious extremism by making moderates the defenders of peace."
+  },
+  {
+    "keywords": ["fail", "failed", "past", "oslo", "camp david", "previous", "westphalian", "zero sum"],
+    "response": "Previous models failed because they used Westphalian, secular, zero-sum political frameworks. They treated the Holy Land as mere real estate, focusing on borders and security while sidelining religion and historical trauma. Any agreement that ignores deeply held spiritual convictions is a house built on sand."
+  },
+  {
+    "keywords": ["sustainable", "development", "policy", "policies", "future"],
+    "response": "Sustainable development requires sustainable policies. The model achieves this through Joint Economic Zones (JEZs) combining Israeli tech with Palestinian demographics, jointly managed Environmental Stewardship grids (water/solar) protected by religious mandate, and Generational Trauma Healing centers to stop inherited trauma."
+  },
+  {
+    "keywords": ["water", "resource", "environment", "solar", "desalination", "drought"],
+    "response": "Under the MRVS framework, water and resources cannot be allocated by military might or political leverage. Because Judaism, Islam, and Christianity all mandate protecting the innocent and being stewards of the earth, water grids are jointly owned and managed, making them immune to political targeting."
+  },
+  {
+    "keywords": ["next generation", "children", "78", "cycle", "inherited", "mental health"],
+    "response": "To break the 78-year cycle, the model stops the transmission of inherited trauma. MRV mandates educational curricula teach the validated narrative of the neighbor, while dual-narrative mental health centers treat psychological wounds. This ensures the next generation inherits peace, not the keys to another war."
+  },
+  {
+    "keywords": ["economy", "economic", "poverty", "jobs", "tech", "jez", "demographic"],
+    "response": "The model uses Joint Economic Zones (JEZs). Built on the MRV principle of shared destiny, these zones leverage the high-tech innovation of Israel with the untapped demographic dividend of Palestine. This creates a unified economic ecosystem where war becomes economically disastrous for both sides."
+  },
+  {
+    "keywords": ["extremism", "extremist", "violence", "radical", "fringe"],
+    "response": "By institutionalizing Multi-Religion Support, religious leaders are given a seat at the highest tables of governance. When fringe extremism rises, these officially recognized, funded moderate religious leaders use their internal theological authority to publicly debunk and isolate the extremists."
+  },
+  {
+    "keywords": ["holy site", "temple mount", "al-aqsa", "jerusalem", "sacred"],
+    "response": "Holy sites are managed as multi-religion cooperatives rather than disputed sovereign monopolies. The Interfaith Peacebuilding Corps acts as the ultimate buffer. When tensions rise at places like the Temple Mount/Al-Aqsa Mosque, political leaders step back, and joint teams of clergy manage de-escalation."
+  },
+  {
+    "keywords": ["education", "school", "textbook", "curriculum", "teach", "learn"],
+    "response": "Under MRV, educational curricula are constitutionally reformed. They are stripped of narratives that erase the other. Instead, schools teach the validated narrative of the neighbor, ensuring children do not grow up viewing the other's existence as a mistake or an existential threat."
   }
 ]
 let knowledgeBase = [];
