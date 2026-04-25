@@ -1,0 +1,37 @@
+div.ipad-mockup {
+  position: relative;
+  max-width: 600px;
+  margin: 20px;
+}
+
+.ipad-mockup img.device {
+  width: 100%;
+  height: auto;
+}
+
+.ipad-mockup .screen {
+  position: absolute;
+  width: 90%;
+  height: 81.5%;
+  top: 8.5%;
+  border-radius: 2px;
+  left: 5%;
+  background-color: #aaa;
+  overflow: hidden;
+  background: url(/screen-content-ipad.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.ipad-mockup .screen:before {
+  content: '';
+  background-color: #fff;
+  position: absolute;
+  width: 70%;
+  height: 119%;
+  top: -26%;
+  right: -44%;
+  transform: rotate(-19deg);
+  opacity: 0.1;
+}
+

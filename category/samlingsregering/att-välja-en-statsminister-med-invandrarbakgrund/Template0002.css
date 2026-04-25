@@ -1,0 +1,31 @@
+.card-header {
+  text-align: center;
+  position: relative;
+  color: #fff;
+  padding: 10px 0;
+  text-shadow: 0 1px rgba(0,0,0,.8);
+  background-color: #405716;
+  background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,0));
+  box-shadow: 0 2px 0 rgba(0,0,0,.3);
+}
+
+.card-header::before, .card-header::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-color: transparent;
+  bottom: -10px;
+}
+
+.card-header::before {
+  border-width: 0 1rem 9px 0;
+  border-right-color: #222;
+  left: 0;
+}
+
+.card-header::after {
+  border-width: 0 0 9px 1rem;
+  border-left-color: #222;
+  right: 0;
+}
+
