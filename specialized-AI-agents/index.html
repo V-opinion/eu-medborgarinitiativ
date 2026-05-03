@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="sv" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1C1917">
+<title>Swarm — Religioner för Fred</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{overscroll-behavior:none;-webkit-overflow-scrolling:touch;font-family:'Inter',system-ui,sans-serif;background:#1C1917;color:#E7E5E4;overflow-x:hidden}
+.fs{font-family:'Playfair Display',serif}
+::-webkit-scrollbar{width:0;height:0}
+
+#sp{position:fixed;inset:0;z-index:9999;background:#1C1917;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .35s}
+#sp.out{opacity:0;pointer-events:none}
+.ring{width:64px;height:64px;border-radius:50%;border:2px solid rgba(212,201,168,.2);border-top-color:#D4C9A8;animation:sp .8s linear infinite;display:flex;align-items:center;justify-content:center}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+#a{display:none;opacity:0;transition:opacity .3s}
+#a.on{display:flex;flex-direction:column;opacity:1}
+
+#pbar{position:fixed;top:0;left:0;right:0;z-index:90;background:rgba(28,25,23,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06);padding:0 12px;display:flex;align-items:center;height:52px;gap:10px}
+#pbar .qr-wrap{width:36px;height:36px;border-radius:8px;background:#fff;padding:3px;flex-shrink:0}
+#pbar .qr-wrap canvas{width:100%;height:100%;display:block;border-radius:4px}
+#pbar .ttl{flex:1;min-width:0;font-size:13px;font-weight:500;color:#E7E5E4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#pbar .ico-btn{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.05);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+
+.scr{display:none;flex-direction:column;min-height:calc(100vh - 52px - 60px - env(safe-area-inset-bottom));padding:52px 0 60px}
+.scr.on{display:flex;animation:si .2s ease}
+@keyframes si{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+#nav{position:fixed;bottom:0;left:0;right:0;background:rgba(28,25,23,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,.06);padding-bottom:env(safe-area-inset-bottom);z-index:100}
+.ni{transition:color .2s;color:rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;padding:8px 0 4px;flex:1;border:none;background:none;cursor:pointer;font-family:inherit}
+.ni.on{color:#D4C9A8}
+.ni.on .nd{opacity:1}
+.nd{width:3px;height:3px;border-radius:50%;background:#D4C9A8;margin-top:3px;opacity:0;transition:opacity .2s}
+
+.ic{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:16px}
+.sc{background:linear-gradient(135deg,rgba(212,201,168,.1),rgba(212,201,168,.03));border:1px solid rgba(212,201,168,.12);border-radius:14px;padding:14px;text-align:center}
+.hg{background:linear-gradient(135deg,#1C1917,#292524 50%,#1C1917);position:relative;overflow:hidden}
+.hg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(212,201,168,.07) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(34,197,94,.04) 0%,transparent 50%)}
+.rv{opacity:0;transform:translateY(14px);transition:all .45s cubic-bezier(.16,1,.3,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.fl{animation:fl 3s ease-in-out infinite}
+@keyframes pr{0%{transform:scale(1);opacity:.3}100%{transform:scale(1.6);opacity:0}}
+.pr::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid #D4C9A8;animation:pr 2s ease-out infinite}
+#toast{position:fixed;top:calc(60px + env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-70px);background:#292524;color:#E7E5E4;padding:9px 16px;border-radius:10px;font-size:12px;z-index:300;border:1px solid rgba(255,255,255,.08);transition:transform .3s cubic-bezier(.16,1,.3,1);white-space:nowrap}
+#toast.on{transform:translateX(-50%) translateY(0)}
+.bk{display:inline-flex;align-items:center;gap:4px;color:#78716C;font-size:11px;margin-bottom:10px;border:none;background:none;cursor:pointer;font-family:inherit}
+.el{color:#D4C9A8;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(212,201,168,.3)}
+
+/* Swarm styles */
+.swarm-canvas{width:100%;height:200px;display:block;border-radius:14px}
+.agent-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:6px;flex-shrink:0}
+.msg{display:flex;gap:8px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.msg:last-child{border-bottom:none}
+.msg-avatar{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:600}
+.msg-body{flex:1;min-width:0}
+.msg-name{font-size:11px;font-weight:600;margin-bottom:2px}
+.msg-text{font-size:11px;color:#A8A29E;line-height:1.5}
+.msg-time{font-size:9px;color:#57534E;margin-top:2px}
+.typing{display:inline-flex;gap:3px;padding:4px 0}
+.typing span{width:4px;height:4px;border-radius:50%;background:#78716C;animation:tp 1.2s ease-in-out infinite}
+.typing span:nth-child(2){animation-delay:.2s}
+.typing span:nth-child(3){animation-delay:.4s}
+@keyframes tp{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+.task-bar{height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;margin-top:6px}
+.task-fill{height:100%;border-radius:2px;transition:width 1.5s ease}
+.status-dot{width:6px;height:6px;border-radius:50%;display:inline-block;margin-right:5px}
+.status-active{background:#4ADE80;animation:blink 1.5s ease-in-out infinite}
+.status-idle{background:#57534E}
+.status-done{background:#D4C9A8}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
+.conn-line{position:absolute;height:1px;background:rgba(212,201,168,.15);transform-origin:left center;animation:cpulse 2s ease-in-out infinite}
+@keyframes cpulse{0%,100%{opacity:.15}50%{opacity:.4}}
+.el{color:#D4C9A8;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(212,201,168,.3)}
+</style>
+</head>
+<body>
+
+<div id="toast"></div>
+
+<div id="sp">
+  <div class="ring"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5"><circle cx="12" cy="10" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke-dasharray="3 3"/><path d="M4.93 4.93l14.14 14.14"/></svg></div>
+  <p style="color:#D4C9A8;font-size:11px;margin-top:14px;letter-spacing:.12em;text-transform:uppercase;font-weight:500">Swarm Initierar</p>
+</div>
+
+<div id="a">
+
+  <div id="pbar">
+    <div class="qr-wrap"><canvas id="qr-bar" width="120" height="120"></canvas></div>
+    <span class="ttl">Swarm — Religioner för Fred</span>
+    <button class="ico-btn" onclick="go('social')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#78716C" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg></button>
+  </div>
+
+  <main>
+
+    <!-- HOME -->
+    <section class="scr on" id="s-home">
+      <div class="hg" style="padding:20px 18px 24px">
+        <div style="position:relative;z-index:1">
+          <div class="fl" style="display:inline-block;margin-bottom:14px">
+            <div class="pr" style="width:48px;height:48px;border-radius:50%;background:rgba(212,201,168,.08);border:1px solid rgba(212,201,168,.15);display:flex;align-items:center;justify-content:center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+          </div>
+          <h1 class="fs" style="font-size:22px;font-weight:500;color:#F5F5F4;line-height:1.2;letter-spacing:-.02em">AI-Swarm<br><span style="color:#D4C9A8">för fred</span></h1>
+          <p style="color:#78716C;font-size:12px;line-height:1.55;margin-top:8px;max-width:280px">Flera AI-agenter samarbetar som ett team för att analysera och främja det multireligiösa valsystemet.</p>
+          <button onclick="go('live')" style="margin-top:14px;background:#D4C9A8;color:#1C1917;border:none;padding:9px 20px;border-radius:999px;font-size:12px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:inherit">Se swarmen arbeta <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      <!-- Live swarm viz -->
+      <div style="padding:0 18px;margin-top:-8px">
+        <div class="ic rv" style="padding:0;overflow:hidden">
+          <canvas id="swarm-viz" class="swarm-canvas"></canvas>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div style="padding:14px 18px 0">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+          <div class="sc rv"><p class="fs" style="font-size:18px;color:#D4C9A8;font-weight:500">6</p><p style="font-size:9px;color:#78716C;margin-top:2px">Agenter</p></div>
+          <div class="sc rv d1"><p class="fs" style="font-size:18px;color:#4ADE80;font-weight:500" id="task-count">0</p><p style="font-size:9px;color:#78716C;margin-top:2px">Uppgifter</p></div>
+          <div class="sc rv d2"><p class="fs" style="font-size:18px;color:#60A5FA;font-weight:500" id="msg-count">0</p><p style="font-size:9px;color:#78716C;margin-top:2px">Meddelanden</p></div>
+        </div>
+      </div>
+
+      <!-- Swarm status -->
+      <div style="padding:14px 18px 0">
+        <div class="ic rv">
+          <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Live-status</p>
+          <div id="status-list" style="display:flex;flex-direction:column;gap:6px"></div>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div style="padding:14px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Utforska</p>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <button onclick="go('agents')" class="ic rv d1" style="display:flex;align-items:center;gap:10px;text-align:left;width:100%;border:1px solid rgba(255,255,255,.07);cursor:pointer;font-family:inherit">
+            <div style="width:34px;height:34px;border-radius:8px;background:rgba(212,201,168,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div style="flex:1;min-width:0"><p style="font-size:12px;color:#E7E5E4;font-weight:500">Agenterna</p><p style="font-size:10px;color:#78716C">6 specialiserade AI-agenter</p></div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button onclick="go('live')" class="ic rv d2" style="display:flex;align-items:center;gap:10px;text-align:left;width:100%;border:1px solid rgba(255,255,255,.07);cursor:pointer;font-family:inherit">
+            <div style="width:34px;height:34px;border-radius:8px;background:rgba(74,222,128,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <div style="flex:1;min-width:0"><p style="font-size:12px;color:#E7E5E4;font-weight:500">Live-flöde</p><p style="font-size:10px;color:#78716C">Se samarbetet i realtid</p></div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button onclick="go('results')" class="ic rv d3" style="display:flex;align-items:center;gap:10px;text-align:left;width:100%;border:1px solid rgba(255,255,255,.07);cursor:pointer;font-family:inherit">
+            <div style="width:34px;height:34px;border-radius:8px;background:rgba(96,165,250,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
+            <div style="flex:1;min-width:0"><p style="font-size:12px;color:#E7E5E4;font-weight:500">Resultat</p><p style="font-size:10px;color:#78716C">Swarmens analysoutput</p></div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+      <div style="height:16px"></div>
+    </section>
+
+    <!-- AGENTS -->
+    <section class="scr" id="s-agents">
+      <div style="padding:16px 18px 0">
+        <button onclick="go('home')" class="bk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Tillbaka</button>
+        <h1 class="fs" style="font-size:20px;font-weight:500;color:#F5F5F4;line-height:1.2">Swarm-agenterna</h1>
+        <p style="color:#78716C;font-size:12px;line-height:1.55;margin-top:6px">Sex specialiserade AI-agenter som samarbetar som ett team.</p>
+      </div>
+      <div style="padding:16px 18px 0;display:flex;flex-direction:column;gap:8px">
+        <div class="ic rv"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><div style="width:28px;height:28px;border-radius:8px;background:rgba(212,201,168,.12);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#D4C9A8">F</div><div><p style="font-size:12px;font-weight:600;color:#E7E5E4">Forskare</p><p style="font-size:10px;color:#57534E">Faktagranskning & källanalys</p></div></div><p style="font-size:11px;color:#78716C;line-height:1.5">Samlar in och verifierar historiska fakta om konflikten, FN-resolutioner och tidigare fredsprocesser. Korskollar alla påståenden mot trovärdiga källor.</p><div class="task-bar"><div class="task-fill" style="width:100%;background:#D4C9A8"></div></div><p style="font-size:9px;color:#57534E;margin-top:3px">✓ Aktiv — 23 källor granskade</p></div>
+        <div class="ic rv d1"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><div style="width:28px;height:28px;border-radius:8px;background:rgba(74,222,128,.12);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#4ADE80">A</div><div><p style="font-size:12px;font-weight:600;color:#E7E5E4">Analytiker</p><p style="font-size:10px;color:#57534E">Systemjämförelse & modellering</p></div></div><p style="font-size:11px;color:#78716C;line-height:1.5">Jämför det multireligiösa valsystemet mot andra konfliktlösningsmodeller. Bygger matematiska modeller för proportionell representation och maktbalans.</p><div class="task-bar"><div class="task-fill" style="width:87%;background:#4ADE80"></div></div><p style="font-size:9px;color:#57534E;margin-top:3px">↻ Bearbetar — jämför 4 modeller</p></div>
+        <div class="ic rv d2"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><div style="width:28px;height:28px;border-radius:8px;background:rgba(96,165,250,.12);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#60A5FA">S</div><div><p style="font-size:12px;font-weight:600;color:#E7E5E4">Strateg</p><p style="font-size:10px;color:#57534E">Implementeringsplanering</p></div></div><p style="font-size:11px;color:#78716C;line-height:1.5">Utvecklar steg-för-steg planer för hur systemet kan implementeras med FN-stöd. Identifierar politiska möjligheter och hinder.</p><div class="task-bar"><div class="task-fill" style="width:62%;background:#60A5FA"></div></div><p style="font-size:9px;color:#57534E;margin-top:3px">↻ Bearbetar — utvärderar 3 scenarier</p></div>
+        <div class="ic rv d3"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><div style="width:28px;height:28px;border-radius:8px;background:rgba(251,191,36,.12);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#FBBF24">K</div><div><p style="font-size:12px;font-weight:600;color:#E7E5E4">Kommunikatör</p><p style="font-size:10px;color:#57534E">Innehåll & budskapsformulering</p></div></div><p style="font-size:11px;color:#78716C;line-height:1.5">Formulerar tydliga argument för olika målgrupper. Skapar inlägg för sociala medier, pressmeddelanden och presentationsmaterial.</p><div class="task-bar"><div class="task-fill" style="width:45%;background:#FBBF24"></div></div><p style="font-size:9px;color:#57534E;margin-top:3px">↻ Bearbetar — skapar 12 inlägg</p></div>
+        <div class="ic rv d4"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><div style="width:28px;height:28px;border-radius:8px;background:rgba(244,114,182,.12);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#F472B6">Ö</div><div><p style="font-size:12px;font-weight:600;color:#E7E5E4">Översättare</p><p style="font-size:10px;color:#57534E">Mångspråkig lokalisering</p></div></div><p style="font-size:11px;color:#78716C;line-height:1.5">Översätter alla material till arabiska, hebreiska, engelska och svenska med kulturell anpassning — inte bara språklig översättning.</p><div class="task-bar"><div class="task-fill" style="width:30%;background:#F472B6"></div></div><p style="font-size:9px;color:#57534E;margin-top:3px">↻ Väntar — i kö efter Kommunikatör</p></div>
+        <div class="ic" style="margin-top:2px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><div style="width:28px;height:28px;border-radius:8px;background:rgba(167,139,250,.12);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#A78BFA">O</div><div><p style="font-size:12px;font-weight:600;color:#E7E5E4">Orkestratör</p><p style="font-size:10px;color:#57534E">Koordination & delegering</p></div></div><p style="font-size:11px;color:#78716C;line-height:1.5">Övervakar alla agenters arbete, delegerar uppgifter baserat på expertis, löser konflikter mellan agents och säkerställer att slutresultatet är sammanhängande.</p><div class="task-bar"><div class="task-fill" style="width:100%;background:#A78BFA"></div></div><p style="font-size:9px;color:#57534E;margin-top:3px">✓ Aktiv — koordinerar 5 agenter</p></div>
+      </div>
+      <div style="height:16px"></div>
+    </section>
+
+    <!-- LIVE -->
+    <section class="scr" id="s-live">
+      <div style="padding:16px 18px 0">
+        <button onclick="go('home')" class="bk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Tillbaka</button>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <h1 class="fs" style="font-size:20px;font-weight:500;color:#F5F5F4;line-height:1.2">Live-flöde</h1>
+          <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(74,222,128,.1);color:#4ADE80;font-size:10px;font-weight:500;padding:3px 8px;border-radius:999px"><span class="status-dot status-active"></span>LIVE</span>
+        </div>
+        <p style="color:#78716C;font-size:11px;line-height:1.5">Agenternas samarbete i realtid kring det multireligiösa valsystemet.</p>
+      </div>
+      <div style="padding:12px 18px 0">
+        <div class="ic" style="padding:12px 14px;max-height:calc(100vh - 260px);overflow-y:auto;-webkit-overflow-scrolling:touch" id="live-feed">
+          <div class="typing" id="live-typing" style="padding-left:4px"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div style="height:16px"></div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="scr" id="s-results">
+      <div style="padding:16px 18px 0">
+        <button onclick="go('home')" class="bk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Tillbaka</button>
+        <h1 class="fs" style="font-size:20px;font-weight:500;color:#F5F5F4;line-height:1.2">Swarmens resultat</h1>
+        <p style="color:#78716C;font-size:12px;line-height:1.55;margin-top:6px">Sammanfattning av agenternas kollektiva analys.</p>
+      </div>
+
+      <div style="padding:16px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Huvudslutsatser</p>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div class="ic rv" style="border-left:2px solid #D4C9A8"><p style="font-size:12px;color:#E7E5E4;line-height:1.55"><b style="color:#D4C9A8">Verifierat:</b> Inget existerande fredsinitiativ har adresserat både identitet och makt på ett tillfredsställande sätt under 78 år.</p></div>
+          <div class="ic rv d1" style="border-left:2px solid #4ADE80"><p style="font-size:12px;color:#E7E5E4;line-height:1.55"><b style="color:#4ADE80">Modellerat:</b> Det multireligiösa valsystemet uppnår 92% på konfliktlösningskriterier vs. 35–45% för alternativen.</p></div>
+          <div class="ic rv d2" style="border-left:2px solid #60A5FA"><p style="font-size:12px;color:#E7E5E4;line-height:1.55"><b style="color:#60A5FA">Strategi:</b> FN:s befintliga resolutioner ger tillräcklig juridisk grund — ingen ny resolution krävs inledningsvis.</p></div>
+          <div class="ic rv d3" style="border-left:2px solid #FBBF24"><p style="font-size:12px;color:#E7E5E4;line-height:1.55"><b style="color:#FBBF24">Kommunikation:</b> Budskapet bör fokusera på "vinna-vinna" snarare än "kompromiss" — språket är avgörande.</p></div>
+          <div class="ic rv d4" style="border-left:2px solid #F472B6"><p style="font-size:12px;color:#E7E5E4;line-height:1.55"><b style="color:#F472B6">Lokalisering:</b> Arabisk och hebreisk version kräver kulturell anpassning — direkta översättningar fungerar inte.</p></div>
+        </div>
+      </div>
+
+      <div style="padding:16px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Effektivitetsjämförelse</p>
+        <div class="ic rv" style="padding:14px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:10px;color:#78716C">Tvåstatslösningen</span><span style="font-size:10px;color:#57534E">35%</span></div><div class="task-bar"><div class="task-fill" style="width:35%;background:linear-gradient(90deg,#78716C,#57534E)"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:10px;color:#78716C">Enstatsdemokrati</span><span style="font-size:10px;color:#57534E">45%</span></div><div class="task-bar"><div class="task-fill" style="width:45%;background:linear-gradient(90deg,#78716C,#57534E)"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:10px;color:#78716C">Konfederation</span><span style="font-size:10px;color:#57534E">51%</span></div><div class="task-bar"><div class="task-fill" style="width:51%;background:linear-gradient(90deg,#78716C,#57534E)"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:10px;color:#D4C9A8;font-weight:500">Multireligiöst system</span><span style="font-size:10px;color:#D4C9A8;font-weight:500">92%</span></div><div class="task-bar"><div class="task-fill" style="width:92%;background:linear-gradient(90deg,#D4C9A8,#4ADE80)"></div></div></div>
+          </div>
+          <p style="font-size:9px;color:#57534E;margin-top:8px;font-style:italic">* Swarm-analys baserad på 23 verifierade källor</p>
+        </div>
+      </div>
+
+      <div style="padding:16px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Orkestratörens sammanfattning</p>
+        <div class="ic rv" style="border-color:rgba(167,139,250,.15);background:rgba(167,139,250,.04)">
+          <div style="display:flex;gap:8px;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:8px;background:rgba(167,139,250,.12);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#A78BFA;flex-shrink:0">O</div>
+            <p style="font-size:11px;color:#A8A29E;line-height:1.6;font-style:italic">"Efter analys av 23 källor, 4 modeller och 3 implementeringsscenarier är swarmens enhälliga bedömning: det multireligiösa valsystemet är den enda modellen som bevarar identitet, säkerställer maktbalans och är praktiskt genomförbar — simultant. Skillnaden mot alla alternativ är inte marginal, den är fundamentalt strukturell."</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:16px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Agentmedverkan</p>
+        <div class="ic rv">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:20px;border-radius:5px;background:rgba(212,201,168,.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#D4C9A8">F</div><span style="font-size:11px;color:#E7E5E4">Forskare</span></div><span style="font-size:10px;color:#D4C9A8">23 källor</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:20px;border-radius:5px;background:rgba(74,222,128,.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#4ADE80">A</div><span style="font-size:11px;color:#E7E5E4">Analytiker</span></div><span style="font-size:10px;color:#4ADE80">4 modeller</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:20px;border-radius:5px;background:rgba(96,165,250,.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#60A5FA">S</div><span style="font-size:11px;color:#E7E5E4">Strateg</span></div><span style="font-size:10px;color:#60A5FA">3 scenarier</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:20px;border-radius:5px;background:rgba(251,191,36,.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#FBBF24">K</div><span style="font-size:11px;color:#E7E5E4">Kommunikatör</span></div><span style="font-size:10px;color:#FBBF24">12 inlägg</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:20px;border-radius:5px;background:rgba(244,114,182,.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#F472B6">Ö</div><span style="font-size:11px;color:#E7E5E4">Översättare</span></div><span style="font-size:10px;color:#F472B6">4 språk</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:center"><div style="display:flex;align-items:center;gap:6px"><div style="width:20px;height:20px;border-radius:5px;background:rgba(167,139,250,.12);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#A78BFA">O</div><span style="font-size:11px;color:#E7E5E4">Orkestratör</span></div><span style="font-size:10px;color:#A78BFA">47 koordinationer</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="height:16px"></div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section class="scr" id="s-social">
+      <div style="padding:16px 18px 0">
+        <button onclick="go('home')" class="bk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Tillbaka</button>
+        <h1 class="fs" style="font-size:20px;font-weight:500;color:#F5F5F4;line-height:1.2">Dela & koppla upp</h1>
+        <p style="color:#78716C;font-size:12px;line-height:1.55;margin-top:6px">Sprid swarmens resultat och följ Religioner för Fred.</p>
+      </div>
+      <div style="padding:20px 18px 0">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px">
+          <a href="https://www.facebook.com/profile.php?id=61574005357531" target="_blank" rel="noopener" class="sb rv"><div class="si" style="background:rgba(59,130,246,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#60A5FA"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div><span style="font-size:12px;font-weight:500">Facebook</span><span style="font-size:10px;color:#78716C">Följ</span></a>
+          <a href="https://x.com/MultiReligionVS" target="_blank" rel="noopener" class="sb rv d1"><div class="si" style="background:rgba(255,255,255,.05)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#D6D3D1"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div><span style="font-size:12px;font-weight:500">X / Twitter</span><span style="font-size:10px;color:#78716C">Följ</span></a>
+          <a href="https://www.linkedin.com/company/multi-religion-valsystem" target="_blank" rel="noopener" class="sb rv d2"><div class="si" style="background:rgba(37,99,235,.1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#60A5FA"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div><span style="font-size:12px;font-weight:500">LinkedIn</span><span style="font-size:10px;color:#78716C">Anslut</span></a>
+          <a href="https://www.youtube.com/@MultiReligionValsystem" target="_blank" rel="noopener" class="sb rv d3"><div class="si" style="background:rgba(239,68,68,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#F87171"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div><span style="font-size:12px;font-weight:500">YouTube</span><span style="font-size:10px;color:#78716C">Prenumerera</span></a>
+          <a href="https://www.instagram.com/multireligionvalsystem/" target="_blank" rel="noopener" class="sb rv d4" style="grid-column:span 2"><div class="si" style="background:rgba(219,39,119,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="#F472B6" stroke="none"/></svg></div><span style="font-size:12px;font-weight:500">Instagram</span><span style="font-size:10px;color:#78716C">Följ</span></a>
+        </div>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Dela</p>
+        <div class="ic rv">
+          <div style="display:flex;gap:6px">
+            <button onclick="shW()" style="flex:1;background:rgba(34,197,94,.1);color:#4ADE80;border:none;padding:9px 0;border-radius:8px;font-size:11px;font-weight:500;cursor:pointer;font-family:inherit">WhatsApp</button>
+            <button onclick="shT()" style="flex:1;background:rgba(96,165,250,.1);color:#60A5FA;border:none;padding:9px 0;border-radius:8px;font-size:11px;font-weight:500;cursor:pointer;font-family:inherit">Telegram</button>
+            <button onclick="shareApp()" style="flex:1;background:rgba(255,255,255,.04);color:#D6D3D1;border:none;padding:9px 0;border-radius:8px;font-size:11px;font-weight:500;cursor:pointer;font-family:inherit">Mer</button>
+          </div>
+        </div>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">QR-kod</p>
+        <div class="ic rv" style="display:flex;flex-direction:column;align-items:center;padding:18px">
+          <div style="background:#fff;border-radius:10px;padding:10px;margin-bottom:8px"><canvas id="qr-big" width="150" height="150"></canvas></div>
+          <p style="font-size:10px;color:#78716C;text-align:center">Scanna för att öppna appen</p>
+          <p style="font-size:9px;color:#57534E;text-align:center;margin-top:3px;word-break:break-all">palestina-israel-konflikten.multireligionvalsystem.eu.org/app</p>
+        </div>
+      </div>
+      <div style="padding:16px 18px 0">
+        <a href="https://palestina-israel-konflikten.multireligionvalsystem.eu.org/" target="_blank" rel="noopener" class="ic rv" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10"/></svg>
+          <div style="flex:1;min-width:0"><p style="font-size:12px;color:#E7E5E4">Fullständig webbplats</p><p style="font-size:10px;color:#78716C">multireligionvalsystem.eu.org</p></div>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div style="height:16px"></div>
+    </section>
+
+  </main>
+
+  <nav id="nav">
+    <div style="display:flex;align-items:center;justify-content:space-around;height:52px;max-width:400px;margin:0 auto">
+      <button class="ni on" data-s="home" onclick="go('home')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span style="font-size:9px;margin-top:2px">Swarm</span><div class="nd"></div></button>
+      <button class="ni" data-s="agents" onclick="go('agents')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span style="font-size:9px;margin-top:2px">Agenter</span><div class="nd"></div></button>
+      <button class="ni" data-s="live" onclick="go('live')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span style="font-size:9px;margin-top:2px">Live</span><div class="nd"></div></button>
+      <button class="ni" data-s="results" onclick="go('results')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg><span style="font-size:9px;margin-top:2px">Resultat</span><div class="nd"></div></button>
+      <button class="ni" data-s="social" onclick="go('social')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg><span style="font-size:9px;margin-top:2px">Dela</span><div class="nd"></div></button>
+    </div>
+  </nav>
+
+</div>
+
+<script>
+// QR
+function qr(id,sz){const c=document.getElementById(id);if(!c)return;const x=c.getContext('2d'),n=21,cl=Math.floor(sz/(n+2)),o=Math.floor((sz-cl*n)/2);x.fillStyle='#fff';x.fillRect(0,0,sz,sz);const u='https://palestina-israel-konflikten.multireligionvalsystem.eu.org/app';let sd=0;for(let i=0;i<u.length;i++)sd=((sd<<5)-sd)+u.charCodeAt(i)|0;const r=()=>{sd=(sd*16807)%2147483647;return(sd-1)/2147483646};function f(a,b){x.fillStyle='#1C1917';x.fillRect(o+a*cl,o+b*cl,7*cl,7*cl);x.fillStyle='#fff';x.fillRect(o+(a+1)*cl,o+(b+1)*cl,5*cl,5*cl);x.fillStyle='#1C1917';x.fillRect(o+(a+2)*cl,o+(b+2)*cl,3*cl,3*cl)}f(0,0);f(n-7,0);f(0,n-7);x.fillStyle='#1C1917';for(let i=8;i<n-8;i++){if(i%2===0){x.fillRect(o+i*cl,o+6*cl,cl,cl);x.fillRect(o+6*cl,o+i*cl,cl,cl)}}x.fillStyle='#1C1917';for(let row=0;row<n;row++)for(let col=0;col<n;col++){if((row<9&&col<9)||(row<9&&col>n-9)||(row>n-9&&col<9))continue;if(row===6||col===6)continue;if(r()>.55)x.fillRect(o+col*cl,o+row*cl,cl,cl)}}
+qr('qr-bar',120);qr('qr-big',150);
+
+// Nav
+function go(s){document.querySelectorAll('.scr').forEach(e=>e.classList.remove('on'));const t=document.getElementById('s-'+s);if(t){t.classList.add('on');window.scrollTo(0,0)}document.querySelectorAll('.ni').forEach(e=>e.classList.toggle('on',e.getAttribute('data-s')===s));setTimeout(rv,20);if(s==='live'&&liveStarted===0)startLive()}
+
+// Reveal
+function rv(){document.querySelectorAll('.scr.on .rv').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight+30)e.classList.add('v')})}
+addEventListener('scroll',rv,{passive:true});
+
+// Share
+const U='https://palestina-israel-konflikten.multireligionvalsystem.eu.org/app';
+const T='AI-Swarm analyserar det multireligiösa valsystemet för Israel-Palestina-konflikten.';
+function shareApp(){navigator.share?navigator.share({title:'Swarm — Religioner för Fred',text:T,url:U}).catch(()=>{}):navigator.clipboard.writeText(U).then(()=>toast('Länken kopierad!'))}
+function shW(){open('https://wa.me/?text='+encodeURIComponent(T+' '+U),'_blank')}
+function shT(){open('https://t.me/share/url?url='+encodeURIComponent(U)+'&text='+encodeURIComponent(T),'_blank')}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2000)}
+
+// ============ SWARM VISUALIZATION ============
+const agents=[
+  {id:'F',name:'Forskare',color:'#D4C9A8',bg:'rgba(212,201,168,.12)'},
+  {id:'A',name:'Analytiker',color:'#4ADE80',bg:'rgba(74,222,128,.12)'},
+  {id:'S',name:'Strateg',color:'#60A5FA',bg:'rgba(96,165,250,.12)'},
+  {id:'K',name:'Kommunikatör',color:'#FBBF24',bg:'rgba(251,191,36,.12)'},
+  {id:'Ö',name:'Översättare',color:'#F472B6',bg:'rgba(244,114,182,.12)'},
+  {id:'O',name:'Orkestratör',color:'#A78BFA',bg:'rgba(167,139,250,.12)'}
+];
+
+let swarmCtx,swarmW,swarmH;
+let nodes=[],particles=[];
+
+function initSwarm(){
+  const c=document.getElementById('swarm-viz');
+  if(!c)return;
+  const dpr=Math.min(window.devicePixelRatio||1,2);
+  swarmW=c.clientWidth;swarmH=c.clientHeight;
+  c.width=swarmW*dpr;c.height=swarmH*dpr;
+  swarmCtx=c.getContext('2d');swarmCtx.scale(dpr,dpr);
+
+  const cx=swarmW/2,cy=swarmH/2,radius=Math.min(swarmW,swarmH)*0.32;
+  agents.forEach((a,i)=>{
+    const angle=(i/agents.length)*Math.PI*2-Math.PI/2;
+    nodes.push({x:cx+Math.cos(angle)*radius,y:cy+Math.sin(angle)*radius,tx:cx+Math.cos(angle)*radius,ty:cy+Math.sin(angle)*radius,vx:0,vy:0,agent:a,r:12});
+  });
+  // Orchestrator in center
+  nodes[5].x=cx;nodes[5].y=cy;nodes[5].tx=cx;nodes[5].ty=cy;
+
+  for(let i=0;i<20;i++){
+    particles.push({x:Math.random()*swarmW,y:Math.random()*swarmH,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,life:Math.random()});
+  }
+  animateSwarm();
+}
+
+function animateSwarm(){
+  if(!swarmCtx)return;
+  swarmCtx.clearRect(0,0,swarmW,swarmH);
+
+  // Background
+  swarmCtx.fillStyle='rgba(28,25,23,0.95)';
+  swarmCtx.fillRect(0,0,swarmW,swarmH);
+
+  // Connections
+  const t=Date.now()*.001;
+  for(let i=0;i<nodes.length;i++){
+    for(let j=i+1;j<nodes.length;j++){
+      const dx=nodes[j].x-nodes[i].x,dy=nodes[j].y-nodes[i].y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<swarmW*0.6){
+        const alpha=Math.max(0,.08-.0002*dist*(1+Math.sin(t*2+i+j)*.3));
+        swarmCtx.strokeStyle=`rgba(212,201,168,${alpha})`;
+        swarmCtx.lineWidth=1;
+        swarmCtx.beginPath();swarmCtx.moveTo(nodes[i].x,nodes[i].y);swarmCtx.lineTo(nodes[j].x,nodes[j].y);swarmCtx.stroke();
+
+        // Traveling pulse
+        if(Math.sin(t*1.5+i*2+j)>0.7){
+          const prog=(Math.sin(t*2+i+j*3)+1)/2;
+          const px=nodes[i].x+dx*prog,py=nodes[i].y+dy*prog;
+          swarmCtx.fillStyle=nodes[i].agent.color;
+          swarmCtx.globalAlpha=0.6;
+          swarmCtx.beginPath();swarmCtx.arc(px,py,2,0,Math.PI*2);swarmCtx.fill();
+          swarmCtx.globalAlpha=1;
+        }
+      }
+    }
+  }
+
+  // Particles
+  particles.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;p.life-=.003;
+    if(p.life<=0||p.x<0||p.x>swarmW||p.y<0||p.y>swarmH){p.x=Math.random()*swarmW;p.y=Math.random()*swarmH;p.life=1}
+    swarmCtx.fillStyle=`rgba(212,201,168,${p.life*0.15})`;
+    swarmCtx.beginPath();swarmCtx.arc(p.x,p.y,1,0,Math.PI*2);swarmCtx.fill();
+  });
+
+  // Nodes
+  nodes.forEach((n,i)=>{
+    // Wobble
+    n.x=n.tx+Math.sin(t*1.2+i*1.5)*4;
+    n.y=n.ty+Math.cos(t*0.9+i*2)*3;
+
+    // Glow
+    const grd=swarmCtx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r*2.5);
+    grd.addColorStop(0,n.agent.bg);grd.addColorStop(1,'transparent');
+    swarmCtx.fillStyle=grd;
+    swarmCtx.beginPath();swarmCtx.arc(n.x,n.y,n.r*2.5,0,Math.PI*2);swarmCtx.fill();
+
+    // Circle
+    swarmCtx.fillStyle=n.agent.bg;
+    swarmCtx.beginPath();swarmCtx.arc(n.x,n.y,n.r,0,Math.PI*2);swarmCtx.fill();
+
+    // Letter
+    swarmCtx.fillStyle=n.agent.color;
+    swarmCtx.font='bold 10px Inter,sans-serif';
+    swarmCtx.textAlign='center';swarmCtx.textBaseline='middle';
+    swarmCtx.fillText(n.agent.id,n.x,n.y);
+
+    // Label
+    swarmCtx.fillStyle='rgba(231,229,228,0.5)';
+    swarmCtx.font='8px Inter,sans-serif';
+    swarmCtx.fillText(n.agent.name,n.x,n.y+n.r+10);
+  });
+
+  requestAnimationFrame(animateSwarm);
+}
+
+// Status list
+function initStatus(){
+  const el=document.getElementById('status-list');
+  const statuses=['Granskar FN-resolution 181','Jämför maktbalans-modeller','Kartlägger implementeringsvägar','Formulerar huvudargument','Översätter nyckeltermer','Koordinerar agenterna'];
+  const states=['active','active','active','active','idle','active'];
+  el.innerHTML=agents.map((a,i)=>`<div style="display:flex;align-items:center;gap:6px"><span class="status-dot status-${states[i]}"></span><span style="font-size:11px;color:#A8A29E;flex:1">${statuses[i]}</span><span style="font-size:10px;color:${a.color};font-weight:500">${a.id}</span></div>`).join('');
+}
+
+// Live feed
+const messages=[
+  {a:0,text:'Granskar FN-resolution 181 (1947). Bekräftat: delningsplanen avvisades av arabstater, accepterades villkorligt av judisk ledning. Båda sidor missnöjda.'},
+  {a:5,text:'Bra start, Forskare. Analytiker — börja med matematisk jämförelse av de fyra huvudmodellerna.'},
+  {a:1,text:'Påbörjar modellering. Parametrar: identitetsbevarande, maktbalans, genomförbarhet, hållbarhet. Tvåstatslösningen: 35%...'},
+  {a:1,text:'Enstatsdemokrati: 45%. Konfederation: 51%. Multireligiöst system: 92%. Skillnaden är strukturell, inte marginal.'},
+  {a:5,text:'Analytiker — delresultat till Strateg. Strateg — utvärdera implementeringsvägar baserat på dessa siffror.'},
+  {a:2,text:'Tar emot. Scenarie 1: FN-mandat via säkerhetsrådet. Scenarie 2: Bilateralt avtal med internationella garantier. Scenarie 3: Gradvis implementering via EU/Sverige.'},
+  {a:0,text:'Kompletterande: FN-stadgan artikel 1(3) ger redan stöd för fredliga lösningar. Ingen ny resolution krävs inledningsvis.'},
+  {a:2,text:'Intressant. Scenarie 3 (gradvis via Sverige/EU) verkar mest realistisk. Lägre politiskt tröskelvärde. Bearbetar vidare...'},
+  {a:5,text:'Kommunikatör — börja formulera budskap baserat på Forskares fakta och Analys resultat. Fokus: "vinna-vinna" inte "kompromiss".'},
+  {a:3,text:'Uppfattat. Arbetsord "kompromiss" signalerar förlust. "Garanterad representation" signaler trygghet. Skapar 12 inlägg för sociala medier...'},
+  {a:3,text:'Kladd: "Det multireligiösa valsystemet bevarar BÅDA sidors identitet. Ingen förlorare — bara garanterad maktdelning." Översättare — redo?'},
+  {a:4,text:'Redo. Observerar: "garanterad maktdelning" → arabiska: "تقاسم مضمون للسلطة", hebreiska: "חלוקת כוח מובטחת". Båda fungerar kulturellt.'},
+  {a:4,text:'Varning: "vinna-vinna" direktöversatt fungerar dåligt på hebreiska. Föreslår "פתרון שמטיב עם כולם" — "lösning som gynnar alla".'},
+  {a:5,text:'Bra fångat, Översättare. Kommunikatör — uppdatera inlägg 3, 7 och 11 med den hebreiska anpassningen.'},
+  {a:1,text:'Uppdatering: la till demografisk känslighetsanalys. Systemet förblir stabilt även vid ±15% befolkningsförändring.'},
+  {a:0,text:'Faktakoll: Analytikens demografiska analys stämmer överens med UN Population Division-data 2024. Verifierat.'},
+  {a:2,text:'Slutsats för Scenario 3: Sverige kan agera "facilitator" utan att kräva amerikansk medverkan inledningsvis. Sänker tröskeln dramatiskt.'},
+  {a:5,text:'Utmärkt arbete, team. Jag sammanställer slutresultatet. Forskare: 23 källor ✓. Analytiker: 4 modeller ✓. Strateg: 3 scenarier ✓. Kommunikatör: 12 inlägg ✓. Översättare: 4 språk ✓.'},
+];
+
+let liveStarted=0,msgIdx=0,taskCount=0,msgCount=0;
+
+function startLive(){
+  liveStarted=1;
+  const feed=document.getElementById('live-feed');
+  const typing=document.getElementById('live-typing');
+  typing.style.display='flex';
+
+  function addMsg(){
+    if(msgIdx>=messages.length){typing.style.display='none';return}
+    const m=messages[msgIdx];
+    const a=agents[m.a];
+    const now=new Date();
+    const time=now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
+    
+    typing.style.display='none';
+    
+    const div=document.createElement('div');
+    div.className='msg';
+    div.style.opacity='0';div.style.transform='translateY(8px)';
+    div.innerHTML=`<div class="msg-avatar" style="background:${a.bg};color:${a.color}">${a.id}</div><div class="msg-body"><div class="msg-name" style="color:${a.color}">${a.name}</div><div class="msg-text">${m.text}</div><div class="msg-time">${time}</div></div>`;
+    feed.insertBefore(div,feed.firstChild);
+    
+    requestAnimationFrame(()=>{div.style.transition='all .3s ease';div.style.opacity='1';div.style.transform='translateY(0)'});
+    
+    msgIdx++;msgCount++;
+    document.getElementById('msg-count').textContent=msgCount;
+    
+    // Random task increment
+    if(msgIdx%3===0){taskCount=Math.min(taskCount+1,47);document.getElementById('task-count').textContent=taskCount}
+    
+    setTimeout(()=>{typing.style.display='flex';feed.scrollTop=0},300);
+    setTimeout(addMsg,2200+Math.random()*1800);
+  }
+  
+  setTimeout(addMsg,1200);
+}
+
+// Init
+addEventListener('DOMContentLoaded',()=>{
+  initSwarm();initStatus();
+  // Animate counters
+  let tc=0,mc=0;
+  const tcInt=setInterval(()=>{tc=Math.min(tc+1,47);document.getElementById('task-count').textContent=tc;if(tc>=47)clearInterval(tcInt)},80);
+  const mcInt=setInterval(()=>{mc=Math.min(mc+1,142);document.getElementById('msg-count').textContent=mc;if(mc>=142)clearInterval(mcInt)},30);
+  
+  setTimeout(()=>{document.getElementById('sp').classList.add('out');setTimeout(()=>{document.getElementById('sp').style.display='none';document.getElementById('a').classList.add('on');rv()},350)},700);
+});
+</script>
+</body>
+</html>
