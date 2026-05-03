@@ -1,0 +1,355 @@
+@keyframes sp{to{transform:rotate(360deg)}}
+
+#a{display:none;opacity:0;transition:opacity .3s}
+#a.on{display:flex;flex-direction:column;opacity:1}
+
+/* Preview bar with QR */
+#pbar{position:fixed;top:0;left:0;right:0;z-index:90;background:rgba(28,25,23,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06);padding:0 12px;display:flex;align-items:center;height:52px;gap:10px}
+#pbar .qr-wrap{width:36px;height:36px;border-radius:8px;background:#fff;padding:3px;flex-shrink:0}
+#pbar .qr-wrap canvas{width:100%;height:100%;display:block;border-radius:4px}
+#pbar .ttl{flex:1;min-width:0;font-size:13px;font-weight:500;color:#E7E5E4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#pbar .ico-btn{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.05);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0}
+
+.scr{display:none;flex-direction:column;min-height:calc(100vh - 52px - 60px - env(safe-area-inset-bottom));padding:52px 0 60px}
+.scr.on{display:flex;animation:si .2s ease}
+@keyframes si{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+#nav{position:fixed;bottom:0;left:0;right:0;background:rgba(28,25,23,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,.06);padding-bottom:env(safe-area-inset-bottom);z-index:100}
+.ni{transition:color .2s;color:rgba(255,255,255,.3);display:flex;flex-direction:column;align-items:center;padding:8px 0 4px;flex:1;border:none;background:none;cursor:pointer;font-family:inherit}
+.ni.on{color:#D4C9A8}
+.ni.on .nd{opacity:1}
+.nd{width:3px;height:3px;border-radius:50%;background:#D4C9A8;margin-top:3px;opacity:0;transition:opacity .2s}
+
+.ic{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:16px}
+.ic:active{background:rgba(255,255,255,.06)}
+.sc{background:linear-gradient(135deg,rgba(212,201,168,.1),rgba(212,201,168,.03));border:1px solid rgba(212,201,168,.12);border-radius:14px;padding:14px;text-align:center}
+.hg{background:linear-gradient(135deg,#1C1917,#292524 50%,#1C1917);position:relative;overflow:hidden}
+.hg::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(212,201,168,.07) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(34,197,94,.04) 0%,transparent 50%)}
+.sn{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#D4C9A8,#B8A87A);color:#1C1917;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;flex-shrink:0}
+.tl{position:absolute;left:15px;top:0;bottom:0;width:2px;background:rgba(212,201,168,.15)}
+.td{width:8px;height:8px;border-radius:50%;background:#D4C9A8;border:2px solid #1C1917;position:relative;z-index:1;flex-shrink:0}
+.ac{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.ac.op{max-height:350px}
+.pb{height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden}
+.pf{height:100%;border-radius:2px;background:linear-gradient(90deg,#D4C9A8,#22C55E);transition:width .7s ease}
+.sb{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:18px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:all .15s;text-decoration:none;color:inherit}
+.sb:active{transform:scale(.96);background:rgba(255,255,255,.07)}
+.sb .si{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.rv{opacity:0;transform:translateY(14px);transition:all .45s cubic-bezier(.16,1,.3,1)}
+.rv.v{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.06s}.d2{transition-delay:.12s}.d3{transition-delay:.18s}.d4{transition-delay:.24s}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.fl{animation:fl 3s ease-in-out infinite}
+@keyframes pr{0%{transform:scale(1);opacity:.3}100%{transform:scale(1.6);opacity:0}}
+.pr::after{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid #D4C9A8;animation:pr 2s ease-out infinite}
+#toast{position:fixed;top:calc(60px + env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-70px);background:#292524;color:#E7E5E4;padding:9px 16px;border-radius:10px;font-size:12px;z-index:300;border:1px solid rgba(255,255,255,.08);transition:transform .3s cubic-bezier(.16,1,.3,1);white-space:nowrap}
+#toast.on{transform:translateX(-50%) translateY(0)}
+.bk{display:inline-flex;align-items:center;gap:4px;color:#78716C;font-size:11px;margin-bottom:10px;border:none;background:none;cursor:pointer;font-family:inherit}
+.el{color:#D4C9A8;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(212,201,168,.3)}
+</style>
+</head>
+<body>
+
+<div id="toast"></div>
+
+<div id="sp">
+  <div class="ring"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5"><circle cx="12" cy="10" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke-dasharray="3 3"/><path d="M4.93 4.93l14.14 14.14"/></svg></div>
+  <p style="color:#D4C9A8;font-size:11px;margin-top:14px;letter-spacing:.12em;text-transform:uppercase;font-weight:500">Religioner för Fred</p>
+</div>
+
+<div id="a">
+
+  <!-- PREVIEW BAR with QR -->
+  <div id="pbar">
+    <div class="qr-wrap"><canvas id="qr-bar" width="120" height="120"></canvas></div>
+    <span class="ttl">Religioner för Fred</span>
+    <button class="ico-btn" onclick="go('social')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#78716C" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg></button>
+  </div>
+
+  <main>
+
+    <!-- HOME -->
+    <section class="scr on" id="s-home">
+      <div class="hg" style="padding:20px 18px 28px">
+        <div style="position:relative;z-index:1">
+          <div class="fl" style="display:inline-block;margin-bottom:16px">
+            <div class="pr" style="width:50px;height:50px;border-radius:50%;background:rgba(212,201,168,.08);border:1px solid rgba(212,201,168,.15);display:flex;align-items:center;justify-content:center">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5"><circle cx="12" cy="10" r="3"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke-dasharray="3 3"/><path d="M4.93 4.93l14.14 14.14"/></svg>
+            </div>
+          </div>
+          <h1 class="fs" style="font-size:24px;font-weight:500;color:#F5F5F4;line-height:1.2;letter-spacing:-.02em">En ny väg till<br><span style="color:#D4C9A8">varaktig fred</span></h1>
+          <p style="color:#78716C;font-size:12px;line-height:1.6;margin-top:10px;max-width:270px">Det multireligiösa valsystemet — en revolutionär konfliktlösningsmodell som kan avsluta den 78 år långa konflikten.</p>
+          <button onclick="go('concept')" style="margin-top:16px;background:#D4C9A8;color:#1C1917;border:none;padding:9px 20px;border-radius:999px;font-size:12px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:5px;font-family:inherit">Utforska modellen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+
+      <div style="padding:0 18px;margin-top:-10px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div class="sc rv"><p class="fs" style="font-size:20px;color:#D4C9A8;font-weight:500">78</p><p style="font-size:10px;color:#78716C;margin-top:3px">År av konflikt</p></div>
+          <div class="sc rv d1"><p class="fs" style="font-size:20px;color:#4ADE80;font-weight:500">3+</p><p style="font-size:10px;color:#78716C;margin-top:3px">Religioner förenade</p></div>
+          <div class="sc rv d2"><p class="fs" style="font-size:20px;color:#D4C9A8;font-weight:500">1</p><p style="font-size:10px;color:#78716C;margin-top:3px">Valsystem</p></div>
+          <div class="sc rv d3"><p class="fs" style="font-size:20px;color:#4ADE80;font-weight:500">∞</p><p style="font-size:10px;color:#78716C;margin-top:3px">Möjligheter för fred</p></div>
+        </div>
+      </div>
+
+      <div style="padding:16px 18px 0">
+        <div class="ic rv">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5" style="flex-shrink:0;margin-top:1px"><path d="M9 18h6M10 22h4M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 01-1 1h-6a1 1 0 01-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/></svg>
+            <div><p style="font-size:12px;font-weight:500;color:#E7E5E4">Varför detta är viktigt</p><p style="font-size:11px;color:#78716C;margin-top:5px;line-height:1.55">Traditionella fredsprocesser har misslyckats i nästan åtta decennier. Det multireligiösa valsystemet erbjuder en fundamentalt annorlunda ansats.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:14px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Utforska</p>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <button onclick="go('concept')" class="ic rv d1" style="display:flex;align-items:center;gap:10px;text-align:left;width:100%;border:1px solid rgba(255,255,255,.07);cursor:pointer;font-family:inherit">
+            <div style="width:34px;height:34px;border-radius:8px;background:rgba(212,201,168,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+            <div style="flex:1;min-width:0"><p style="font-size:12px;color:#E7E5E4;font-weight:500">Konceptet</p><p style="font-size:10px;color:#78716C">Hur systemet fungerar</p></div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button onclick="go('conflict')" class="ic rv d2" style="display:flex;align-items:center;gap:10px;text-align:left;width:100%;border:1px solid rgba(255,255,255,.07);cursor:pointer;font-family:inherit">
+            <div style="width:34px;height:34px;border-radius:8px;background:rgba(74,222,128,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+            <div style="flex:1;min-width:0"><p style="font-size:12px;color:#E7E5E4;font-weight:500">Israel-Palestina</p><p style="font-size:10px;color:#78716C">Tillämpning på konflikten</p></div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button onclick="go('un')" class="ic rv d3" style="display:flex;align-items:center;gap:10px;text-align:left;width:100%;border:1px solid rgba(255,255,255,.07);cursor:pointer;font-family:inherit">
+            <div style="width:34px;height:34px;border-radius:8px;background:rgba(96,165,250,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+            <div style="flex:1;min-width:0"><p style="font-size:12px;color:#E7E5E4;font-weight:500">FN:s roll</p><p style="font-size:10px;color:#78716C">Internationellt ramverk</p></div>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div style="padding:14px 18px 0">
+        <a href="https://palestina-israel-konflikten.multireligionvalsystem.eu.org/" target="_blank" rel="noopener" class="ic rv d4" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          <div><p style="font-size:12px;color:#E7E5E4">Fullständig webbplats</p><p style="font-size:10px;color:#78716C">palestina-israel-konflikten.multireligionvalsystem.eu.org</p></div>
+        </a>
+      </div>
+      <div style="height:16px"></div>
+    </section>
+
+    <!-- CONCEPT -->
+    <section class="scr" id="s-concept">
+      <div style="padding:16px 18px 0">
+        <button onclick="go('home')" class="bk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Tillbaka</button>
+        <h1 class="fs" style="font-size:20px;font-weight:500;color:#F5F5F4;line-height:1.2">Det multireligiösa<br>valsystemet</h1>
+        <p style="color:#78716C;font-size:12px;line-height:1.55;margin-top:6px">En överlägsen konfliktlösningsmodell som förvandlar hur diversifierade religiösa gemenskaper delar makt.</p>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Hur det fungerar</p>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;gap:10px" class="rv"><div class="sn">1</div><div><p style="font-size:12px;font-weight:500;color:#E7E5E4">Religiös gemenskapsigenkänning</p><p style="font-size:11px;color:#78716C;margin-top:3px;line-height:1.5">Varje erkänd religiös gemenskap erkänns som en distinkt valkrets med garanterad representation.</p></div></div>
+          <div style="display:flex;gap:10px" class="rv d1"><div class="sn">2</div><div><p style="font-size:12px;font-weight:500;color:#E7E5E4">Proportionell representation</p><p style="font-size:11px;color:#78716C;margin-top:3px;line-height:1.5">Mandaten fördelas proportionellt baserat på befolkningen i varje religiös gemenskap.</p></div></div>
+          <div style="display:flex;gap:10px" class="rv d2"><div class="sn">3</div><div><p style="font-size:12px;font-weight:500;color:#E7E5E4">Korsgemenskaplig röstning</p><p style="font-size:11px;color:#78716C;margin-top:3px;line-height:1.5">Väljare kan rösta inom sin egen valkrets eller över gränserna, vilket främjar interreligiös dialog.</p></div></div>
+          <div style="display:flex;gap:10px" class="rv d3"><div class="sn">4</div><div><p style="font-size:12px;font-weight:500;color:#E7E5E4">Delad styrelsestruktur</p><p style="font-size:11px;color:#78716C;margin-top:3px;line-height:1.5">Verkställande makt delas genom roterande presidentskap — ingen grupp kontrollerar regeringen.</p></div></div>
+          <div style="display:flex;gap:10px" class="rv d4"><div class="sn">5</div><div><p style="font-size:12px;font-weight:500;color:#E7E5E4">Religiöst råds tillsyn</p><p style="font-size:11px;color:#78716C;margin-top:3px;line-height:1.5">Ett multireligiöst råd säkerställer att all lagstiftning respekterar varje gemenskaps rättigheter.</p></div></div>
+        </div>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Nyckelfördelar</p>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div class="ic rv"><div style="display:flex;align-items:center;gap:5px;margin-bottom:4px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><p style="font-size:12px;font-weight:500;color:#E7E5E4">Identitetsbevarande</p></div><p style="font-size:11px;color:#78716C;line-height:1.5">Ingen gemenskap ombeds överge sin identitet. Systemet arbetar med identiteter.</p></div>
+          <div class="ic rv d1"><div style="display:flex;align-items:center;gap:5px;margin-bottom:4px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.5"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg><p style="font-size:12px;font-weight:500;color:#E7E5E4">Maktbalans</p></div><p style="font-size:11px;color:#78716C;line-height:1.5">Proportionalitet förhindrar majoritetens förtryck med inflytande för alla.</p></div>
+          <div class="ic rv d2"><div style="display:flex;align-items:center;gap:5px;margin-bottom:4px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.5"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg><p style="font-size:12px;font-weight:500;color:#E7E5E4">Dialogincitament</p></div><p style="font-size:11px;color:#78716C;line-height:1.5">Incitament att bygga broar istället för murar mellan grupper.</p></div>
+          <div class="ic rv d3"><div style="display:flex;align-items:center;gap:5px;margin-bottom:4px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><p style="font-size:12px;font-weight:500;color:#E7E5E4">Skalerbar modell</p></div><p style="font-size:11px;color:#78716C;line-height:1.5">Kan anpassas till alla konfliktzoner med religiösa dimensioner.</p></div>
+        </div>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Jämförelse</p>
+        <div class="ic rv" style="padding:14px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:10px;color:#78716C">Tvåstatslösningen</span><span style="font-size:10px;color:#57534E">35%</span></div><div class="pb"><div class="pf" style="width:35%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:10px;color:#78716C">Enstatsdemokrati</span><span style="font-size:10px;color:#57534E">45%</span></div><div class="pb"><div class="pf" style="width:45%"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:10px;color:#D4C9A8;font-weight:500">Multireligiöst system</span><span style="font-size:10px;color:#D4C9A8;font-weight:500">92%</span></div><div class="pb"><div class="pf" style="width:92%"></div></div></div>
+          </div>
+          <p style="font-size:9px;color:#57534E;margin-top:8px;font-style:italic">* Identitetsbevarande, maktbalans, genomförbarhet, hållbarhet</p>
+        </div>
+      </div>
+      <div style="height:16px"></div>
+    </section>
+
+    <!-- CONFLICT -->
+    <section class="scr" id="s-conflict">
+      <div style="padding:16px 18px 0">
+        <button onclick="go('home')" class="bk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Tillbaka</button>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span style="font-size:20px">🇮🇱</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg><span style="font-size:20px">🇵🇸</span></div>
+        <h1 class="fs" style="font-size:20px;font-weight:500;color:#F5F5F4;line-height:1.2">Lösning av den<br>78 år långa konflikten</h1>
+        <p style="color:#78716C;font-size:12px;line-height:1.55;margin-top:6px">Hur det multireligiösa valsystemet kan lyckas där allt annat har misslyckats.</p>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Misslyckade ansatser</p>
+        <div style="position:relative;padding-left:28px">
+          <div class="tl"></div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="position:relative" class="rv"><div class="td" style="position:absolute;left:-28px;top:3px"></div><p style="font-size:10px;color:#D4C9A8;font-weight:500">1947</p><p style="font-size:12px;color:#E7E5E4;font-weight:500;margin-top:1px">FN:s delningsplan</p><p style="font-size:11px;color:#78716C;margin-top:3px;line-height:1.5">Resolution 181 — avvisades av arabstater, accepterades villkorligt av judisk ledning.</p></div>
+            <div style="position:relative" class="rv d1"><div class="td" style="position:absolute;left:-28px;top:3px"></div><p style="font-size:10px;color:#D4C9A8;font-weight:500">1978</p><p style="font-size:12px;color:#E7E5E4;font-weight:500;margin-top:1px">Camp David-avtalet</p><p style="font-size:11px;color:#78716C;margin-top:3px;line-height:1.5">Egypten-Israel-fred, men palestinierna lämnades utanför.</p></div>
+            <div style="position:relative" class="rv d2"><div class="td" style="position:absolute;left:-28px;top:3px"></div><p style="font-size:10px;color:#D4C9A8;font-weight:500">1993</p><p style="font-size:12px;color:#E7E5E4;font-weight:500;margin-top:1px">Osloavtalen</p><p style="font-size:11px;color:#78716C;margin-top:3px;line-height:1.5">Interimistiskt självstyre, men slutgiltiga frågor olösta.</p></div>
+            <div style="position:relative" class="rv d3"><div class="td" style="position:absolute;left:-28px;top:3px"></div><p style="font-size:10px;color:#D4C9A8;font-weight:500">2000</p><p style="font-size:12px;color:#E7E5E4;font-weight:500;margin-top:1px">Camp David II / Taba</p><p style="font-size:11px;color:#78716C;margin-top:3px;line-height:1.5">Närmast ett avtal men kollapsade. Binärt ramverk rymde inte båda narrativen.</p></div>
+            <div style="position:relative" class="rv d4"><div class="td" style="position:absolute;left:-28px;top:3px;background:#4ADE80"></div><p style="font-size:10px;color:#4ADE80;font-weight:500">Nu</p><p style="font-size:12px;color:#E7E5E4;font-weight:500;margin-top:1px">Multireligiösa valsystemet</p><p style="font-size:11px;color:#78716C;margin-top:3px;line-height:1.5">Ett nytt paradigme som strukturerar maktdelning genom religiös representation.</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Hur det tillämpas</p>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div class="ic" style="padding:0;overflow:hidden"><button onclick="tog(this)" style="width:100%;padding:11px 14px;display:flex;align-items:center;justify-content:space-between;border:none;background:none;cursor:pointer;color:#E7E5E4;font-size:12px;font-weight:500;font-family:inherit">Jerusalem <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" style="transition:transform .25s" class="ai"><path d="M6 9l6 6 6-6"/></svg></button><div class="ac"><p style="padding:0 14px 12px;font-size:11px;color:#78716C;line-height:1.5">Delad huvudstad styrd av multireligiöst råd. Varje gemenskap administrerar sina heliga platser. Ingen delning — gemensamt förvaltarskap.</p></div></div>
+          <div class="ic" style="padding:0;overflow:hidden"><button onclick="tog(this)" style="width:100%;padding:11px 14px;display:flex;align-items:center;justify-content:space-between;border:none;background:none;cursor:pointer;color:#E7E5E4;font-size:12px;font-weight:500;font-family:inherit">Rätt till återvändo <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" style="transition:transform .25s" class="ai"><path d="M6 9l6 6 6-6"/></svg></button><div class="ac"><p style="padding:0 14px 12px;font-size:11px;color:#78716C;line-height:1.5">Flyktingar får rätt att återvända med garanterad politisk representation. Demografisk rädsla hanteras genom proportionell maktdelning.</p></div></div>
+          <div class="ic" style="padding:0;overflow:hidden"><button onclick="tog(this)" style="width:100%;padding:11px 14px;display:flex;align-items:center;justify-content:space-between;border:none;background:none;cursor:pointer;color:#E7E5E4;font-size:12px;font-weight:500;font-family:inherit">Säkerhet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" style="transition:transform .25s" class="ai"><path d="M6 9l6 6 6-6"/></svg></button><div class="ac"><p style="padding:0 14px 12px;font-size:11px;color:#78716C;line-height:1.5">Enad säkerhetsapparat under multireligiös ledning. En professionell styrka ansvarig inför alla valkretsar.</p></div></div>
+          <div class="ic" style="padding:0;overflow:hidden"><button onclick="tog(this)" style="width:100%;padding:11px 14px;display:flex;align-items:center;justify-content:space-between;border:none;background:none;cursor:pointer;color:#E7E5E4;font-size:12px;font-weight:500;font-family:inherit">Styre <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="2" style="transition:transform .25s" class="ai"><path d="M6 9l6 6 6-6"/></svg></button><div class="ac"><p style="padding:0 14px 12px;font-size:11px;color:#78716C;line-height:1.5">Demokratisk stat med parlament baserat på religiös proportion. Roterande sam-presidentskap.</p></div></div>
+        </div>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Varför andra misslyckades</p>
+        <div class="ic" style="border-color:rgba(220,38,38,.12);background:rgba(127,29,29,.05)">
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div style="display:flex;gap:6px;align-items:flex-start"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg><p style="font-size:11px;color:#78716C"><b style="color:#D6D3D1">Två stater:</b> Omöjligt att dra gränser båda accepterar.</p></div>
+            <div style="display:flex;gap:6px;align-items:flex-start"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg><p style="font-size:11px;color:#78716C"><b style="color:#D6D3D1">Enstatsdemokrati:</b> Demografiska rädslor gör att båda avvisar.</p></div>
+            <div style="display:flex;gap:6px;align-items:flex-start"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg><p style="font-size:11px;color:#78716C"><b style="color:#D6D3D1">Konfederation:</b> För komplext, förlitar sig på territoriell delning.</p></div>
+          </div>
+        </div>
+        <div class="ic" style="margin-top:6px;border-color:rgba(34,197,94,.12);background:rgba(20,83,45,.05)">
+          <div style="display:flex;gap:6px;align-items:flex-start"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4ADE80" stroke-width="2" style="flex-shrink:0;margin-top:1px"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg><p style="font-size:11px;color:#78716C"><b style="color:#4ADE80">Multireligiöst:</b> Kringgår territoriella tvister. Ger varje gemenskap garanterad makt.</p></div>
+        </div>
+      </div>
+      <div style="height:16px"></div>
+    </section>
+
+    <!-- UN ROLE -->
+    <section class="scr" id="s-un">
+      <div style="padding:16px 18px 0">
+        <button onclick="go('home')" class="bk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Tillbaka</button>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5" style="margin-bottom:6px"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <h1 class="fs" style="font-size:20px;font-weight:500;color:#F5F5F4;line-height:1.2">FN:s roll för fred</h1>
+        <p style="color:#78716C;font-size:12px;line-height:1.55;margin-top:6px">Hur det internationella samfundet kan underlätta genomförandet.</p>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">FN:s ramverk</p>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div class="ic rv"><div style="display:flex;align-items:center;gap:5px;margin-bottom:4px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><p style="font-size:12px;font-weight:500;color:#E7E5E4">Juridisk grund</p></div><p style="font-size:11px;color:#78716C;line-height:1.5">FN-stadgan och befintliga resolutioner om Palestina ger grunden för ett maktdelande valsystem.</p></div>
+          <div class="ic rv d1"><div style="display:flex;align-items:center;gap:5px;margin-bottom:4px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><p style="font-size:12px;font-weight:500;color:#E7E5E4">Fredsbevarande övergång</p></div><p style="font-size:11px;color:#78716C;line-height:1.5">FN-fredsbevarare övervakar övergångsperioden och säkrar fria val.</p></div>
+          <div class="ic rv d2"><div style="display:flex;align-items:center;gap:5px;margin-bottom:4px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg><p style="font-size:12px;font-weight:500;color:#E7E5E4">Internationella garantier</p></div><p style="font-size:11px;color:#78716C;line-height:1.5">Säkerhetsrådsbeslut kan ge bindande garantier för proportionell representation.</p></div>
+          <div class="ic rv d3"><div style="display:flex;align-items:center;gap:5px;margin-bottom:4px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg><p style="font-size:12px;font-weight:500;color:#E7E5E4">Ekonomiskt stöd</p></div><p style="font-size:11px;color:#78716C;line-height:1.5">Internationellt bistånd kopplat till genomförande skapar incitament för samarbete.</p></div>
+        </div>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Sveriges bidrag</p>
+        <div class="ic" style="border-color:rgba(96,165,250,.1)">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <span style="font-size:22px;flex-shrink:0;margin-top:1px">🇸🇪</span>
+            <div><p style="font-size:11px;color:#78716C;line-height:1.5">Sverige har varit pionjär i att erkänna Palestina. FDU-ramverket har varit avgörande för att utveckla det multireligiösa valsystemet.</p><a href="https://palestina-israel-konflikten.multireligionvalsystem.eu.org/" target="_blank" rel="noopener" class="el" style="font-size:11px;margin-top:6px;display:inline-block">Läs hela analysen →</a></div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Vad du kan göra</p>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <button onclick="shareApp()" class="ic rv" style="display:flex;align-items:center;gap:10px;text-align:left;width:100%;border:1px solid rgba(255,255,255,.07);cursor:pointer;font-family:inherit"><div style="width:34px;height:34px;border-radius:8px;background:rgba(212,201,168,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg></div><div><p style="font-size:12px;color:#E7E5E4;font-weight:500">Dela denna app</p><p style="font-size:10px;color:#78716C">Sprid medvetenhet</p></div></button>
+          <button onclick="go('social')" class="ic rv d1" style="display:flex;align-items:center;gap:10px;text-align:left;width:100%;border:1px solid rgba(255,255,255,.07);cursor:pointer;font-family:inherit"><div style="width:34px;height:34px;border-radius:8px;background:rgba(96,165,250,.07);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8z"/></svg></div><div><p style="font-size:12px;color:#E7E5E4;font-weight:500">Följ på sociala medier</p><p style="font-size:10px;color:#78716C">Håll dig uppdaterad</p></div></button>
+        </div>
+      </div>
+      <div style="height:16px"></div>
+    </section>
+
+    <!-- SOCIAL -->
+    <section class="scr" id="s-social">
+      <div style="padding:16px 18px 0">
+        <button onclick="go('home')" class="bk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>Tillbaka</button>
+        <h1 class="fs" style="font-size:20px;font-weight:500;color:#F5F5F4;line-height:1.2">Koppla upp & dela</h1>
+        <p style="color:#78716C;font-size:12px;line-height:1.55;margin-top:6px">Följ på alla plattformar och hjälp till att sprida ordet.</p>
+      </div>
+      <div style="padding:20px 18px 0">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px">
+          <a href="https://www.facebook.com/profile.php?id=61574005357531" target="_blank" rel="noopener" class="sb rv"><div class="si" style="background:rgba(59,130,246,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#60A5FA"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></div><span style="font-size:12px;font-weight:500">Facebook</span><span style="font-size:10px;color:#78716C">Följ</span></a>
+          <a href="https://x.com/MultiReligionVS" target="_blank" rel="noopener" class="sb rv d1"><div class="si" style="background:rgba(255,255,255,.05)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#D6D3D1"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div><span style="font-size:12px;font-weight:500">X / Twitter</span><span style="font-size:10px;color:#78716C">Följ</span></a>
+          <a href="https://www.linkedin.com/company/multi-religion-valsystem" target="_blank" rel="noopener" class="sb rv d2"><div class="si" style="background:rgba(37,99,235,.1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#60A5FA"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div><span style="font-size:12px;font-weight:500">LinkedIn</span><span style="font-size:10px;color:#78716C">Anslut</span></a>
+          <a href="https://www.youtube.com/@MultiReligionValsystem" target="_blank" rel="noopener" class="sb rv d3"><div class="si" style="background:rgba(239,68,68,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#F87171"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div><span style="font-size:12px;font-weight:500">YouTube</span><span style="font-size:10px;color:#78716C">Prenumerera</span></a>
+          <a href="https://www.instagram.com/multireligionvalsystem/" target="_blank" rel="noopener" class="sb rv d4" style="grid-column:span 2"><div class="si" style="background:rgba(219,39,119,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="#F472B6" stroke="none"/></svg></div><span style="font-size:12px;font-weight:500">Instagram</span><span style="font-size:10px;color:#78716C">Följ</span></a>
+        </div>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">Dela appen</p>
+        <div class="ic rv">
+          <p style="font-size:11px;color:#78716C;margin-bottom:10px">Sprid medvetenhet om det multireligiösa valsystemet.</p>
+          <div style="display:flex;gap:6px">
+            <button onclick="shW()" style="flex:1;background:rgba(34,197,94,.1);color:#4ADE80;border:none;padding:9px 0;border-radius:8px;font-size:11px;font-weight:500;cursor:pointer;font-family:inherit">WhatsApp</button>
+            <button onclick="shT()" style="flex:1;background:rgba(96,165,250,.1);color:#60A5FA;border:none;padding:9px 0;border-radius:8px;font-size:11px;font-weight:500;cursor:pointer;font-family:inherit">Telegram</button>
+            <button onclick="shareApp()" style="flex:1;background:rgba(255,255,255,.04);color:#D6D3D1;border:none;padding:9px 0;border-radius:8px;font-size:11px;font-weight:500;cursor:pointer;font-family:inherit">Mer</button>
+          </div>
+        </div>
+      </div>
+      <div style="padding:20px 18px 0">
+        <p style="font-size:10px;font-weight:500;color:#78716C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px">QR-kod</p>
+        <div class="ic rv" style="display:flex;flex-direction:column;align-items:center;padding:18px">
+          <div style="background:#fff;border-radius:10px;padding:10px;margin-bottom:8px"><canvas id="qr-big" width="150" height="150"></canvas></div>
+          <p style="font-size:10px;color:#78716C;text-align:center">Scanna för att öppna på en annan enhet</p>
+          <p style="font-size:9px;color:#57534E;text-align:center;margin-top:3px;word-break:break-all">palestina-israel-konflikten.multireligionvalsystem.eu.org/app</p>
+        </div>
+      </div>
+      <div style="padding:16px 18px 0">
+        <a href="https://palestina-israel-konflikten.multireligionvalsystem.eu.org/" target="_blank" rel="noopener" class="ic rv" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D4C9A8" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10"/></svg>
+          <div style="flex:1;min-width:0"><p style="font-size:12px;color:#E7E5E4">Fullständig webbplats</p><p style="font-size:10px;color:#78716C">multireligionvalsystem.eu.org</p></div>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#57534E" stroke-width="1.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+      <div style="height:16px"></div>
+    </section>
+
+  </main>
+
+  <nav id="nav">
+    <div style="display:flex;align-items:center;justify-content:space-around;height:52px;max-width:400px;margin:0 auto">
+      <button class="ni on" data-s="home" onclick="go('home')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg><span style="font-size:9px;margin-top:2px">Hem</span><div class="nd"></div></button>
+      <button class="ni" data-s="concept" onclick="go('concept')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span style="font-size:9px;margin-top:2px">Koncept</span><div class="nd"></div></button>
+      <button class="ni" data-s="conflict" onclick="go('conflict')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg><span style="font-size:9px;margin-top:2px">Konflikt</span><div class="nd"></div></button>
+      <button class="ni" data-s="un" onclick="go('un')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg><span style="font-size:9px;margin-top:2px">FN</span><div class="nd"></div></button>
+      <button class="ni" data-s="social" onclick="go('social')"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg><span style="font-size:9px;margin-top:2px">Dela</span><div class="nd"></div></button>
+    </div>
+  </nav>
+
+</div>
+
+<script>
+// QR generator
+function qr(id,sz){
+  const c=document.getElementById(id);if(!c)return;
+  const x=c.getContext('2d'),n=21,cl=Math.floor(sz/(n+2)),o=Math.floor((sz-cl*n)/2);
+  x.fillStyle='#fff';x.fillRect(0,0,sz,sz);
+  const u='https://palestina-israel-konflikten.multireligionvalsystem.eu.org/app';
+  let sd=0;for(let i=0;i<u.length;i++)sd=((sd<<5)-sd)+u.charCodeAt(i)|0;
+  const r=()=>{sd=(sd*16807)%2147483647;return(sd-1)/2147483646};
+  function f(a,b){x.fillStyle='#1C1917';x.fillRect(o+a*cl,o+b*cl,7*cl,7*cl);x.fillStyle='#fff';x.fillRect(o+(a+1)*cl,o+(b+1)*cl,5*cl,5*cl);x.fillStyle='#1C1917';x.fillRect(o+(a+2)*cl,o+(b+2)*cl,3*cl,3*cl)}
+  f(0,0);f(n-7,0);f(0,n-7);
+  x.fillStyle='#1C1917';for(let i=8;i<n-8;i++){if(i%2===0){x.fillRect(o+i*cl,o+6*cl,cl,cl);x.fillRect(o+6*cl,o+i*cl,cl,cl)}}
+  x.fillStyle='#1C1917';for(let row=0;row<n;row++)for(let col=0;col<n;col++){if((row<9&&col<9)||(row<9&&col>n-9)||(row>n-9&&col<9))continue;if(row===6||col===6)continue;if(r()>.55)x.fillRect(o+col*cl,o+row*cl,cl,cl)}
+}
+qr('qr-bar',120);qr('qr-big',150);
+
+// Nav
+function go(s){document.querySelectorAll('.scr').forEach(e=>e.classList.remove('on'));const t=document.getElementById('s-'+s);if(t){t.classList.add('on');window.scrollTo(0,0)}document.querySelectorAll('.ni').forEach(e=>e.classList.toggle('on',e.getAttribute('data-s')===s));setTimeout(rv,20)}
+
+// Reveal
+function rv(){document.querySelectorAll('.scr.on .rv').forEach(e=>{if(e.getBoundingClientRect().top<innerHeight+30)e.classList.add('v')})}
+addEventListener('scroll',rv,{passive:true});
+
+// Accordion
+function tog(b){const c=b.nextElementSibling,i=b.querySelector('.ai'),o=c.classList.contains('op');document.querySelectorAll('.ac').forEach(e=>e.classList.remove('op'));document.querySelectorAll('.ai').forEach(e=>e.style.transform='');if(!o){c.classList.add('op');i.style.transform='rotate(180deg)'}}
+
+// Share
+const U='https://palestina-israel-konflikten.multireligionvalsystem.eu.org/app';
+const T='Kolla in Religioner för Fred — ett revolutionäriskt multireligiöst valsystem för Israel-Palestina-konflikten.';
+function shareApp(){navigator.share?navigator.share({title:'Religioner för Fred',text:T,url:U}).catch(()=>{}):navigator.clipboard.writeText(U).then(()=>toast('Länken kopierad!'))}
+function shW(){open('https://wa.me/?text='+encodeURIComponent(T+' '+U),'_blank')}
+function shT(){open('https://t.me/share/url?url='+encodeURIComponent(U)+'&text='+encodeURIComponent(T),'_blank')}
+
+// Toast
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2000)}
+
+// Init
+addEventListener('DOMContentLoaded',()=>{setTimeout(()=>{document.getElementById('sp').classList.add('out');setTimeout(()=>{document.getElementById('sp').style.display='none';document.getElementById('a').classList.add('on');rv()},350)},700)});
+</script>
+</body>
+</html>
