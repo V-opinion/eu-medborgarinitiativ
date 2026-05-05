@@ -45,6 +45,66 @@ Why did Israeli extremists assassinate Nobel Peace Prize winner Yitzhak Rabin?
     </div>
   </div>
 </section>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    .cite-box {
+      max-width: 760px;
+      margin: 0 auto;
+      border: 1px solid #d7dce3;
+      border-radius: 12px;
+      background: #f8fafc;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+    .cite-box-header {
+      padding: 12px 16px;
+      background: #1f2937;
+      color: #fff;
+      font-weight: 700;
+    }
+    .cite-box-body {
+      padding: 14px 16px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .cite-box-body p {
+      margin: 0 0 10px;
+    }
+    .cite-box-body p:last-child {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="cite-box">
+    <div class="cite-box-header">Cite This Page</div>
+    <div class="cite-box-body" id="citeBoxBody"></div>
+  </div>
+
+  <script>
+    const pageData = {
+      title: document.title.replace(/\s*[-|].*$/, '').trim() || 'Page title',
+      site: 'Multireligionvalsystem',
+      url: window.location.href
+    };
+
+    function buildCitations(data) {
+      const apa = `${data.site}. (n.d.). <em>${data.title}</em>. <a href="${data.url}">${data.url}</a>`;
+      const mla = `“${data.title}.” <em>${data.site}</em>, <a href="${data.url}">${data.url}</a>.`;
+      return `
+        <p><strong>APA:</strong> ${apa}</p>
+        <p><strong>MLA:</strong> ${mla}</p>
+      `;
+    }
+
+    document.getElementById('citeBoxBody').innerHTML = buildCitations(pageData);
+  </script>
 <!-- Social Media Signals Block -->
 <div class="social-signals">
     <h3>Follow & Join the Conversation</h3>
