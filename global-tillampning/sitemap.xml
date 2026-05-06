@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Page for Global Tillämpning -->
+  <url>
+    <loc>https://mre.multireligionvalsystem.eu.org/global-tillampning/</loc>
+    <lastmod>2023-10-27</lastmod> <!-- Change to today's date or last updated date -->
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Example Subpage 1 (Replace with your actual subpage) -->
+  <url>
+    <loc>https://mre.multireligionvalsystem.eu.org/global-tillampning/om-oss/</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Example Subpage 2 (Replace with your actual subpage) -->
+  <url>
+    <loc>https://mre.multireligionvalsystem.eu.org/global-tillampning/tjanster/</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Example Subpage 3 (Replace with your actual subpage) -->
+  <url>
+    <loc>https://mre.multireligionvalsystem.eu.org/global-tillampning/kontakt/</loc>
+    <lastmod>2023-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
