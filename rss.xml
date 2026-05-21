@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Multireligionvalsystem</title>
+    <link>https://multireligionvalsystem.eu.org</link>
+    <description>Den ofullbordade separationen  mellan stat och kyrka samt mellan religion och politik</description>
+    <language>en-us</language>
+    
+    <!-- ADD A NEW <item> BLOCK FOR EVERY BLOG POST YOU WRITE -->
+    <item>
+      <title>Multireligionvalsystem ,FN:s rollspel för fred.</title>
+      <link>https://multireligionvalsystem.eu.org/your-first-article.html</link>
+      <description>A short summary or snippet of your article.</description>
+      <pubDate>Mon, 23 Oct 2023 00:00:00 GMT</pubDate>
+    </item>
+    
+    <item>
+      <title>Your Second Article Title</title>
+      <link>https://multireligionvalsystem.eu.org/your-second-article.html</link>
+      <description>A short summary of this article.</description>
+      <pubDate>Tue, 24 Oct 2023 00:00:00 GMT</pubDate>
+    </item>
+
+  </channel>
+</rss>
