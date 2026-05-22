@@ -1,8 +1,8 @@
-podcast_htm_files
-podcast.htm
-sitemap.xml
-robots.txt
-https://multireligionvalsystem.eu.org/podcast/1.jpg
+https://www.multireligionvalsystem.eu.org/podcast
+https://www.multireligionvalsystem.eu.org/podcast.htm
+https://www.multireligionvalsystem.eu.org/sitemap.xml
+https://www.multireligionvalsystem.eu.org/robots.txt
+https://www.multireligionvalsystem.eu.org/podcast/1.jpg
 https://multireligionvalsystem.eu.org/podcast/1@2x.jpg
 https://multireligionvalsystem.eu.org/podcast/5.png
 https://multireligionvalsystem.eu.org/podcast/5@2x.png
