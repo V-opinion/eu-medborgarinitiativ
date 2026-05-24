@@ -5,18 +5,18 @@ window.local_nivoslider_3_data = [
 },
 {
  caption: "F.D.U",
- image: "multireligionval_htm_files/430.jpg"
+ image: "https://www.multireligionvalsystem.eu.org/oi/430.jpg"
 },
 {
  caption: "F.D.U",
- image: "multireligionval_htm_files/536.jpg"
+ image: "https://www.multireligionvalsystem.eu.org/oi/536.jpg"
 },
 {
  caption: "F.D.U\u000A..",
- image: "multireligionval_htm_files/432.jpg"
+ image: "https://www.multireligionvalsystem.eu.org/oi/432.jpg"
 },
 {
  caption: "F.D.U\u000A..",
- image: "multireligionval_htm_files/433.jpg"
+ image: "https://www.multireligionvalsystem.eu.org/oi/433.jpg"
 }
 ];
