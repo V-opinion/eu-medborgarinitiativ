@@ -397,7 +397,7 @@ body > .row > [class*='col-xs-'].review-column {
 body > .row.price-row {
   padding-top: 90px;
   padding-bottom: 90px;
-  background-image: url('../images/tech-lights.jpg?id=89&cache=1491591054677');
+  background-image: url('https://www.multireligionvalsystem.eu.org/images/tech-lights.jpg?id=89&cache=1491591054677');
   background-attachment: scroll;
   background-position: center center;
   background-clip: border-box;
@@ -460,7 +460,7 @@ body > .row.skils-row {
 }
 
 body > .row#about {
-  background-image: url('../images/color-blast-computer.jpg?id=90&cache=1491591124797');
+  background-image: url('https://www.multireligionvalsystem.eu.org/images/color-blast-computer.jpg?id=90&cache=1491591124797');
   background-attachment: scroll;
   background-position: center top;
   background-clip: border-box;
@@ -470,7 +470,7 @@ body > .row#about {
 }
 
 body > .row#contact {
-  background-image: url('../images/rainbow-blast.png?id=98&cache=1491591429952');
+  background-image: url('https://www.multireligionvalsystem.eu.org/images/rainbow-blast.png?id=98&cache=1491591429952');
   background-position: center center;
 }
 
@@ -824,11 +824,11 @@ span.glyph.address-icon {
 }
 
 .container-fluid#flex-container-1 {
-  background-image: url('../images/office-devices.jpg?id=94&cache=1491591218082');
+  background-image: url('https://www.multireligionvalsystem.eu.org/images/office-devices.jpg?id=94&cache=1491591218082');
 }
 
 .container-fluid#flex-container-2 {
-  background-image: url('../images/entrepreneur.jpg?id=97&cache=1491591366264');
+  background-image: url('https://www.multireligionvalsystem.eu.org/images/entrepreneur.jpg?id=97&cache=1491591366264');
 }
 
 .container-fluid.news-container {
@@ -836,7 +836,7 @@ span.glyph.address-icon {
 }
 
 .container-fluid#container-1 {
-  background-image: url('../images/mobile-apps.jpg?id=96&cache=1491591286049');
+  background-image: url('https://www.multireligionvalsystem.eu.org/images/mobile-apps.jpg?id=96&cache=1491591286049');
 }
 
 span.glyph.feature-icon:hover {
