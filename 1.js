@@ -1,43 +1,27 @@
-window.local_cyclemec_0_data = [
+window.local_cycleBottomradio_v8_6_data = [
 {
- effect: "5",
- pause: "5",
- speed: "0.7",
- theme: "0",
- trans: "0.8"
-},
-{
- bimage: "https://www.multireligionvalsystem.eu.org/412.png",
- desc: "https://www.multireligionvalsystem.eu.org/413.png",
- heading: "https://www.multireligionvalsystem.eu.org/414.png",
- image: "https://www.multireligionvalsystem.eu.org/415.png",
+ bulletimage: "fns%20rollspel_htm_files/472.png",
+ image: "fns%20rollspel_htm_files/473.jpg",
  link: "#"
 },
 {
- bimage: "https://www.multireligionvalsystem.eu.org/412.png",
- desc: "https://www.multireligionvalsystem.eu.org/416.png",
- heading: "https://www.multireligionvalsystem.eu.org/417.png",
- image: "https://www.multireligionvalsystem.eu.org/418.jpg",
+ image: "fns%20rollspel_htm_files/474.png",
  link: "#"
 },
 {
- bimage: "https://www.multireligionvalsystem.eu.org/412.png",
- desc: "https://www.multireligionvalsystem.eu.org/419.png",
- heading: "https://www.multireligionvalsystem.eu.org/420.png",
- image: "https://www.multireligionvalsystem.eu.org/421.png",
+ image: "fns%20rollspel_htm_files/475.jpg",
  link: "#"
 },
 {
- bimage: "https://www.multireligionvalsystem.eu.org/412.png",
- desc: "https://www.multireligionvalsystem.eu.org/422.png",
- heading: "https://www.multireligionvalsystem.eu.org/423.png",
- image: "https://www.multireligionvalsystem.eu.org/424.png",
+ image: "fns%20rollspel_htm_files/476.jpg",
  link: "#"
 },
 {
- bimage: "https://wwwmultireligionvalsystem.eu.org/412.png",
- desc: "https://www.multireligionvalsystem.eu.org/425.png",
- heading: "https://www.multireligionvalsystem.eu.org/426.png",
- image: "https://www.multireligionvalsystem.eu.org/427.jpg",
+ image: "fns%20rollspel_htm_files/477.jpg",
  link: "#"
+},
+{
+ image: "fns%20rollspel_htm_files/478.jpg",
+ link: "#"
+}
 ];
