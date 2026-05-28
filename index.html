@@ -41,12 +41,29 @@ Om hur du går till väga för att ta ditt eget EU-medborgarinitiativ" />
  <script src="https://www.multireligionvalsystem.eu.org/jquery.js"></script>
  <script src="https://www.multireligionvalsystem.eu.org/datamap.js"></script>
  <link rel="stylesheet" href="https://www.multireligionvalsystem.eu.org/ani.css"/>
- <style>
- @media (max-width: 768px) {
-  /* Adjust styles for mobile */
-  .container { width: 100%; }
+<style>
+/* Mobile styles (screens up to 768px wide) */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .main-content {
+    width: 100%;
+    padding: 10px;
+  }
+  .sidebar {
+    display: none; /* Hide sidebar on mobile */
+  }
 }
- </style>
+
+/* Responsive media */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+</style>
  <script src="https://www.multireligionvalsystem.eu.org/jquery.cycle.all.min.js"></script>
  <script src="https://www.multireligionvalsystem.eu.org/cycle_bottomradio_v8_config.js"></script>
  <!-- Social Media Signals Block -->
