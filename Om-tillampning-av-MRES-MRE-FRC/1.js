@@ -1,6 +1,6 @@
 window.local_cycleBottomradio_v8_6_data = [
 {
- bulletimage: "Om-tillampning-av-MRES-MRE-FRC_htm_files/472.png",
+ bulletimage: "https://www.multireligionvalsystem.eu.org/Om-tillampning-av-MRES-MRE-FRC/472.png",
  image: "https://www.multireligionvalsystem.eu.org/Om-tillampning-av-MRES-MRE-FRC/473.jpg",
  link: "#"
 },
