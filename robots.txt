@@ -5,7 +5,13 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
 Allow: /
 
 User-agent: ChatGPT-User
@@ -29,4 +35,11 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://multireligionvalsystem.eu.org/sitemap.xml
+Sitemap: https://www.multireligionvalsystem.eu.org/sitemap.xml
+
+
+
+
+
+
+
