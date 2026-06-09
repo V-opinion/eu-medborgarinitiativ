@@ -1,0 +1,16 @@
+{
+  "resource": "https://example.com",
+  "authorization_servers": [
+    "https://example.com"
+  ],
+  "scopes_supported": [
+    "openid",
+    "profile",
+    "email",
+    "agent:read",
+    "agent:write"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ]
+}

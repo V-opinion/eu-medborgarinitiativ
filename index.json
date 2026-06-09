@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "auth-md",
+      "type": "skill-md",
+      "description": "Implement Auth.md agent registration discovery, including OAuth Protected Resource Metadata and Authorization Server agent_auth blocks.",
+      "url": "https://example.com/.well-known/agent-skills/auth-md/SKILL.md",
+      "digest": "sha256:1794fff49d4ae401e782230c9aed1a268ce094b3200a02c5f7c98e72b21f1222"
+    },
+    {
+      "name": "mcp-server-card",
+      "type": "skill-md",
+      "description": "Publish an MCP Server Card (SEP-1649) for agent discovery at /.well-known/mcp/server-card.json.",
+      "url": "https://example.com/.well-known/agent-skills/mcp-server-card/SKILL.md",
+      "digest": "sha256:9a1af2376a9741bc29f97ff40120a7f115c1618188d40f2c9674b729485bd0d8"
+    },
+    {
+      "name": "agent-skills",
+      "type": "skill-md",
+      "description": "Publish an Agent Skills Discovery index at /.well-known/agent-skills/index.json per RFC v0.2.0.",
+      "url": "https://example.com/.well-known/agent-skills/agent-skills/SKILL.md",
+      "digest": "sha256:2cdda60ea052eb8af4ae8a4d96dc0d173151d5386ee724a4e98f93ed21adbae5"
+    },
+    {
+      "name": "webmcp",
+      "type": "skill-md",
+      "description": "Implement WebMCP via navigator.modelContext.registerTool() to expose site tools to AI agents in the browser.",
+      "url": "https://example.com/.well-known/agent-skills/webmcp/SKILL.md",
+      "digest": "sha256:7084ef104e2cdac6a92a29622170c3c894628fbf6406597f86bf4349fa87732b"
+    }
+  ]
+}
