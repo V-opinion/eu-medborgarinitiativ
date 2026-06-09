@@ -1,1 +1,20 @@
-
+{
+  "serverInfo": {
+    "name": "example-mcp-server",
+    "version": "1.0.0",
+    "description": "MCP server exposing tools and resources for AI agents"
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://multireligionvalsystem.eu.org/mcp"
+  },
+  "capabilities": {
+    "tools": true,
+    "resources": true,
+    "prompts": false
+  },
+  "authentication": {
+    "required": false,
+    "schemes": ["bearer"]
+  }
+}
