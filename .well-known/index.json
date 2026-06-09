@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "auth-md",
+      "type": "skill-md",
+      "description": "Implement Auth.md agent registration discovery, including OAuth Protected Resource Metadata and Authorization Server agent_auth blocks.",
+      "url": "https://isitagentready.com/.well-known/agent-skills/auth-md/SKILL.md",
+      "digest": "sha256:__AUTH_MD_DIGEST__"
+    },
+    {
+      "name": "mcp-server-card",
+      "type": "skill-md",
+      "description": "Publish an MCP Server Card (SEP-1649) for agent discovery at /.well-known/mcp/server-card.json.",
+      "url": "https://isitagentready.com/.well-known/agent-skills/mcp-server-card/SKILL.md",
+      "digest": "sha256:__MCP_SERVER_CARD_DIGEST__"
+    },
+    {
+      "name": "agent-skills",
+      "type": "skill-md",
+      "description": "Publish an Agent Skills Discovery index at /.well-known/agent-skills/index.json per RFC v0.2.0.",
+      "url": "https://isitagentready.com/.well-known/agent-skills/agent-skills/SKILL.md",
+      "digest": "sha256:__AGENT_SKILLS_DIGEST__"
+    },
+    {
+      "name": "webmcp",
+      "type": "skill-md",
+      "description": "Implement WebMCP via navigator.modelContext.registerTool() to expose site tools to AI agents in the browser.",
+      "url": "https://isitagentready.com/.well-known/agent-skills/webmcp/SKILL.md",
+      "digest": "sha256:__WEBMCP_DIGEST__"
+    }
+  ]
+}
