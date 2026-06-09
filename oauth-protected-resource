@@ -1,7 +1,7 @@
 {
-  "resource": "https://example.com",
+  "resource": "https://multireligionvalsystem.eu.org",
   "authorization_servers": [
-    "https://example.com"
+    "https://multireligionvalsystem.eu.org"
   ],
   "scopes_supported": [
     "openid",

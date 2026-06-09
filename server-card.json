@@ -6,7 +6,7 @@
   },
   "transport": {
     "type": "streamable-http",
-    "endpoint": "https://example.com/mcp"
+    "endpoint": "https://multireligionvalsystem.eu.org/mcp"
   },
   "capabilities": {
     "tools": true,
