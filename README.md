@@ -69,7 +69,7 @@ Once deployed, check all four checks at once:
 ```bash
 curl -s -X POST https://isitagentready.com/api/scan \
   -H "Content-Type: application/json" \
-  -d '{"url": "https://your-site.com"}' | jq .
+  -d '{"url": "[https://your-site.com](https://multireligionvalsystem.eu.org)"}' | jq .
 ```
 
 Look for `"status": "pass"` on:
