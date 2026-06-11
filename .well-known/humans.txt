@@ -1,0 +1,8 @@
+/* TEAM */
+Organization: Multi-Religion Value System
+Location: Stockholm, Sweden
+Members: 1,200+
+
+/* SITE */
+Language: English, Swedish, Arabic, Spanish
+Technology: GitHub Pages, Cloudflare
