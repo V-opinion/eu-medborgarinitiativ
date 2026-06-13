@@ -6,21 +6,21 @@
       "name": "auth-md",
       "type": "skill-md",
       "description": "Agent registration via Auth.md.",
-      "url": "https://isitagentready.com/.well-known/agent-skills/auth-md/SKILL.md",
+      "url": "multireligionvalsystem.eu.org/.well-known/agent-skills/auth-md/SKILL.md",
            "digest": "sha256:1794fff49d4ae401e782230c9aed1a268ce094b3200a02c5f7c98e72b21f1222"
     },
     {
       "name": "mcp-server-card",
       "type": "skill-md",
       "description": "MCP Server Card for agent discovery.",
-      "url": "https://isitagentready.com/.well-known/mcp/server-card.json",
+      "url": "multireligionvalsystem.eu.org/.well-known/mcp/server-card.json",
       "digest": "sha256:9a1af2376a9741bc29f97ff40120a7f115c1618188d40f2c9674b729485bd0d8"
     },
     {
       "name": "agent-skills",
       "type": "skill-md",
       "description": "Agent Skills Discovery index (RFC v0.2.0).",
-      "url": "https://isitagentready.com/.well-known/agent-skills/mcp-server-card/SKILL.md",
+      "url": "multireligionvalsystem.eu.org/.well-known/agent-skills/mcp-server-card/SKILL.md",
               
       "digest": "sha256:b5493339cb886c24c2311b7d1f38b8606b1c95fd324359a0670b0b89531a6e94"
     },
@@ -28,9 +28,9 @@
       "name": "webmcp",
       "type": "skill-md",
       "description": "WebMCP via navigator.modelContext.registerTool().",
-      "url": "https://isitagentready.com/.well-known/agent-skills/webmcp/SKILL.md",
+      "url": "hmultireligionvalsystem.eu.org/.well-known/agent-skills/webmcp/SKILL.md",
       "digest": "sha256:03614296c6917535ca5716450b9db0c42d50e08cf4373e09a9a47ebc06a61094"
     }
   ]
 }
-'@ | Set-Content ".well-known\agent-skills\index.json" -Encoding UTF8
+'@ | Set-Content "multireligionvalsystem.eu.org/.well-known\agent-skills\index.json" -Encoding UTF8
