@@ -1,12 +1,12 @@
 {
   "serverInfo": {
-    "name": "example-mcp-server",
+    "name": "isitagentready",
     "version": "1.0.0",
-    "description": "MCP server exposing tools and resources for AI agents"
+    "description": "MCP server for agent readiness checks and discovery"
   },
   "transport": {
     "type": "streamable-http",
-    "endpoint": "https://multireligionvalsystem.eu.org/mcp"
+    "endpoint": "https://isitagentready.com/mcp"
   },
   "capabilities": {
     "tools": true,
