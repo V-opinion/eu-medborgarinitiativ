@@ -1,16 +1,13 @@
+@'
 {
   "resource": "https://multireligionvalsystem.eu.org",
   "authorization_servers": [
     "https://multireligionvalsystem.eu.org"
   ],
-  "scopes_supported": [
-    "openid",
-    "profile",
-    "email",
-    "agent:read",
-    "agent:write"
-  ],
-  "bearer_methods_supported": [
-    "header"
-  ]
+  "scopes_supported": ["read", "write"],
+  "bearer_methods_supported": ["header"],
+  "resource_documentation": "https://multireligionvalsystem.eu.org/docs/api"
 }
+'@ | Set-Content ".well-known\oauth-protected-resource" -Encoding UTF8
+
+
