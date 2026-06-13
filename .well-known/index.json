@@ -1,3 +1,4 @@
+@'
 {
   "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
   "skills": [
@@ -12,7 +13,7 @@
       "name": "mcp-server-card",
       "type": "skill-md",
       "description": "MCP Server Card for agent discovery.",
-      "url": "https://isitagentready.com/.well-known/agent-skills/mcp-server-card/SKILL.md",
+      "url": "https://isitagentready.com/.well-known/mcp/server-card.json",
       "digest": "sha256:9a1af2376a9741bc29f97ff40120a7f115c1618188d40f2c9674b729485bd0d8"
     },
     {
@@ -31,3 +32,4 @@
     }
   ]
 }
+'@ | Set-Content ".well-known\agent-skills\index.json" -Encoding UTF8
