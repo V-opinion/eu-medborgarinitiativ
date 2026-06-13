@@ -1,3 +1,4 @@
+@'
 {
   "serverInfo": {
     "name": "example-mcp-server",
@@ -18,3 +19,4 @@
     "schemes": ["bearer"]
   }
 }
+'@ | Set-Content ".well-known\mcp\server-card.json" -Encoding UTF8
