@@ -20,7 +20,7 @@
       "name": "agent-skills",
       "type": "skill-md",
       "description": "Agent Skills Discovery index (RFC v0.2.0).",
-      "url": " https://isitagentready.com/.well-known/agent-skills/mcp-server-card/SKILL.md",
+      "url": "https://isitagentready.com/.well-known/agent-skills/mcp-server-card/SKILL.md",
               
       "digest": "sha256:b5493339cb886c24c2311b7d1f38b8606b1c95fd324359a0670b0b89531a6e94"
     },
