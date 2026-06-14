@@ -1,22 +1,16 @@
-@'
 {
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-11-25",
   "serverInfo": {
-    "name": "example-mcp-server",
-    "version": "1.0.0",
-    "description": "MCP server exposing tools and resources for AI agents"
+    "name": "multireligionvalsystem",
+    "title": "Multi-Religion Election System",
+    "version": "1.0.0"
   },
-  "transport": {
-    "type": "streamable-http",
-    "endpoint": "https://multireligionvalsystem.eu.org/mcp"
-  },
-  "capabilities": {
-    "tools": true,
-    "resources": true,
-    "prompts": false
-  },
+  "description": "A proposal for transitioning from church elections to a multi-religion election system for peace.",
+  "documentationUrl": "https://multireligionvalsystem.eu.org",
   "authentication": {
-    "required": false,
-    "schemes": ["bearer"]
-  }
+    "required": false
+  },
+  "tools": []
 }
-'@ | Set-Content ".well-known\mcp\server-card.json" -Encoding UTF8
