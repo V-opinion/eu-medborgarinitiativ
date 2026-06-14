@@ -1,9 +1,9 @@
-# Multireligionvalsystem
+# Multi-Religion Election System
 
-> The Multi-Religion Election System (Multireligionvalsystem) proposes the Faith Representatives Chamber (FRC) — a democratically elected parallel parliament of all religious communities, modeled on the Nordic church election tradition and extended to all faiths.
+> A proposal for transitioning from church elections to a multi-religion election system for peace. Political Practices in Exile. Religions for Peace.
 
-## Key pages
+## About
+- https://www.multireligionvalsystem.eu.org
 
-- Anchor article (Israel-Palestine conflict resolution): https://www.multireligionvalsystem.eu.org/multireligionvalsystem-anchor-article.html
-- Main site: https://www.multireligionvalsystem.eu.org/
-- Faith Representatives Chamber: https://frc.multireligionvalsystem.eu.org/
+## Documentation
+- https://www.multireligionvalsystem.eu.org/README.md
