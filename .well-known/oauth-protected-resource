@@ -9,5 +9,10 @@
   "resource_documentation": "https://multireligionvalsystem.eu.org/docs/api"
 }
 '@ | Set-Content ".well-known\oauth-protected-resource" -Encoding UTF8
+{
+  "resource": "https://multireligionvalsystem.eu.org",
+  "authorization_servers": ["https://your-auth-server.example.com"],
+  "bearer_methods_supported": ["header"]
+}
 
 
