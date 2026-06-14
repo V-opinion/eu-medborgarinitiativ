@@ -8,9 +8,20 @@
     "version": "1.0.0"
   },
   "description": "A proposal for transitioning from church elections to a multi-religion election system for peace.",
-  "documentationUrl": "https://www.multireligionvalsystem.eu.org"
+  "documentationUrl": "https://www.multireligionvalsystem.eu.org",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://www.multireligionvalsystem.eu.org/mcp"
+  },
+  "capabilities": {
+    "tools": false,
+    "resources": false,
+    "prompts": false
+  },
   "authentication": {
     "required": false
   },
   "tools": []
 }
+
+
