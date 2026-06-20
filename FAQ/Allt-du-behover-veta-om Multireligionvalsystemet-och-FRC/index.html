@@ -1,290 +1,304 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="se">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R247XM39WE"></script>
-<script>
+	<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R247XM39WE" type="2f281bfbd9a8864164e3a701-text/javascript"></script>
+<script type="2f281bfbd9a8864164e3a701-text/javascript">
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-R247XM39WE');
 </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Multireligionvalsystem & FRC</title>
-    <style>
-        :root {
-            --primary-color: #1a365d;
-            --secondary-color: #2b6cb0;
-            --text-color: #2d3748;
-            --bg-color: #f7fafc;
-            --card-bg: #ffffff;
-            --border-color: #e2e8f0;
-        }
+<nav class="mvs-navbar">
+    <div class="nav-container">
+        <!-- Logotyp / Hem-länk -->
+        <a href="https://multireligionvalsystem.eu.org.eu.org" class="nav-logo">
+            Multireligionvalsystem & FRC
+        </a>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-        }
+        <!-- Mobilmeny-knapp (Burgarmeny) -->
+        <button class="nav-toggle" aria-label="Öppna meny" onclick="toggleMenu()">
+            &#9776;
+        </button>
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+        <!-- Meny-länkar -->
+        <div class="nav-links" id="navLinks">
+            <a href="https://multireligionvalsystem.eu.org">Hem</a>
+            <a href="https://multireligionvalsystem.eu.org/FAQ/">FAQ</a>
+            <a href="https://multireligionvalsystem.eu.orgeu.org/fredsplan/">Fredsplanen</a>
+            <a href="https://www.multireligionvalsystem.eu.org/FAQ/Internationell-diplomati-och-asylratt-i-Multireligionvalsystemet/">Diplomati & Asyl</a>
+        </div>
+    </div>
+</nav>
 
-        h1 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-        }
+<!-- CSS-styling (Lägg till i din <style>-tagg i <head>) -->
+<style>
+    :root {
+        --nav-bg: #1a365d;
+        --nav-text: #ffffff;
+        --nav-hover: #2b6cb0;
+    }
 
-        .subtitle {
-            text-align: center;
-            color: var(--secondary-color);
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
+    .mvs-navbar {
+        background-color: var(--nav-bg);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-        .faq-section {
-            background: var(--card-bg);
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .nav-logo {
+        color: var(--nav-text);
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-links a {
+        color: var(--nav-text);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+    }
+
+    .nav-links a:hover {
+        background-color: var(--nav-hover);
+    }
+
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--nav-text);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Responsiv design för mobiler */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--nav-bg);
             padding: 20px;
-            margin-bottom: 30px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .faq-item {
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-question {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin: 0 0 10px 0;
-            cursor: pointer;
+        .nav-links.show {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
-        .faq-answer {
-            color: var(--text-color);
-            font-size: 1rem;
-            margin: 0;
-            padding-left: 5px;
+        .nav-toggle {
+            display: block;
         }
+    }
+</style>
 
-        .badge {
-            background-color: #e2e8f0;
-            color: #4a5568;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-right: 10px;
-            vertical-align: middle;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 5px;
-            font-size: 0.9rem;
-            color: #718096;
-        }
-
-        footer a {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
+<!-- JavaScript för mobilmeny (Lägg till före </body>) -->
+<script>
+    function toggleMenu() {
+        const navLinks = document.getElementById('navLinks');
+        navLinks.classList.toggle('show');
+    }
+</script>
 
 <div class="container">
-    <h1>Frågor och svar (FAQ)</h1>
-    <div class="subtitle">Allt du behöver veta om Multireligionvalsystemet och FRC</div>
+        <h1>Frågor och svar (FAQ)</h1>
+        <div class="subtitle">Allt du behöver veta om Multireligionvalsystemet och FRC</div>
 
-    <div class="faq-section">
+        <div class="faq-section">
 
-        <!-- Fråga 1 -->
-        <div class="faq-item">
-            <h3 class="faq-question">Vad är ett Multireligionvalsystem?</h3>
-            <p class="faq-answer">
-                Det är en ny, demokratisk konflikthanterings- och konfliktlösningsmodell. Systemet innebär att de traditionella, partipolitiska kyrkovalen i Norden reformeras till ett gemensamt, universellt valsystem för samtliga registrerade trossamfund under ett gemensamt demokratiskt ramverk.
-            </p>
-        </div>
+                <!-- Fråga 1 -->
+                <div class="faq-item">
+                        <h3 class="faq-question">Vad är ett Multireligionvalsystem?</h3>
+                        <p class="faq-answer">
+                                Det är en ny, demokratisk konflikthanterings- och konfliktlösningsmodell. Systemet innebär att de traditionella, partipolitiska kyrkovalen i Norden reformeras till ett gemensamt, universellt valsystem för samtliga registrerade trossamfund under ett gemensamt demokratiskt ramverk.
+                        </p>
+                </div>
 
-        <!-- Fråga 2 -->
-        <div class="faq-item">
-            <h3 class="faq-question">Vad är The Faith Representatives Chamber (FRC)?</h3>
-            <p class="faq-answer">
-                FRC är det högsta beslutande parlamentariska organet för alla deltagande trossamfund utan undantag. Det ersätter det nuvarande kyrkomötet och väljs direkt av folket vart femte år (i samband med EU-valet). FRC är helt fritt från politiker och sekulära politiska partier.
-            </p>
-        </div>
+                <!-- Fråga 2 -->
+                <div class="faq-item">
+                        <h3 class="faq-question">Vad är The Faith Representatives Chamber (FRC)?</h3>
+                        <p class="faq-answer">
+                                FRC är det högsta beslutande parlamentariska organet för alla deltagande trossamfund utan undantag. Det ersätter det nuvarande kyrkomötet och väljs direkt av folket vart femte år (i samband med EU-valet). FRC är helt fritt från politiker och sekulära politiska partier.
+                        </p>
+                </div>
 
-        <!-- Fråga 3 -->
-        <div class="faq-item">
-            <h3 class="faq-question">Varför förbjuds politiska partier i valet?</h3>
-            <p class="faq-answer">
-                Modellen kräver en fullbordad separation mellan stat och kyrka, samt mellan religion och politik. Sekulära politiska partier ska inte styra över trossamfundens inre liv eller teologi. Istället nomineras lämpliga kandidater av trossamfundens egna valberedningar.
-            </p>
-        </div>
+                <!-- Fråga 3 -->
+                <div class="faq-item">
+                        <h3 class="faq-question">Varför förbjuds politiska partier i valet?</h3>
+                        <p class="faq-answer">
+                                Modellen kräver en fullbordad separation mellan stat och kyrka, samt mellan religion och politik. Sekulära politiska partier ska inte styra över trossamfundens inre liv eller teologi. Istället nomineras lämpliga kandidater av trossamfundens egna valberedningar.
+                        </p>
+                </div>
 
-        <!-- Fråga 4 -->
-        <div class="faq-item">
-            <h3 class="faq-question">Hur fungerar rösträtten och de ungas inflytande?</h3>
-            <p class="faq-answer">
-                Alla medborgare och personer med hemvist i landet som har fyllt <strong>16 år</strong> har rösträtt i Multireligionvalet. Genom att harmonisera rösträtten till 16 år för alla religioner (vilket protestantiska ungdomar i Sverige redan har idag) inkluderas unga i demokratin, vilket motverkar utanförskap och religiös radikalisering.
-            </p>
-        </div>
+                <!-- Fråga 4 -->
+                <div class="faq-item">
+                        <h3 class="faq-question">Hur fungerar rösträtten och de ungas inflytande?</h3>
+                        <p class="faq-answer">
+                                Alla medborgare och personer med hemvist i landet som har fyllt <strong>16 år</strong> har rösträtt i Multireligionvalet. Genom att harmonisera rösträtten till 16 år för alla religioner (vilket protestantiska ungdomar i Sverige redan har idag) inkluderas unga i demokratin, vilket motverkar utanförskap och religiös radikalisering.
+                        </p>
+                </div>
 
-        <!-- Fråga 5 -->
-        <div class="faq-item">
-            <h3 class="faq-question">Hur säkerställs jämställdhet och kvinnligt ledarskap?</h3>
-            <p class="faq-answer">
-                För att få delta i systemet måste trossamfunden förbinda sig till demokratiska principer. Detta inkluderar krav på jämn könsfördelning (minst 40 % av vardera könet) i alla beslutande styrelser, samt konkreta handlingsplaner för att ge kvinnor möjlighet att nå högsta andliga ledarpositioner på samma villkor som män.
-            </p>
-        </div>
+                <!-- Fråga 5 -->
+                <div class="faq-item">
+                        <h3 class="faq-question">Hur säkerställs jämställdhet och kvinnligt ledarskap?</h3>
+                        <p class="faq-answer">
+                                För att få delta i systemet måste trossamfunden förbinda sig till demokratiska principer. Detta inkluderar krav på jämn könsfördelning (minst 40 % av vardera könet) i alla beslutande styrelser, samt konkreta handlingsplaner för att ge kvinnor möjlighet att nå högsta andliga ledarpositioner på samma villkor som män.
+                        </p>
+                </div>
 
-        <!-- Fråga 6 -->
-        <div class="faq-item">
-            <h3 class="faq-question">Hur ser valsedlarna ut och hur röstar man praktiskt?</h3>
-            <p class="faq-answer">
-                Valsedlarna trycks och administreras av Valmyndigheten och länsstyrelsen och placeras i alla valdistrikts vallokaler. För att underlätta för väljaren märks kandidaterna med bokstäver för sitt specifika samfund. Kristna kandidater grupperas exempelvis under bokstäverna <span class="badge">P</span> (Protestant), <span class="badge">O</span> (Ortodox) och <span class="badge">K</span> (Katolik). Motsvarande tydliga beteckningar används för judiska, muslimska, buddhistiska och övriga trossamfund.
-            </p>
-        </div>
+                <!-- Fråga 6 -->
+                <div class="faq-item">
+                        <h3 class="faq-question">Hur ser valsedlarna ut och hur röstar man praktiskt?</h3>
+                        <p class="faq-answer">
+                                Valsedlarna trycks och administreras av Valmyndigheten och länsstyrelsen och placeras i alla valdistrikts vallokaler. För att underlätta för väljaren märks kandidaterna med bokstäver för sitt specifika samfund. Kristna kandidater grupperas exempelvis under bokstäverna <span class="badge">P</span> (Protestant), <span class="badge">O</span> (Ortodox) och <span class="badge">K</span> (Katolik). Motsvarande tydliga beteckningar används för judiska, muslimska, buddhistiska och övriga trossamfund.
+                        </p>
+                </div>
 
-        <!-- Fråga 7 -->
-        <div class="faq-item">
-            <h3 class="faq-question">Vem betalar för detta? Kommer det att kosta skattepengar?</h3>
-            <p class="faq-answer">
-                Nej. Systemet finansieras helt oberoende av statliga skattemedel och partistöd genom den nya finansiella modellen <strong>Multireligionstödet</strong>. Det ersätter den statliga SST-stiftelsen. Istället poolas de samlade tillgångar som trossamfunden gemensamt förfogar över för att finansiera valsedlar och administration.
-            </p>
-        </div>
+                <!-- Fråga 7 -->
+                <div class="faq-item">
+                        <h3 class="faq-question">Vem betalar för detta? Kommer det att kosta skattepengar?</h3>
+                        <p class="faq-answer">
+                                Nej. Systemet finansieras helt oberoende av statliga skattemedel och partistöd genom den nya finansiella modellen <strong>Multireligionstödet</strong>. Det ersätter den statliga SST-stiftelsen. Istället poolas de samlade tillgångar som trossamfunden gemensamt förfogar över för att finansiera valsedlar och administration.
+                        </p>
+                </div>
 
-        <!-- Fråga 8 -->
-        <div class="faq-item">
-            <h3 class="faq-question">Vad är Det Interreligiösa Fredsrådet och hur kopplas det till globala konflikter?</h3>
-            <p class="faq-answer">
-                Det Interreligiösa Fredsrådet är det verkställande organet som väljs <em>av</em> representanterna i FRC. Genom att visa hur olika världsreligioner kan samarbeta under absolut demokratiska, jämställda och sekulärt skyddade former i Norden, skapas en internationell fredsmodell. Rådet förpliktigar sig att använda detta som ett verktyg för att motverka den extremism som i 78 år har låst och ärvt globala konflikter, såsom Israel-Palestina-konflikten.
-            </p>
-        </div>
-          <!DOCTYPE html>
+                <!-- Fråga 8 -->
+                <div class="faq-item">
+                        <h3 class="faq-question">Vad är Det Interreligiösa Fredsrådet och hur kopplas det till globala konflikter?</h3>
+                        <p class="faq-answer">
+                                Det Interreligiösa Fredsrådet är det verkställande organet som väljs <em>av</em> representanterna i FRC. Genom att visa hur olika världsreligioner kan samarbeta under absolut demokratiska, jämställda och sekulärt skyddade former i Norden, skapas en internationell fredsmodell. Rådet förpliktigar sig att använda detta som ett verktyg för att motverka den extremism som i 78 år har låst och ärvt globala konflikter, såsom Israel-Palestina-konflikten.
+                        </p>
+                </div>
+                    <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Multireligionvalsystem & FRC</title>
-    <style>
-        :root { --primary-color: #1a365d; --secondary-color: #2b6cb0; --text-color: #2d3748; --bg-color: #f7fafc; --card-bg: #ffffff; --border-color: #e2e8f0; }
-        body { font-family: sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        h1 { text-align: center; color: var(--primary-color); }
-        .faq-section { background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .faq-item { border-bottom: 1px solid var(--border-color); }
-        .faq-question { cursor: pointer; padding: 15px 0; margin: 0; font-weight: 600; color: var(--primary-color); display: flex; justify-content: space-between; }
-        .faq-question::after { content: '\25BC'; font-size: 0.8rem; transition: transform 0.3s; }
-        .faq-item.active .faq-question::after { transform: rotate(180deg); }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; opacity: 0; }
-        .faq-item.active .faq-answer { max-height: 500px; opacity: 1; padding-bottom: 15px; }
-        .badge { background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; }
-        footer { text-align: center; margin-top: 30px; font-size: 0.9rem; }
-    </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FAQ - Multireligionvalsystem & FRC</title>
+        <style>
+                :root { --primary-color: #1a365d; --secondary-color: #2b6cb0; --text-color: #2d3748; --bg-color: #f7fafc; --card-bg: #ffffff; --border-color: #e2e8f0; }
+                body { font-family: sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); margin: 0; padding: 20px; }
+                .container { max-width: 800px; margin: 0 auto; }
+                h1 { text-align: center; color: var(--primary-color); }
+                .faq-section { background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+                .faq-item { border-bottom: 1px solid var(--border-color); }
+                .faq-question { cursor: pointer; padding: 15px 0; margin: 0; font-weight: 600; color: var(--primary-color); display: flex; justify-content: space-between; }
+                .faq-question::after { content: '\25BC'; font-size: 0.8rem; transition: transform 0.3s; }
+                .faq-item.active .faq-question::after { transform: rotate(180deg); }
+                .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; opacity: 0; }
+                .faq-item.active .faq-answer { max-height: 500px; opacity: 1; padding-bottom: 15px; }
+                .badge { background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; }
+                footer { text-align: center; margin-top: 30px; font-size: 0.9rem; }
+        </style>
 
 <div class="container">
-    <h1>FAQ</h1>
-    <div class="faq-section">
-        <!-- Exempel på FAQ-struktur -->
-        <div class="faq-item">
-            <h3 class="faq-question">Vad är Multireligionvalsystemet?</h3>
-            <div class="faq-answer"><p>En demokratisk modell för alla samfund.</p></div>
+        <h1>FAQ</h1>
+        <div class="faq-section">
+                <!-- Exempel på FAQ-struktur -->
+                <div class="faq-item">
+                        <h3 class="faq-question">Vad är Multireligionvalsystemet?</h3>
+                        <div class="faq-answer"><p>En demokratisk modell för alla samfund.</p></div>
+                </div>
+                <div class="faq-item">
+                        <h3 class="faq-question">Vilka får rösta?</h3>
+                        <div class="faq-answer"><p>Alla medlemmar, inklusive personer med permanent uppehållstillstånd.</p></div>
+                </div>
+                <!-- Fler punkter från källan... -->
         </div>
-        <div class="faq-item">
-            <h3 class="faq-question">Vilka får rösta?</h3>
-            <div class="faq-answer"><p>Alla medlemmar, inklusive personer med permanent uppehållstillstånd.</p></div>
-        </div>
-        <!-- Fler punkter från källan... -->
-    </div>
-    <footer><p>Se fullständig FAQ: <a href="https://www.multireligionvalsystem.eu.org/FAQ/">www.multireligionvalsystem.eu.org/FAQ/</a></p></footer>
+        <footer><p>Se fullständig FAQ: <a href="https://www.multireligionvalsystem.eu.org/FAQ/">www.multireligionvalsystem.eu.org/FAQ/</a></p></footer>
 </div>
 
-<script>
-    document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
-            const item = question.parentElement;
-            item.classList.toggle('active');
-            const answer = item.querySelector('.faq-answer');
-            answer.style.maxHeight = item.classList.contains('active') ? answer.scrollHeight + "px" : null;
+<script type="35c347a4d749514a4245b9ec-text/javascript">
+        document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                        const item = question.parentElement;
+                        item.classList.toggle('active');
+                        const answer = item.querySelector('.faq-answer');
+                        answer.style.maxHeight = item.classList.contains('active') ? answer.scrollHeight + "px" : null;
+                });
         });
-    });
 </script>
  div class="peace-plan-section">
-    <h2>Fredsplanen för flyktingar och uppgörelsen med partipolitiken</h2>
-    <p>
-        Multireligionvalsystemet presenterar en konkret fredsplan för samtliga flyktingar som har tvingats lämna sina hemländer på grund av religiösa och geopolitiska konflikter. Planen adresserar ett djupt rotat problem i hur dagens politiska partier fungerar, och vänder på den nuvarande dynamiken.
-    </p>
+        <h2>Fredsplanen för flyktingar och uppgörelsen med partipolitiken</h2>
+        <p>
+                Multireligionvalsystemet presenterar en konkret fredsplan för samtliga flyktingar som har tvingats lämna sina hemländer på grund av religiösa och geopolitiska konflikter. Planen adresserar ett djupt rotat problem i hur dagens politiska partier fungerar, och vänder på den nuvarande dynamiken.
+        </p>
 
-    <div class="grid-container">
-        <!-- Dåtid/Nutid: Partipolitikens utnyttjande -->
-        <div class="card">
-            <h3>Politiska partiers roll igår och idag</h3>
-            <p>
-                Traditionella politiska partier har under lång tid utnyttjat flyktingströmmar och integration som ett politiskt slagträ. Istället för att lösa grundorsakerna till konflikterna i flyktingarnas hemländer, har partierna använt frågorna för att plocka inrikespolitiska poänger, skapa polarisering och säkra röstboskap till sekulära val. Religion och ursprung har därmed blivit verktyg i den partipolitiska maktkampen.
-            </p>
+        <div class="grid-container">
+                <!-- Dåtid/Nutid: Partipolitikens utnyttjande -->
+                <div class="card">
+                        <h3>Politiska partiers roll igår och idag</h3>
+                        <p>
+                                Traditionella politiska partier har under lång tid utnyttjat flyktingströmmar och integration som ett politiskt slagträ. Istället för att lösa grundorsakerna till konflikterna i flyktingarnas hemländer, har partierna använt frågorna för att plocka inrikespolitiska poänger, skapa polarisering och säkra röstboskap till sekulära val. Religion och ursprung har därmed blivit verktyg i den partipolitiska maktkampen.
+                        </p>
+                </div>
+
+                <!-- Framtid: Multireligionvalsystemets lösning -->
+                <div class="card reverse">
+                        <h3>Tvärtom: Multireligionvalets lösning</h3>
+                        <p>
+                                Genom att kasta ut de politiska partierna ur trossamfunden vänder vi på förhållandet helt. Istället för att flyktingar blir brickor i partipolitiken, blir de aktiva medborgare i ett demokratiskt trossamfund. Det ger dem en direkt plattform att samarbeta interreligiöst, bygga lokal integration och skicka fredsbyggande impulser tillbaka till sina ursprungsländer.
+                        </p>
+                </div>
         </div>
 
-        <!-- Framtid: Multireligionvalsystemets lösning -->
-        <div class="card reverse">
-            <h3>Tvärtom: Multireligionvalets lösning</h3>
-            <p>
-                Genom att kasta ut de politiska partierna ur trossamfunden vänder vi på förhållandet helt. Istället för att flyktingar blir brickor i partipolitiken, blir de aktiva medborgare i ett demokratiskt trossamfund. Det ger dem en direkt plattform att samarbeta interreligiöst, bygga lokal integration och skicka fredsbyggande impulser tillbaka till sina ursprungsländer.
-            </p>
+        <h3>Fredsplanens tre kärnpunkter för flyktingar</h3>
+        <ul class="peace-list">
+                <li>
+                        <strong>Rösträtt baserad på hemvist:</strong> Alla flyktingar med permanent uppehållstillstånd ges direkt rösträtt i Multireligionvalet från 16 års ålder. Detta garanterar att de inkluderas i samhällsbygget direkt utan att behöva vänta på långdragna medborgarskapsprocesser.
+                </li>
+                <li>
+                        <strong>Demokratisering av ursprungssamfund:</strong> Genom att införa krav på allmänna val, ungas inflytande och kvinnligt ledarskap, bryts de patriarkala och extremistiska strukturer som ofta förföljt flyktingar även efter att de flytt.
+                </li>
+                <li>
+                        <strong>Det globala fredsmandatet:</strong> De flyktingar som väljs in i <em>The Faith Representatives Chamber (FRC)</em> får via <em>Det Interreligiösa Fredsrådet</em> resurser att arbeta direkt med medling i de konflikter som en gång orsakade deras flykt, vilket skapar en väg mot permanent global fred.
+                </li>
+        </ul>
+
+        <div class="highlight-box">
+                Slutsats: Genom Multireligionvalsystemet slutar trossamfunden att vara verktyg för sekulära politikers intressen. Istället blir trossamfunden en fri, demokratisk arena där flyktingar och etablerade medborgare tillsammans bygger lokal trygghet och global fred.
         </div>
-    </div>
 
-    <h3>Fredsplanens tre kärnpunkter för flyktingar</h3>
-    <ul class="peace-list">
-        <li>
-            <strong>Rösträtt baserad på hemvist:</strong> Alla flyktingar med permanent uppehållstillstånd ges direkt rösträtt i Multireligionvalet från 16 års ålder. Detta garanterar att de inkluderas i samhällsbygget direkt utan att behöva vänta på långdragna medborgarskapsprocesser.
-        </li>
-        <li>
-            <strong>Demokratisering av ursprungssamfund:</strong> Genom att införa krav på allmänna val, ungas inflytande och kvinnligt ledarskap, bryts de patriarkala och extremistiska strukturer som ofta förföljt flyktingar även efter att de flytt.
-        </li>
-        <li>
-            <strong>Det globala fredsmandatet:</strong> De flyktingar som väljs in i <em>The Faith Representatives Chamber (FRC)</em> får via <em>Det Interreligiösa Fredsrådet</em> resurser att arbeta direkt med medling i de konflikter som en gång orsakade deras flykt, vilket skapar en väg mot permanent global fred.
-        </li>
-    </ul>
+        <a href="https://eu.org" class="source-link" target="_blank">Läs mer på den officiella plattformen för Multireligionvalsystemet</a>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="35c347a4d749514a4245b9ec-|49" defer></script></div>
 
-    <div class="highlight-box">
-        Slutsats: Genom Multireligionvalsystemet slutar trossamfunden att vara verktyg för sekulära politikers intressen. Istället blir trossamfunden en fri, demokratisk arena där flyktingar och etablerade medborgare tillsammans bygger lokal trygghet och global fred.
-    </div>
-
-    <a href="https://eu.org" class="source-link" target="_blank">Läs mer på den officiella plattformen för Multireligionvalsystemet</a>
-</div>
-
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"90fdef7da9c745b9921b35c565174988","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
-Use code with caution.Hur vill du gå vidare för att utveckla denna sektion?Vill du integrera denna kod direkt i det tidigare FAQ-dokumentet så att allt ligger på samma webbsida?Behöver du skriva en argumentationslista specifikt riktad till flyktingorganisationer för att förklara hur denna plan hjälper dem?Vill du lägga till information om hur systemet hanterar internationell diplomati och asylrätt i förhållande till de nordiska regeringarna?AI responses may include mistakes. Learn moreAsk 
+Use code with caution.Hur vill du gå vidare för att utveckla denna sektion?Vill du integrera denna kod direkt i det tidigare FAQ-dokumentet så att allt ligger på samma webbsida?Behöver du skriva en argumentationslista specifikt riktad till flyktingorganisationer för att förklara hur denna plan hjälper dem?Vill du lägga till information om hur systemet hanterar internationell diplomati och asylrätt i förhållande till de nordiska regeringarna?AI responses may include mistakes. Learn moreAsk
 
-    </div>
+        </div>
 
-    <footer>
-        <p>För mer information, besök vår officiella plattform på <a href="https://multireligionvalsystem.eu.org" target="_blank">frc.multireligionvalsystem.eu.org</a></p>
-    </footer>
+        <footer>
+                <p>För mer information, besök vår officiella plattform på <a href="https://multireligionvalsystem.eu.org" target="_blank">frc.multireligionvalsystem.eu.org</a></p>
+        </footer>
 </div>
 👉Read the open letter: https://www.multireligionvalsystem.eu.org/open-letter-2026-election-reform/">👉 engagera dig nu ! 🤑
-</body>
-</html>
