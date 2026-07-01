@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Multi-Religion Voting System</title>
+    <meta name="description" content="HTML Sitemap for the Multi-Religion Voting System platform. Find all available tools, resources, and documentation.">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2937;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --border-color: #e5e7eb;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        h1 {
+            font-size: 2.25rem;
+            margin-top: 0;
+            color: #111827;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+        .subtitle {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+        .sitemap-section {
+            margin-bottom: 2rem;
+        }
+        .sitemap-section h2 {
+            font-size: 1.5rem;
+            color: #374151;
+            margin-bottom: 0.5rem;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .page-desc {
+            display: block;
+            font-size: 0.875rem;
+            color: #4b5563;
+            margin-top: 0.25rem;
+        }
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Sitemap</h1>
+        <p class="subtitle">Index of available pages and applications for <code>multireligionvalsystem.eu.org/do</code></p>
+    </header>
+
+    <main>
+        <!-- Core Platform Pages -->
+        <section class="sitemap-section">
+            <h2>Core Applications & Tools</h2>
+            <ul>
+                <li>
+                    <a href="https://multireligionvalsystem.eu.org/do/">Home Dashboard</a>
+                    <span class="page-desc">The main interface and landing page for the Multi-Religion Voting System action center.</span>
+                </li>
+                <!-- Add your actual tools/sub-pages below. Examples provided: -->
+                <li>
+                    <a href="https://multireligionvalsystem.eu.org/do/vote">Voting Portal</a>
+                    <span class="page-desc">Access to live ballots, system registration, and secure token processing.</span>
+                </li>
+                <li>
+                    <a href="https://multireligionvalsystem.eu.org/do/results">Election Results</a>
+                    <span class="page-desc">Public ledger data, live tally updates, and statistical breakdowns.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Documentation & System Info -->
+        <section class="sitemap-section">
+            <h2>System & Documentation</h2>
+            <ul>
+                <li>
+                    <a href="https://multireligionvalsystem.eu.org/do/about">About the System</a>
+                    <span class="page-desc">Core philosophy, algorithmic documentation, and compliance framework guidelines.</span>
+                </li>
+                <li>
+                    <a href="https://multireligionvalsystem.eu.org/do/terms">Terms & Privacy</a>
+                    <span class="page-desc">Data handling principles, zero-knowledge security explanations, and rules of use.</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Multi-Religion Voting System. Generated for search indexation and user accessibility.</p>
+    </footer>
+</div>
+
+</body>
+</html>
