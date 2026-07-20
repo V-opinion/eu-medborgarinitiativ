@@ -20,3 +20,18 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: "dist/*"
           target: "/var/www/staging/"
+name: Deploy site
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/deploy.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish
+        run: echo "Add your GitHub Pages deploy steps here"
