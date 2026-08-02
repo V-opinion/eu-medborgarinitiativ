@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+<head
  <script>
   (function(w,d,s,l,i){
     w[l]=w[l]||[];
@@ -13,334 +14,978 @@
     f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MMV2S7Z6');
   </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --card: #12121a;
+            --card-border: rgba(255, 255, 255, 0.06);
+            --fg: #e8e6f0;
+            --muted: #6b6880;
+            --accent: #f0a040;
+            --accent-glow: rgba(240, 160, 64, 0.35);
+            --accent-dim: #c07820;
+            --progress-bg: rgba(255, 255, 255, 0.08);
+            --volume-bg: rgba(255, 255, 255, 0.08);
+        }
 
- 
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MMV2S7Z6"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe
- <meta http-equiv="X-UA-Compatible" content="IE=EDGE"/>
- <meta charset="utf-8"/>
- <meta name="kyrkovalsreforme" content="kyrkovalsreforme"/>
- <meta name="XAR Files" content="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/xr_files.txt"/>
- <title>Det svenska valsystemet | är kyrkovalet ett politiskt val</title>
- <meta name="viewport" content="width=device-width, initial-scale=1" />
- <meta name="keywords" content="politiskt val, påven, reform, protestantiska trossamfund, Det svenska valsystemet,  är kyrkovalet ett politiskt val"/>
- <meta name="description" content="Är kyrkovalet ett politiskt val, Hur kommer det sig att påven och hans trossamfund motsätter sig den reform som protestantiska trossamfund  i de nordiska länderna lyckats med ?"/>
- <link rel="preload" href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/xr_fonts.css" as="style" onload="this.onload = null; this.rel = 'stylesheet'" />
- <script><!--
- if(navigator.userAgent.indexOf('MSIE')!=-1 || navigator.userAgent.indexOf('Trident')!=-1){ document.write('<link rel="stylesheet" href="https://multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/xr_fontsie.css"/>');} 
- if(navigator.userAgent.indexOf('Android')!=-1){ document.write('<link rel="stylesheet" href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/xr_fontsrep.css"/>');} 
---></script>
- <script>document.documentElement.className="xr_bgh0";</script>
- <link rel="preload" href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/highslide.css" as="style" onload="this.onload = null; this.rel = 'stylesheet'" />
- <!--[if lt IE 7]><link rel="stylesheet" href="https://multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/highslide-ie6.css" /><![endif]-->
- <script async src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/highslide.js"></script>
- <link rel="stylesheet" href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/xr_main.css"/>
- <link rel="preload" href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/custom_styles.css" as="style" onload="this.onload = null; this.rel = 'stylesheet'" />
- <link rel="preload" href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/xr_text.css" as="style" onload="this.onload = null; this.rel = 'stylesheet'" />
- <link rel="canonical" href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/index.html" />
- <meta name="twitter:card" content="summary_large_image" />
- <meta property="og:type" content="website" />
- <meta property="og:title" content="Det svenska valsystemet |  är kyrkovalet ett politiskt val" />
- <meta property="og:description" content="Det svenska valsystemet, är kyrkovalet ett politiskt val
-Varför mördade  de israeliska terroristerna Nobels fredspristagare Yitzhak Rabin när han deltog i  fredsavtalet, Osloavtalet! . Det mordet ski" />
- <meta property="og:url" content="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen" />
- <meta property="og:image" content="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/opengraph.jpg" />
- <meta property="og:image:type" content="image/jpeg" />
- <meta property="og:image:width" content="500" />
- <meta property="og:image:height" content="374" />
- <script src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/roe.js"></script>
- <script async src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/replaceMobileFonts.js"></script>
- <link rel="stylesheet" href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/xr_all.css" id="xr_mvcss"/>
- <!--[if lt IE 9]><link rel="stylesheet" href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/xr_ie.css"/><![endif]-->
- <script> var xr_multivar=1;xr_ios_ini2();</script>
- <style>
-  @media screen and (min-width: 720px) and (max-width: 1359px) {#xr_xr {top:0px;}}
-  @media screen and (max-width: 719px) {#xr_xr {top:0px;}}
- </style>
- <style>.xr_pbd {position: absolute; border:none;}</style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Atmospheric background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -40%;
+            left: -20%;
+            width: 80vw;
+            height: 80vw;
+            background: radial-gradient(circle, rgba(240, 160, 64, 0.06) 0%, transparent 65%);
+            pointer-events: none;
+            animation: driftBlob 18s ease-in-out infinite alternate;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -30%;
+            right: -15%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(180, 80, 220, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+            animation: driftBlob 22s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes driftBlob {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(60px, -40px) scale(1.15);
+            }
+        }
+
+        /* Hidden native audio */
+        #MediaPlayer1 {
+            display: none !important;
+        }
+
+        /* Player container */
+        .player-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            padding: 0 16px;
+            z-index: 10;
+        }
+
+        .player-card {
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 32px 28px 28px;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 2px 40px rgba(0, 0, 0, 0.5),
+                0 0 80px rgba(240, 160, 64, 0.03);
+            backdrop-filter: blur(20px);
+        }
+
+        /* Subtle inner glow at top */
+        .player-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20%;
+            right: 20%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-glow), transparent);
+        }
+
+        /* Visualizer area */
+        .visualizer-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 28px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vis-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1.5px solid rgba(240, 160, 64, 0.12);
+            animation: pulseRing 3s ease-in-out infinite;
+        }
+
+        .vis-ring:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            animation-delay: 0s;
+        }
+
+        .vis-ring:nth-child(2) {
+            width: 120%;
+            height: 120%;
+            animation-delay: 0.6s;
+            opacity: 0.6;
+        }
+
+        .vis-ring:nth-child(3) {
+            width: 140%;
+            height: 140%;
+            animation-delay: 1.2s;
+            opacity: 0.3;
+        }
+
+        .player-card:not(.playing) .vis-ring {
+            animation-play-state: paused;
+        }
+
+        @keyframes pulseRing {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.04);
+                opacity: 1;
+            }
+        }
+
+        .vis-disc {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg,
+                    #1a1a28, #22222e, #1a1a28, #22222e, #1a1a28);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .player-card.playing .vis-disc {
+            animation: spinDisc 4s linear infinite;
+        }
+
+        @keyframes spinDisc {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .vis-disc::after {
+            content: '';
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 12px var(--accent-glow), 0 0 30px rgba(240, 160, 64, 0.15);
+        }
+
+        /* Canvas visualizer bars behind disc */
+        #visualizerCanvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        /* Track info */
+        .track-info {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .track-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--fg);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .track-artist {
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+        }
+
+        /* Progress bar */
+        .progress-section {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar-wrap {
+            width: 100%;
+            height: 6px;
+            background: var(--progress-bg);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+            transition: height 0.15s ease;
+        }
+
+        .progress-bar-wrap:hover {
+            height: 8px;
+        }
+
+        .progress-bar-wrap:hover .progress-thumb {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+            border-radius: 3px;
+            width: 0%;
+            position: relative;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 8px rgba(240, 160, 64, 0.2);
+        }
+
+        .progress-thumb {
+            position: absolute;
+            right: -7px;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.6);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
+            opacity: 0;
+            transition: opacity 0.15s, transform 0.15s;
+            pointer-events: none;
+        }
+
+        .time-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 0.72rem;
+            font-weight: 400;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Controls */
+        .controls-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 22px;
+        }
+
+        .ctrl-btn {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: color 0.2s, background 0.2s, transform 0.15s;
+            outline: none;
+        }
+
+        .ctrl-btn:hover {
+            color: var(--fg);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .ctrl-btn:active {
+            transform: scale(0.92);
+        }
+
+        .ctrl-btn:focus-visible {
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        .play-btn {
+            width: 58px;
+            height: 58px;
+            font-size: 1.35rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+            color: #0a0a0f;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px var(--accent-glow), 0 0 40px rgba(240, 160, 64, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .play-btn:hover {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+            color: #0a0a0f;
+            transform: scale(1.06);
+            box-shadow: 0 4px 28px var(--accent-glow), 0 0 60px rgba(240, 160, 64, 0.15);
+        }
+
+        .play-btn:active {
+            transform: scale(0.96);
+        }
+
+        .play-btn i {
+            margin-left: 2px;
+        }
+
+        .player-card.playing .play-btn i.fa-play::before {
+            content: "\f04c";
+        }
+
+        /* Volume row */
+        .volume-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0 4px;
+        }
+
+        .volume-icon {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 0.9rem;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s;
+            outline: none;
+            flex-shrink: 0;
+        }
+
+        .volume-icon:hover {
+            color: var(--fg);
+        }
+
+        .volume-icon:focus-visible {
+            box-shadow: 0 0 0 2px var(--accent);
+            border-radius: 4px;
+        }
+
+        .volume-bar-wrap {
+            flex: 1;
+            height: 4px;
+            background: var(--volume-bg);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .volume-bar-wrap:hover {
+            height: 6px;
+        }
+
+        .volume-fill {
+            height: 100%;
+            background: var(--muted);
+            border-radius: 2px;
+            width: 80%;
+            transition: width 0.05s linear, background 0.2s;
+        }
+
+        .volume-bar-wrap:hover .volume-fill {
+            background: var(--accent);
+        }
+
+        .volume-percent {
+            font-size: 0.7rem;
+            color: var(--muted);
+            width: 30px;
+            text-align: right;
+            font-variant-numeric: tabular-nums;
+            flex-shrink: 0;
+        }
+
+        /* Speed indicator */
+        .speed-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--muted);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+            outline: none;
+            flex-shrink: 0;
+            margin-left: 6px;
+        }
+
+        .speed-btn:hover {
+            color: var(--accent);
+            border-color: rgba(240, 160, 64, 0.2);
+            background: rgba(240, 160, 64, 0.06);
+        }
+
+        .speed-btn:focus-visible {
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            color: var(--fg);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.82rem;
+            padding: 10px 22px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 999;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Floating particles */
+        .particle {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 0;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+
+            .vis-ring,
+            .vis-disc,
+            .particle {
+                animation: none !important;
+            }
+
+            .player-card.playing .vis-disc {
+                animation: none !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .player-card {
+                padding: 24px 20px 22px;
+                border-radius: 20px;
+            }
+
+            .visualizer-container {
+                width: 110px;
+                height: 110px;
+                margin-bottom: 22px;
+            }
+
+            .vis-disc {
+                width: 88px;
+                height: 88px;
+            }
+
+            .track-title {
+                font-size: 1.05rem;
+            }
+
+            .controls-row {
+                gap: 18px;
+            }
+
+            .play-btn {
+                width: 52px;
+                height: 52px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
-<body class="xr_bgb0">
-<div class="xr_ap" id="xr_bph" style="width: 100%; height: 100%; left: 0px; top: 0px; overflow: hidden;">
-<div class="xr_ar xr_mvp_1 " style="width: 100%; height: 100%;">
-<div class="xr_pbd">
- <span class="xr_ar" style="left:0px;top:0px;width:960px;height:80px; background-color: #9EBE23;"></span>
-</div>
-</div>
-<div class="xr_ar xr_mvp_2 xr_mvpo " style="width: 100%; height: 100%;">
-<div class="xr_pbd">
- <span class="xr_ar" style="left:0px;top:0px;width:480px;height:80px; background-color: #9EBE23;"></span>
-</div>
-</div>
-</div>
-<!--[if gte IE 9]><!-->
-<div id="xr_xr" class="xr_noc" style="position:relative; text-align:left; margin:0 auto;" onmousedown="xr_mm(event);">
-<!--<![endif]-->
-<!--[if lt IE 9]>
-<div class="xr_ap" id="xr_xr" style="width: 960px; height: 1092px; left:50%; margin-left: -480px; text-align: left; top:0px;">
-<![endif]-->
- <script>var xr_xr=document.getElementById("xr_xr")</script>
-<div id="xr_td" class="xr_td">
-<div id="xr_mvp_1" class="xr_mvp_1 xr_bgn_0_0_0" style="position:absolute; width:960px; height:1092px;">
-<div class="xr_ap xr_pp">
- <span class="xr_ar" style="left:0px;top:0px;width:960px;height:1092px; pointer-events: none;"></span>
- <span class="xr_ar" style="left:0px;top:327px;width:960px;height:765px; background-color: #FFFFFF;"></span>
-</div>
-<div id="xr_xrc1" class="xr_ap xr_xri_ xr_xrc" style="width: 960px; height: 1092px; overflow:hidden;">
-<div class="xr_group">
- <span class="xr_ar" style="left:35px;top:405px;width:960px;height:34px; background-color: #4A4A4A;"></span>
-</div>
-<div class="xr_group">
- <div class="xr_txt xr_s0" style="position: absolute; left:929px; top:1030px; width:72px; height:10px;">
-  <span class="xr_tr xr_s0" style="left: -79.5px; top: -10.69px; width: 80px;"><a href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/" onclick="return(xr_nn());" onmousemove="xr_mo(this,0)" ><span class="xr_s0" style="text-decoration:underline;">Endast genom den konfliktlösningsmodellen uppnås separation mellan stat och kyrka och mellan  religion och politik !</span></a></span>
- </div>
-</div>
-<div class="xr_group">
- <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#109;&#117;&#108;&#116;&#105;&#114;&#101;&#108;&#105;&#103;&#105;&#111;&#110;&#118;&#97;&#108;&#115;&#121;&#115;&#116;&#101;&#109;&#46;&#101;&#117;&#46;&#111;&#114;&#103;" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/124.png" alt="" title="" onmousemove="xr_mo(this,0,event)" style="left:912px;top:10px;width:30px;height:30px; filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.80));"/>
-   <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/147.png" alt="" title="" onmousemove="xr_mo(this,0)" style="left:912px;top:10px;width:30px;height:30px; filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.80));"/>
- </a>
-</div>
- <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/378.png" alt="" title="" style="left:363px;top:392px;width:388px;height:44px;"/>
- <div class="xr_txt Heading_1 xr_s1" style="position: absolute; left:376px; top:423px; width:357px; height:10px;">
-  <h1 class="xr_tl Heading_1 xr_s1" style="top: -34.21px;margin:0;"><span id="Heading1Text26"></span>konfliktlösningsmodell</h1>
- </div>
- <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/316.png" alt="" title="" style="left:34px;top:442px;width:961px;height:641px;"/>
- <img class="xr_rn_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/317.png" alt="" title="" style="left:34px;top:442px;width:961px;height:641px;"/>
- <img class="xr_rn_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/318.png" alt="" title="" style="left:196px;top:455px;width:688px;height:620px;"/>
- <img class="xr_rn_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/319.png" alt="" title="" style="left:202px;top:460px;width:683px;height:623px;"/>
- <img class="xr_rn_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/392.png" alt="Reform av kyrkovalet , det hemliga valet som skall     äga rnum i sep 2025  Endast genom den konfliktlösningsmodellen uppnås  separation mellan stat och kyrka och mellan  religion och politik !" title="" style="left:34px;top:442px;width:961px;height:641px;"/>
- <img class="xr_rn_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/140.jpg" alt="" title="" style="left:31px;top:438px;width:1px;height:1px;"/>
- <a href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/141.png" alt="FDU" title="" onmousemove="xr_mo(this,0,event)" style="left:397px;top:940px;width:59px;height:53px;"/>
- </a>
- <a href="https://www.facebook.com/demokratin" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/142.png" alt="" title="" onmousemove="xr_mo(this,0,event)" style="left:543px;top:945px;width:43px;height:43px;"/>
- </a>
- <a href="https://twitter.com/DPNS" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/143.png" alt="" title="" onmousemove="xr_mo(this,0,event)" style="left:616px;top:915px;width:43px;height:42px;"/>
- </a>
- <a href="http://www.youtube.com/user/solidaritet" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/144.png" alt="" title="" onmousemove="xr_mo(this,0,event)" style="left:682px;top:886px;width:42px;height:41px;"/>
- </a>
- <a href="http://se.linkedin.com/in/solidarity" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/145.png" alt="" title="" onmousemove="xr_mo(this,0,event)" style="left:743px;top:849px;width:43px;height:43px;"/>
- </a>
- <img class="xr_rn_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/146.jpg" alt="" title="" style="left:0px;top:79px;width:969px;height:206px;"/>
- <img class="xr_rn_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/363.jpg" alt="" title="" style="left:0px;top:2px;width:969px;height:283px;"/>
- <div class="xr_txt xr_s2" style="position: absolute; left:47px; top:903px; width:257px; height:10px;">
-  <h2 class="xr_tl Heading_2 xr_s3" style="top: -21.38px;margin:0;"><a href="https://fdu.multireligionvalsystem.eu.org/eu-medborgarinitiativ/Swexit-eller-krig" onclick="return(xr_nn());" onmousemove="xr_mo(this,0)" >Kyrkovalsreform</a></h2>
-  <h3 class="xr_tl Heading_3 xr_s4" style="top: 20.86px;margin:0;"><a href="https://www.multireligionvalsystem.eu.org/Conflict-resolution-model/" onclick="return(xr_nn());" onmousemove="xr_mo(this,0)" >Det svenska valsystemet,.</a></h3>
-  <h3 class="xr_tl Heading_3 xr_s4" style="top: 59.86px;margin:0;"><a href="https://www.multireligionvalsystem.eu.org/eu-citizens-initiative/" onclick="return(xr_nn());" onmousemove="xr_mo(this,0)" >Är kyrkovalet ett politiskt val</a></h3>
- </div>
-<div class="xr_group">
- <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/157.png" alt="" title="" style="left:0px;top:1027px;width:960px;height:65px;"/>
- <div class="xr_txt xr_s5" style="position: absolute; left:30px; top:1055px; width:175px; height:10px;">
-  <span class="xr_tl xr_s5" style="top: -10.69px;"><a href="https://www.multireligionvalsystem.eu.org/" onclick="return(xr_nn());" onmousemove="xr_mo(this,0)" ><span class="xr_s5" style="text-decoration:underline;">https://multireligionvalsystem.eu.org/</span></a></span>
- </div>
-</div>
- <div class="xr_txt Heading_3 xr_s4" style="position: absolute; left:314px; top:971px; width:9px; height:10px;">
-  <h3 class="xr_tl Heading_3 xr_s4" style="top: -19px;margin:0;">?</h3>
- </div>
- <div id="xr_xo0" class="xr_ap" style="left:0; top:0; width:960px; height:100px; visibility:hidden; z-index:3;">
- <a href="" onclick="return(false);" onmousedown="xr_ppir(this);">
- </a>
- </div>
- <div id="xr_xd0"></div>
-</div>
-<div class="xr_xpos" style="position:absolute; left: -77px; top: 285px; width:1162px; height:44px;">
-<div id="xr_nb1" class="xr_ar">
- <div class="xr_ar xr_nb0">
- <a href="javascript:;" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/307.png" alt="Det svenska valsystemet" title="" onmousemove="xr_mo(this,0,event)" style="left:0px;top:0px;width:174px;height:44px;"/>
-  <img class="xr_rn_ xr_rnsp_ xr_ap xr_rs" src="https://multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/332.png" alt="Det svenska valsystemet" title="" onmousemove="xr_mo(this,0)" style="left:0px;top:0px;width:174px;height:44px;"/>
- </a>
- </div>
- <div class="xr_ar xr_nb0">
- <a href="https://fdu.multireligionvalsystem.eu.org/" target="_self" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/308.png" alt="FDU" title="" onmousemove="xr_mo(this,0,event)" style="left:175px;top:0px;width:50px;height:44px;"/>
-  <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/333.png" alt="FDU" title="" onmousemove="xr_mo(this,0)" style="left:175px;top:0px;width:50px;height:44px;"/>
- </a>
- </div>
- <div class="xr_ar xr_nb0">
- <a href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/" target="_self" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/309.png" alt="kyrkovalsreforme" title="" onmousemove="xr_mo(this,0,event)" style="left:226px;top:0px;width:131px;height:44px;"/>
-  <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/334.png" alt="kyrkovalsreforme" title="" onmousemove="xr_mo(this,0)" style="left:226px;top:0px;width:131px;height:44px;"/>
- </a>
- </div>
- <div class="xr_ar xr_nb0">
- <a href="https://www.multireligionvalsystem.eu.org/Valet-av-TRC-amp.dev/%20" target="_self" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/310.png" alt="About" title="" onmousemove="xr_mo(this,0,event)" style="left:358px;top:0px;width:63px;height:44px;"/>
-  <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/335.png" alt="About" title="" onmousemove="xr_mo(this,0)" style="left:358px;top:0px;width:63px;height:44px;"/>
- </a>
- </div>
- <div class="xr_ar xr_nb0">
- <a href="https://fdu.multireligionvalsystem.eu.org/v%C3%A5ra-europeiskt-medborgarinitiativ-i-Social-Media//" target="_self" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/311.png" alt="Frystorkning av de döda" title="" onmousemove="xr_mo(this,0,event)" style="left:422px;top:0px;width:171px;height:44px;"/>
-  <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/336.png" alt="Frystorkning av de döda" title="" onmousemove="xr_mo(this,0)" style="left:422px;top:0px;width:171px;height:44px;"/>
- </a>
- </div>
- <div class="xr_ar xr_nb0">
- <a href="https://www.multireligionvalsystem.eu.org/Conflict-resolution-model" target="_self" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/312.png" alt="Conflict-resolution-model" title="" onmousemove="xr_mo(this,0,event)" style="left:594px;top:0px;width:179px;height:44px;"/>
-  <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/337.png" alt="Conflict-resolution-model" title="" onmousemove="xr_mo(this,0)" style="left:594px;top:0px;width:179px;height:44px;"/>
- </a>
- </div>
- <div class="xr_ar xr_nb0">
- <a href="https://www.multireligionvalsystem.eu.org/a-parallel-parliament" target="_self" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/313.png" alt="A parallel parliament" title="" onmousemove="xr_mo(this,0,event)" style="left:774px;top:0px;width:152px;height:44px;"/>
-  <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/338.png" alt="A parallel parliament" title="" onmousemove="xr_mo(this,0)" style="left:774px;top:0px;width:152px;height:44px;"/>
- </a>
- </div>
- <div class="xr_ar xr_nb0">
- <a href="https://www.multireligionvalsystem.eu.org/mres/" target="_self" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/314.png" alt="multireligionvalsystem" title="" onmousemove="xr_mo(this,0,event)" style="left:928px;top:0px;width:161px;height:44px;"/>
-  <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/339.png" alt="multireligionvalsystem" title="" onmousemove="xr_mo(this,0)" style="left:928px;top:0px;width:161px;height:44px;"/>
- </a>
- </div>
-</div>
-</div>
-</div>
-<div id="xr_mvp_2" class="xr_mvp_2 xr_bgn_1_0_0 xr_mvpo" style="position:absolute; width:480px; height:1531px;">
-<div class="xr_ap xr_pp">
- <span class="xr_ar" style="left:0px;top:0px;width:480px;height:1531px; pointer-events: none;"></span>
- <span class="xr_ar" style="left:0px;top:327px;width:480px;height:1204px; background-color: #FFFFFF;"></span>
-</div>
-<div id="xr_xrc2" class="xr_ap xr_xri_ xr_xrc" style="width: 480px; height: 1531px; overflow:hidden;">
-<div class="xr_group">
- <img class="xr_rn_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/376.jpg" alt="" title="" style="left:0px;top:80px;width:480px;height:220px;"/>
-</div>
-<div class="xr_group">
- <span class="xr_ar" style="left:0px;top:273px;width:480px;height:54px; background-color: #4A4A4A;"></span>
-</div>
-<div class="xr_group">
- <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/33.png" alt="" title="" style="left:0px;top:1421px;width:480px;height:110px;"/>
- <div class="xr_txt xr_s6" style="position: absolute; left:19px; top:1459px; width:271px; height:10px;">
-  <span class="xr_tl xr_s6" style="top: -14.96px;">© FDU </span>
-  <span class="xr_tl xr_s6" style="top: 6.01px;">konfliktlösningsmodell</span>
- </div>
-</div>
-<div class="xr_group">
- <div class="xr_txt xr_s6" style="position: absolute; left:460px; top:1467px; width:101px; height:10px;">
-  <span class="xr_tr xr_s6" style="left: -111.31px; top: -14.96px; width: 111px;"><a href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/" onclick="return(xr_nn());" onmousemove="xr_mo(this,6)" ><span class="xr_s6" style="text-decoration:underline;">Endast genom den konfliktlösningsmodellen uppnås separation mellan stat och kyrka och mellan  religion och politik !
-</span></a></span>
- </div>
-</div>
-<div class="xr_group">
- <a href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/3.png" alt="" title="" onmousemove="xr_mo(this,6,event)" style="left:345px;top:24px;width:30px;height:31px; filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.80));"/>
-   <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/19.png" alt="" title="" onmousemove="xr_mo(this,6)" style="left:345px;top:24px;width:30px;height:31px; filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.80));"/>
- </a>
-</div>
-<div class="xr_group">
- <a href="https://www.multireligionvalsystem.eu.org/mres/" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/4.png" alt="" title="" onmousemove="xr_mo(this,6,event)" style="left:431px;top:24px;width:30px;height:31px; filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.80));"/>
-   <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/20.png" alt="" title="" onmousemove="xr_mo(this,6)" style="left:431px;top:24px;width:30px;height:31px; filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.80));"/>
- </a>
-</div>
-<div class="xr_group">
- <a href="https://www.multireligionvalsystem.eu.org/mres/" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/5.png" alt="" title="" onmousemove="xr_mo(this,6,event)" style="left:388px;top:24px;width:30px;height:31px; filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.80));"/>
-   <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/21.png" alt="" title="" onmousemove="xr_mo(this,6)" style="left:388px;top:24px;width:30px;height:31px; filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.80));"/>
- </a>
-</div>
- <div class="xr_txt xr_s7" style="position: absolute; left:45px; top:450px; width:257px; height:10px;">
-  <h2 class="xr_tl Heading_2 xr_s8" style="top: -29.93px;margin:0;"><a href="https://fdu.multireligionvalsystem.eu.org/eu-medborgarinitiativ/Swexit-eller-krig" onclick="return(xr_nn());" onmousemove="xr_mo(this,6)" >Kyrkovalsreform</a></h2>
-  <h3 class="xr_tl Heading_3 xr_s4" style="top: 23.2px;margin:0;"><a href="https://www.multireligionvalsystem.eu.org/eu-citizens-initiative/" onclick="return(xr_nn());" onmousemove="xr_mo(this,6)" >Det svenska valsystemet,.</a></h3>
-  <h3 class="xr_tl Heading_3 xr_s4" style="top: 62.2px;margin:0;"><a href="https://www.multireligionvalsystem.eu.org/eu-citizens-initiative/" onclick="return(xr_nn());" onmousemove="xr_mo(this,6)" >Är kyrkovalet ett politiskt val</a></h3>
- </div>
- <a href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/42.jpg" class="highslide" onmouseover="hs.headingText=''" onclick="return hs.expand(this, { headingText: '', slideshowGroup: 1 } )">
-  <img class="xr_rn_ xr_ap" id="Xxr_v2_template:58object" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/35.jpg" alt="" title="" onmousemove="xr_mo(this,6,event)" style="left:44px;top:576px;width:187px;height:187px;"/>
- </a>
- <a href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/43.jpg" class="highslide" onmouseover="hs.headingText=''" onclick="return hs.expand(this, { headingText: '', slideshowGroup: 1 } )">
-  <img class="xr_rn_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/36.jpg" alt="" title="" onmousemove="xr_mo(this,6,event)" style="left:249px;top:576px;width:187px;height:187px;"/>
- </a>
- <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/38.png" alt="" title="" style="left:44px;top:804px;width:393px;height:537px;"/>
- <div class="xr_txt xr_s9" style="position: absolute; left:73px; top:854px; width:336px; height:10px;">
-  <h2 class="xr_tl Heading_2 xr_s10" style="top: -29.93px;margin:0;"><span id="Xxr_v2_PanelText5"></span>Hur löser man den 77-år långa konflikten,  Israel-Palestina , en steg för steg guide. </h2>
-  <h2 class="xr_tl Heading_2 xr_s10" style="top: 8.2px;margin:0;">Det är en ohållbar politik och omänsligt  att FN och EU  överlämnar samma konflikt som har pågått i 77 år till kommande valda politiker samt till nästkommande generation..</h2>
-  <span class="xr_tl Normal_text xr_s11" style="top: 61.33px;">Om varför misslyckas FN, EU , påvar , amerikanska presidenter med att lösa den konflikten . Inte heller Nobels fredpristagare har kunnat  lösa konflikten  , läs vidare .....  </span>
-  <span class="xr_tl Normal_text xr_s11" style="top: 93.19px;">Den här effektiva , aldrig tillämpade konfliktlösningsmodellen skall steg för steg visa hur den konflikten kan lösas på ett effektivt och rättvist demokratiskt sätt som gynnar alla  religioner som i sin tur  leder till en ny och fredlig värld . </span>
-  <span class="xr_tl Normal_text xr_s11" style="top: 125.06px;">Vi kommer att använda en modell som redan tillämpas i de nordiska länderna som redan har infört demokrati i sina trossamfund genom kyrkovalet .  Kyrkovalet i Sverige äger run i sep 2025 om bara fyra månder . Trots att riksdagspartierna deltar i det valet och talmannen öppnar kyrkomötet vill varken kyrkan, massmedia eller riksdagspartierna tala om detta viktiga val som ger de som fyllt 16 år rösträtt vilket gör att de får praktisera demokrati två år innan det allmänna valet ., </span>
-  <span class="xr_tl Normal_text xr_s11" style="top: 156.92px;">Frågan är huruvida  kyrkovalet , införandet av demokrati i de protestantiska trossamfunden i de nordiska länderna bidragit till fred mellan dessa länder  . Andra länder såväl inom EU som FN-länderna saknar motsvarande reform.  Varför ?  </span>
-  <span class="xr_tl Normal_text xr_s11" style="top: 188.79px;">1) Kan det bero på att de nordiska länderna och de röstberättigade i kyrkovalet betraktar det som om det skulle handla om religion och att staten och kyrkan är separerade på samma sätt som religionen är separerad från politiken . </span>
-  <span class="xr_tl Normal_text xr_s11" style="top: 220.65px;">2) Kan det bero på att de med invandrarbakgrund och deras trossamfund i de nordiska länderna saknar kunskap om kyrkovalet trots att riksdagspartierna deltar i  detsamma och att talmannen öppnar det högsta beslutande organ , kyrkomötet på samma sätt som han öppnar riksdagen. </span>
-  <span class="xr_tl Normal_text xr_s11" style="top: 252.51px;">Genom att konfliktlösningsmodellen, steg för steg, informerar alla om betydelsen av kyrkovalet och varför endast de  nordiska ländernas , protestantiska trossmfund infört det. </span>
-  <span class="xr_tl Normal_text xr_s11" style="top: 284.38px;">Hur fungerar egentlign SIR, Sveriges interreligiösa råd som en nationell plattform för trossamfund där de kan mötas, bygga tillit och agera tillsammans under de pågående krig i Gaza ? </span>
-  <span class="xr_tl Normal_text xr_s11" style="top: 316.24px;">Vill du att dina barn som har fyllt 16 år ska praktisera demokrati två år innan det allmäna valet eller EU-valet ? </span>
-  <span class="xr_tl Normal_text xr_s11" style="top: 348.11px;">Vill de trossamfund som är icke protestantiska införa demokrati i sina trossamfund på samma sätt som de nordiska länder där de sökt skydd  på grund av  förföljelse , religiös, ekonomisk , krig eller politisk .?.
 
-Vill  de trossamfund som är icke protestantiska informera allmänheten om sina religioner samt  öppna sina bönelokaler för allmänheten för att kunna rösta  på samma sätt som de protestantiska kyrkorna.?
+<body>
 
-Vill de trossamfund som är icke protestantiska göra religionsundervisningen mer intressant genom att då och då delta i religionsundervisningen i skolorna så att eleverna får lära sin mer och på det sättet blir teologin mera intressant  . ?
+    <!-- The original audio element (hidden, used for actual playback) -->
+    <div id="wb_MediaPlayer1" style="display:block;width:100%;z-index:10;">
+        <audio id="MediaPlayer1" autoplay controls>
+            <source src="https://multireligionvalsystem.eu.org/FAQ/TRK.m4a" type="audio/wav">
+        </audio>
+    </div>
 
-Vill de som representerar alla trossamfund i de nordiska länderna få stopp  på den 77 år  långa konflikten från att överlämnas till nästkommande generation ? 
+    <!-- Custom player UI -->
+    <div class="player-wrapper">
+        <div class="player-card" id="playerCard">
 
-Svaret på ovan nämnda frågor leder oss till möjligheten att införa demokrati i alla trossamfund utan undantag. Detta sker genom kyrkovalsreformen. Multireligionvalsystemet som den teoretiska och Multireligionvalet som den praktiska tillämpningen samt Multireligionstödet som finansieringsmodell som ersätter statsbidraget från SST-stiftelsen.
+            <!-- Visualizer -->
+            <div class="visualizer-container">
+                <canvas id="visualizerCanvas" width="200" height="200"></canvas>
+                <div class="vis-ring"></div>
+                <div class="vis-ring"></div>
+                <div class="vis-ring"></div>
+                <div class="vis-disc"></div>
+            </div>
 
-Endast genom den konfliktlösningsmodellen uppnås separation mellan stat och kyrka och mellan  religion och politik !
-</span>
- </div>
-<div class="xr_group">
- <a href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/39.png" alt="More Info" title="" onmousemove="xr_mo(this,6,event)" style="left:304px;top:1265px;width:106px;height:52px;"/>
-  <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/41.png" alt="More Info" title="" onmousemove="xr_mo(this,6)" style="left:304px;top:1265px;width:106px;height:52px;"/>
- </a>
-</div>
- <div id="xr_xo6" class="xr_ap" style="left:0; top:0; width:480px; height:100px; visibility:hidden; z-index:3;">
- <a href="" onclick="return(false);" onmousedown="xr_ppir(this);">
- </a>
- </div>
- <div id="xr_xd6"></div>
-</div>
-<div class="xr_xpos" style="position:absolute; left: 157px; top: 278px; width:182px; height:44px;">
-<div id="xr_nb5" class="xr_ar">
- <div class="xr_ar xr_nb0">
- <a href="javascript:;" aria-haspopup="true" onclick="return(xr_nn());">
-  <img class="xr_rn_ xr_rnsp_ xr_ap" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/37.png" alt="Navigation Menu" title="" style="left:0px;top:0px;width:182px;height:44px;"/>
-  <img class="xr_rn_ xr_rnsp_ xr_ap xr_ro xr_ro0 xr_tt3" src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/40.png" alt="Navigation Menu" title="" onmousemove="xr_mo(this,6)" style="left:0px;top:0px;width:182px;height:44px;"/>
- </a>
-  <div class="xr_nb2 xr_nb5 xr_smp0_-182" style="left:0px; top:44px; min-width:182px;">
-  <ul class="xr_nb4">
-   <li><a href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/">Home</a>
-   </li>
-   <li><a href="https://www.multireligionvalsystem.eu.org/about" target="_self">About</a>
-   </li>
-   <li><a href="https://how-to-multireligionval.multireligionvalsystem.eu.org/" target="_self">How to Multireligionvalsystem</a>
-   </li>
-   <li><a href="https://www.multireligionvalsystem.eu.org/Conflict-resolution-model/?_gl=1*buj0p3*_ga*Mzc3NzgxNjY3LjE3ODEzODkzMjc.*_ga_22XJ6G2CEE*czE3ODQzOTQ5NzkkbzY1JGcxJHQxNzg0Mzk1MjY0JGo1NiRsMCRoODkyNDQ1OTc3" target="_self">Store</a>
-   </li>
-   <li><a href="https://frc.multireligionvalsystem.eu.org/" target="_self">FRC</a>
-   </li>
-   <li><a href="https://mres.multireligionvalsystem.eu.org/" target="_self">MRES</a>
-   </li>
-   <li><a href="https://www.multireligionvalsystem.eu.org/contact?_gl=1*1so4b9m*_ga*Mzc3NzgxNjY3LjE3ODEzODkzMjc.*_ga_22XJ6G2CEE*czE3ODQzOTQ5NzkkbzY1JGcxJHQxNzg0Mzk1NDE1JGo2MCRsMCRoODkyNDQ1OTc3" target="_self">Contact</a>
-   </li>
-  </ul>
-  </div>
- </div>   Läs vidare om Multireligionvalsystemet ,Multireligionvalsystem ,FN:s rollspel för fred som kan lösa den 78 år långa konflikten mellan Israel och Palestina..
-<li><a href="https://palestina-israel-konflikten.multireligionvalsystem.eu.org/folkmord/The-International-Criminal-Tribunal-for-Israel-ICTI.html/">👉 engagera dig nu ! 🤑  </a></li>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!--[if lt IE 7]><script src="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/kyrkovalsreformen/png.js"></script><![endif]-->
-<!--[if IE]><script>xr_aeh()</script><![endif]--><!--[if !IE]>--><script>xr_htm();repMobFonts();window.addEventListener('load', xr_aeh, false);</script><!--<![endif]-->
-<footer>
-  <div class="footer-links">
-    <h4>Our Network</h4>
-    <ul>
-      <li><a href="https://www.multireligionvalsystem.eu.org">Religion Comparisons</a></li>
-      <li><a href="https://www.multireligionvalsystem.eu.org/kyrkovalsreformen/Riksdagen_EU-parlamentet-och-kyrkovalet/">EU och kyrkovalets</a></li>
-     <li><a href=" https://www.multireligionvalsystem.eu.org/Det-svenska-hemliga-valet-sep-2025/religion-for-fred//">Religion för fred</a></li</a></li>
-     <li><a href="https://multireligionvalsystem.eu.org/mres/den-judisk-kristna-politiska-alliansen/">Political conflict resolution model</a></li>
-      <li><a href="https://clawdbot.multireligionvalsystem.eu.org">Clawdbot AI</a></li>
+            <!-- Track info -->
+            <div class="track-info">
+                <div class="track-title" id="trackTitle">Multireligionvalsystem-MRES</div>
+                <div class="track-artist" id="trackArtist">A multi-religion election system (MRES)</div>
+            </div>
 
-     
-    </ul>
-  </div>
-</footer>
+            <!-- Progress -->
+            <div class="progress-section">
+                <div class="progress-bar-wrap" id="progressWrap" role="slider" aria-label="Seek audio" aria-valuemin="0"
+                    aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                    <div class="progress-fill" id="progressFill">
+                        <div class="progress-thumb"></div>
+                    </div>
+                </div>
+                <div class="time-row">
+                    <span id="timeCurrent">0:00</span>
+                    <span id="timeDuration">0:00</span>
+                </div>
+            </div>
 
+            <!-- Controls -->
+            <div class="controls-row">
+                <button class="ctrl-btn" id="btnBackward" aria-label="Rewind 10 seconds" title="Rewind 10s">
+                    <i class="fa-solid fa-backward"></i>
+                </button>
+                <button class="ctrl-btn play-btn" id="btnPlay" aria-label="Play" title="Play / Pause">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <button class="ctrl-btn" id="btnForward" aria-label="Forward 10 seconds" title="Forward 10s">
+                    <i class="fa-solid fa-forward"></i>
+                </button>
+            </div>
+
+            <!-- Volume + Speed -->
+            <div class="volume-row">
+                <button class="volume-icon" id="btnMute" aria-label="Mute / Unmute" title="Mute">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+                <div class="volume-bar-wrap" id="volumeWrap" role="slider" aria-label="Volume" aria-valuemin="0"
+                    aria-valuemax="100" aria-valuenow="80" tabindex="0">
+                    <div class="volume-fill" id="volumeFill"></div>
+                </div>
+                <span class="volume-percent" id="volumePercent">80%</span>
+                <button class="speed-btn" id="btnSpeed" aria-label="Playback speed" title="Playback speed">1x</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // === Core references ===
+        const audio = document.getElementById('MediaPlayer1');
+        const card = document.getElementById('playerCard');
+        const btnPlay = document.getElementById('btnPlay');
+        const btnBackward = document.getElementById('btnBackward');
+        const btnForward = document.getElementById('btnForward');
+        const btnMute = document.getElementById('btnMute');
+        const btnSpeed = document.getElementById('btnSpeed');
+        const progressWrap = document.getElementById('progressWrap');
+        const progressFill = document.getElementById('progressFill');
+        const timeCurrent = document.getElementById('timeCurrent');
+        const timeDuration = document.getElementById('timeDuration');
+        const volumeWrap = document.getElementById('volumeWrap');
+        const volumeFill = document.getElementById('volumeFill');
+        const volumePercent = document.getElementById('volumePercent');
+        const canvas = document.getElementById('visualizerCanvas');
+        const ctx = canvas.getContext('2d');
+        const toastEl = document.getElementById('toast');
+
+        // === State ===
+        let isPlaying = false;
+        let isSeeking = false;
+        let isDraggingVolume = false;
+        let currentSpeed = 1;
+        const speeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
+        let speedIndex = 2;
+        let previousVolume = 0.8;
+
+        // Set initial volume
+        audio.volume = 0.8;
+        volumeFill.style.width = '80%';
+
+        // === Utility: format time ===
+        function formatTime(sec) {
+            if (!isFinite(sec) || sec < 0) return '0:00';
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return m + ':' + (s < 10 ? '0' : '') + s;
+        }
+
+        // === Toast ===
+        let toastTimer = null;
+        function showToast(msg) {
+            toastEl.textContent = msg;
+            toastEl.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1800);
+        }
+
+        // === Play / Pause ===
+        function togglePlay() {
+            if (isPlaying) {
+                audio.pause();
+            } else {
+                audio.play().catch(() => { });
+            }
+        }
+
+        btnPlay.addEventListener('click', togglePlay);
+
+        // Keyboard shortcut: Space to toggle
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT') {
+                e.preventDefault();
+                togglePlay();
+            }
+            if (e.code === 'ArrowLeft') { audio.currentTime = Math.max(0, audio.currentTime - 5); }
+            if (e.code === 'ArrowRight') { audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 5); }
+        });
+
+        // === Audio events ===
+        audio.addEventListener('play', () => {
+            isPlaying = true;
+            card.classList.add('playing');
+            btnPlay.setAttribute('aria-label', 'Pause');
+            initAudioContext();
+        });
+
+        audio.addEventListener('pause', () => {
+            isPlaying = false;
+            card.classList.remove('playing');
+            btnPlay.setAttribute('aria-label', 'Play');
+        });
+
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            card.classList.remove('playing');
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            timeDuration.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            if (isSeeking) return;
+            const pct = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+            progressFill.style.width = pct + '%';
+            progressWrap.setAttribute('aria-valuenow', Math.round(pct));
+            timeCurrent.textContent = formatTime(audio.currentTime);
+        });
+
+        audio.addEventListener('durationchange', () => {
+            timeDuration.textContent = formatTime(audio.duration);
+        });
+
+        // === Progress seek ===
+        function seekFromEvent(e) {
+            const rect = progressWrap.getBoundingClientRect();
+            let pct = (e.clientX - rect.left) / rect.width;
+            pct = Math.max(0, Math.min(1, pct));
+            progressFill.style.width = (pct * 100) + '%';
+            if (audio.duration) {
+                audio.currentTime = pct * audio.duration;
+            }
+        }
+
+        progressWrap.addEventListener('mousedown', (e) => {
+            isSeeking = true;
+            seekFromEvent(e);
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (isSeeking) seekFromEvent(e);
+        });
+        document.addEventListener('mouseup', () => {
+            isSeeking = false;
+        });
+
+        // Touch support for progress
+        progressWrap.addEventListener('touchstart', (e) => {
+            isSeeking = true;
+            seekFromEvent(e.touches[0]);
+        }, { passive: true });
+        document.addEventListener('touchmove', (e) => {
+            if (isSeeking) seekFromEvent(e.touches[0]);
+        }, { passive: true });
+        document.addEventListener('touchend', () => { isSeeking = false; });
+
+        // === Skip buttons ===
+        btnBackward.addEventListener('click', () => {
+            audio.currentTime = Math.max(0, audio.currentTime - 10);
+            showToast('-10 seconds');
+        });
+
+        btnForward.addEventListener('click', () => {
+            audio.currentTime = Math.min(audio.duration || 0, audio.currentTime + 10);
+            showToast('+10 seconds');
+        });
+
+        // === Volume ===
+        function setVolumeFromEvent(e) {
+            const rect = volumeWrap.getBoundingClientRect();
+            let pct = (e.clientX - rect.left) / rect.width;
+            pct = Math.max(0, Math.min(1, pct));
+            audio.volume = pct;
+            audio.muted = false;
+            volumeFill.style.width = (pct * 100) + '%';
+            volumePercent.textContent = Math.round(pct * 100) + '%';
+            volumeWrap.setAttribute('aria-valuenow', Math.round(pct * 100));
+            updateVolumeIcon(pct);
+        }
+
+        function updateVolumeIcon(vol) {
+            const icon = btnMute.querySelector('i');
+            if (audio.muted || vol === 0) {
+                icon.className = 'fa-solid fa-volume-xmark';
+                btnMute.setAttribute('aria-label', 'Unmute');
+            } else if (vol < 0.4) {
+                icon.className = 'fa-solid fa-volume-low';
+                btnMute.setAttribute('aria-label', 'Mute');
+            } else {
+                icon.className = 'fa-solid fa-volume-high';
+                btnMute.setAttribute('aria-label', 'Mute');
+            }
+        }
+
+        volumeWrap.addEventListener('mousedown', (e) => {
+            isDraggingVolume = true;
+            setVolumeFromEvent(e);
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (isDraggingVolume) setVolumeFromEvent(e);
+        });
+        document.addEventListener('mouseup', () => { isDraggingVolume = false; });
+
+        // Touch support for volume
+        volumeWrap.addEventListener('touchstart', (e) => {
+            isDraggingVolume = true;
+            setVolumeFromEvent(e.touches[0]);
+        }, { passive: true });
+        document.addEventListener('touchmove', (e) => {
+            if (isDraggingVolume) setVolumeFromEvent(e.touches[0]);
+        }, { passive: true });
+        document.addEventListener('touchend', () => { isDraggingVolume = false; });
+
+        btnMute.addEventListener('click', () => {
+            if (audio.muted || audio.volume === 0) {
+                audio.muted = false;
+                audio.volume = previousVolume || 0.8;
+                volumeFill.style.width = (audio.volume * 100) + '%';
+                volumePercent.textContent = Math.round(audio.volume * 100) + '%';
+                updateVolumeIcon(audio.volume);
+                showToast('Unmuted');
+            } else {
+                previousVolume = audio.volume;
+                audio.muted = true;
+                volumeFill.style.width = '0%';
+                volumePercent.textContent = '0%';
+                updateVolumeIcon(0);
+                showToast('Muted');
+            }
+        });
+
+        // === Speed ===
+        btnSpeed.addEventListener('click', () => {
+            speedIndex = (speedIndex + 1) % speeds.length;
+            currentSpeed = speeds[speedIndex];
+            audio.playbackRate = currentSpeed;
+            btnSpeed.textContent = currentSpeed + 'x';
+            showToast('Speed: ' + currentSpeed + 'x');
+        });
+
+        // === Audio Visualizer (Web Audio API) ===
+        let audioCtx = null;
+        let analyser = null;
+        let sourceNode = null;
+        let dataArray = null;
+        let audioContextInitialized = false;
+
+        function initAudioContext() {
+            if (audioContextInitialized) return;
+            try {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioCtx.createAnalyser();
+                analyser.fftSize = 64;
+                sourceNode = audioCtx.createMediaElementSource(audio);
+                sourceNode.connect(analyser);
+                analyser.connect(audioCtx.destination);
+                dataArray = new Uint8Array(analyser.frequencyBinCount);
+                audioContextInitialized = true;
+            } catch (err) {
+                // Graceful fallback — visualizer just won't show bars
+                console.warn('AudioContext not available:', err);
+            }
+        }
+
+        function drawVisualizer() {
+            requestAnimationFrame(drawVisualizer);
+
+            const w = canvas.width;
+            const h = canvas.height;
+            ctx.clearRect(0, 0, w, h);
+
+            if (!analyser || !isPlaying) {
+                // Draw subtle idle bars
+                const cx = w / 2;
+                const cy = h / 2;
+                const barCount = 24;
+                for (let i = 0; i < barCount; i++) {
+                    const angle = (i / barCount) * Math.PI * 2 - Math.PI / 2;
+                    const innerR = 58;
+                    const outerR = innerR + 3;
+                    const x1 = cx + Math.cos(angle) * innerR;
+                    const y1 = cy + Math.sin(angle) * innerR;
+                    const x2 = cx + Math.cos(angle) * outerR;
+                    const y2 = cy + Math.sin(angle) * outerR;
+                    ctx.beginPath();
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(x2, y2);
+                    ctx.strokeStyle = 'rgba(240,160,64,0.15)';
+                    ctx.lineWidth = 2;
+                    ctx.lineCap = 'round';
+                    ctx.stroke();
+                }
+                return;
+            }
+
+            analyser.getByteFrequencyData(dataArray);
+            const cx = w / 2;
+            const cy = h / 2;
+            const barCount = dataArray.length;
+
+            for (let i = 0; i < barCount; i++) {
+                const angle = (i / barCount) * Math.PI * 2 - Math.PI / 2;
+                const val = dataArray[i] / 255;
+                const innerR = 58;
+                const outerR = innerR + val * 30;
+                const x1 = cx + Math.cos(angle) * innerR;
+                const y1 = cy + Math.sin(angle) * innerR;
+                const x2 = cx + Math.cos(angle) * outerR;
+                const y2 = cy + Math.sin(angle) * outerR;
+
+                const alpha = 0.25 + val * 0.75;
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y2);
+                ctx.strokeStyle = `rgba(240,160,64,${alpha})`;
+                ctx.lineWidth = 2.5;
+                ctx.lineCap = 'round';
+                ctx.stroke();
+            }
+        }
+
+        drawVisualizer();
+
+        // === Floating particles ===
+        function createParticles() {
+            const count = 15;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = 1 + Math.random() * 2;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.top = Math.random() * 100 + 'vh';
+                p.style.opacity = 0;
+                const dur = 6 + Math.random() * 10;
+                const delay = Math.random() * 8;
+                p.style.animation = `floatParticle ${dur}s ${delay}s ease-in-out infinite`;
+                document.body.appendChild(p);
+            }
+
+            // Inject the keyframes
+            const style = document.createElement('style');
+            style.textContent = `
+      @keyframes floatParticle {
+        0% { opacity: 0; transform: translateY(0) translateX(0); }
+        20% { opacity: 0.4; }
+        80% { opacity: 0.2; }
+        100% { opacity: 0; transform: translateY(-80px) translateX(${20 - Math.random() * 40}px); }
+      }
+    `;
+            document.head.appendChild(style);
+        }
+
+        // Only create particles if user doesn't prefer reduced motion
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            createParticles();
+        }
+    </script>
+The term "multi-religion election"—representing the practical application of the multi-religion election system—refers to a reform of church elections. Church elections are a practice unique to the Nordic countries, where they have introduced democracy into the Protestant denominations; other religious communities based in the Nordic countries do not hold corresponding religious elections.
+
+Sweden has freedom of religion, meaning that everyone has the right to decide for themselves which religion to belong to—or whether to belong to none at all—but it is democracy that has granted freedom of religion to all religious communities. In a democratic country, this entails, among other things, that a refugee may be granted protection in Sweden due to persecution based on their religion. A defining characteristic of a secular state is the complete separation of state and church, as well as of religion and politics.
+
+The notion—held by many—that Sweden is a Christian country and must therefore have a religious party in the Riksdag conflicts with the fundamental principle of separation mentioned above. The same applies to the idea that Sweden, as an EU member, must have a religious party in the European Parliament; this, too, runs counter to the fundamental principle of separation.
+
+Regardless of whether the "Multi-religion Election" holds official political or legal significance in Sweden, the aim is to ensure that the 78-year-old conflict between Israel and Palestine is not left for the next generation to resolve—as politicians of previous generations have done.
+
+More information about the Multi-Religion Election System is available at MRES (https://mres.multireligionvalsystem.eu.org/)
+, more information about Multi-Religion Elections is available at MRE (https://www.multireligionvalsystem.eu.org/mre),
+ and information on Multi-Religion Support is available at https://multi-religion-support.multireligionvalsystem.eu.org/altirenativ-till-SST-stiftelse.
+
+
+More information on what constitutes a complete separation between state and church, as well as between religion and politics, can be found at https://multireligionvalsystem.eu.org/ofullbordade-separationen-stat-kyrka-religion-politik.html
 </body>
+
 </html>
