@@ -36,6 +36,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:url" content="https://www.multireligionvalsystem.eu.org/">
     <meta property="og:image" content="https://multireligionvalsystem.eu.org/Enskild-motion-FDU-Riksdagen/og.webp">
 <meta name="p:domain_verify" content="8f1364a0c6847a505263647edabfefe5"/>
+  // Yielding execution using scheduler.yield() or a fallback timeout
+async function processLargeData(items) {
+  for (let i = 0; i < items.length; i++) {
+    processItem(items[i]);
+    // Yield every 50 items to keep individual tasks under 50ms
+    if (i % 50 === 0) {
+      if ('scheduler' in window && 'yield' in window.scheduler) {
+        await window.scheduler.yield();
+      } else {
+        await new Promise(resolve => setTimeout(resolve, 0));
+      }
+    }
+  }
+}
     <!-- Structured Data: WebSite Schema (Crucial for Homepages) -->
     <script type="application/ld+json">
     {
