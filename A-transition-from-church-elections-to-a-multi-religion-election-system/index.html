@@ -205,3 +205,308 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </ul>
   </div>
 </footer>
+<!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 YP, The Youth Party. Alla rättigheter förbehållna.</p>
+      <p style="margin-top: 15px;">
+        <a href="/integritet" style="color: white; margin: 0 10px;">Integritetspolicy</a>
+        <a href="/kontakt" style="color: white; margin: 0 10px;">Kontakt</a>
+        <a href="https://multireligionvalsystem.eu.org/" style="color: white; margin: 0 10px;">Huvudsida</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Analytics & Tracking -->
+  <script>
+    // Track form submission
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      // Send to analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'signup', {
+          'event_category': 'Conversion',
+          'event_label': 'Membership Signup'
+        });
+      }
+      
+      // Could also send to your backend/CRM here
+    });
+    
+    // Track CTA clicks
+    document.querySelectorAll('.cta-primary').forEach(button => {
+      button.addEventListener('click', function() {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'cta_click', {
+            'event_category': 'Engagement',
+            'event_label': this.textContent
+          });
+        }
+      });
+    });
+    
+    // Track scroll depth
+    let scrollDepthTracked = {25: false, 50: false, 75: false, 100: false};
+    window.addEventListener('scroll', function() {
+      const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+      
+      [25, 50, 75, 100].forEach(depth => {
+        if (scrollPercent >= depth && !scrollDepthTracked[depth]) {
+          scrollDepthTracked[depth] = true;
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'scroll_depth', {
+              'event_category': 'Engagement',
+              'event_label': depth + '% Scrolled'
+            });
+          }
+        }
+      });
+    });
+  </script>
+ <!-- Footer -->
+    <footer class="bg-bark-900 text-ivory-400 pt-20 pb-10 relative">
+        <div class="absolute top-0 left-0 right-0 h-px gold-line opacity-40"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="md:col-span-1">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-full bg-tea-500 flex items-center justify-center">
+                            <span class="iconify text-ivory-100 text-lg" data-icon="lucide:leaf"></span>
+                        </div>
+                        <div>
+                            <span class="font-display text-xl font-semibold text-ivory-100">FDU</span>
+                            <span class="font-display text-xs block tracking-[0.25em] text-gold-400 -mt-0.5">Fred, Demokrati, hållbar utveckling (Hållbar politik) som vilar på Multireligionvalsystem</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-ivory-500 leading-relaxed mb-6">
+                        Ofullbordat separation mellan stst och kyrka samt mellan religion och politik.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="https://www.instagram.com/multireligionval"
+                            class="w-9 h-9 rounded-full border border-ivory-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 transition-all">
+                            <span class="iconify text-sm" data-icon="lucide:instagram"></span>
+                        </a>
+                        <a href="https://www.facebook.com/amultireligionelectionsystem"
+                            class="w-9 h-9 rounded-full border border-ivory-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 transition-all">
+                            <span class="iconify text-sm" data-icon="lucide:facebook"></span>
+                        </a>
+                        <a href="https://www.youtube.com/@faith-representatives"
+                            class="w-9 h-9 rounded-full border border-ivory-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 transition-all">
+                            <span class="iconify text-sm" data-icon="lucide:youtube"></span>
+                        </a>
+                        <a href="https://twitter.com/DPNS"
+                            class="w-9 h-9 rounded-full border border-ivory-700 flex items-center justify-center hover:border-gold-400 hover:text-gold-400 transition-all">
+                            <span class="iconify text-sm" data-icon="lucide:twitter"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-display text-sm font-semibold text-ivory-100 tracking-wide uppercase mb-5">Religion</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://kyrkovalsreform.forumotion.eu/t30-hur-kommer-det-sig-da-att-samtliga-som-haller-pa-med-fns-rollspel-for-fred-konfliktlosningsmodeller-och-nobels-fredspris-oslo-avtalet-har-misslyckats" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Trossamfund och Religionsfrihet </a></li>
+                        <li><a href="https://www.multireligionvalsystem.eu.org/oi/" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Demokrati</a>
+                        </li>
+                        <li><a href="https://www.multireligionvalsystem.eu.org/fns-rollspel-for-fred/" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">FN:s reform</a></li>
+                        <li><a href="https://asyl-och-flyktingpolitik.multireligionvalsystem.eu.org/denyasvenskarna/"
+                                class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Subscriptions</a>
+                        </li>
+                        <li><a href="https://www.multireligionvalsystem.eu.org/oi/" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">EU-reform</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display text-sm font-semibold text-ivory-100 tracking-wide uppercase mb-5">Learn
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://palestina-israel-konflikten.multireligionvalsystem.eu.org" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Israel-Palestina konflikt</a></li>
+                        <li><a href="https://www.multireligionvalsystem.eu.org/unikt-konfliktl%C3%B6sningsmodellskoncept/" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Avancerade konfliktlösningsmodell</a></li>
+                        <li><a href="https://www.multireligionvalsystem.eu.org/svenska-kyrkans-privilegier/" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Kyrkovalsreform</a></li>
+                        <li><a href="https://blog.multireligionvalsystem.eu.org/" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Blog</a>
+                        </li>
+                        <li><a href="https://fdu.multireligionvalsystem.eu.org" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">FDU
+                                </a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-display text-sm font-semibold text-ivory-100 tracking-wide uppercase mb-5">Reserch
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://www.multireligionvalsystem.eu.org/de-nya-svenskarna/" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Our
+                                Story</a></li>
+                        <li><a href="https://mre.multireligionvalsystem.eu.org/2026/08/om-kristersson-och-andersson-trots.html"
+                                class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">samlingsregering</a>
+                        </li>
+                        <li><a href="https://www.multireligionvalsystem.eu.org/fns-rollspel-for-fred/" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Kyrkovalsreform
+                                </a></li>
+                        <li><a href="https://www.multireligionvalsystem.eu.org/FRED" class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Contact
+                                FRED</a></li>
+                        <li><a href="https://multi-religion-election.multireligionvalsystem.eu.org/"
+                                class="text-sm text-ivory-500 hover:text-gold-400 transition-colors">Multireligionval</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="h-px bg-ivory-800 mb-8"></div>
+
+            <!-- Bottom Bar -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-ivory-600">© 2024 A multi-religion election system. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="https://mres.multireligionvalsystem.eu.org/" class="text-xs text-ivory-600 hover:text-gold-400 transition-colors">MRES</a>
+                    <a href="https://www.multireligionvalsystem.eu.org/FAQ" class="text-xs text-ivory-600 hover:text-gold-400 transition-colors">FAQ</a>
+                    <a href="https://www.multireligionvalsystem.eu.org/contact" class="text-xs text-ivory-600 hover:text-gold-400 transition-colors">kontact</a>
+                    <a href="https://mre.multireligionvalsystem.eu.org/" class="text-xs text-ivory-600 hover:text-gold-400 transition-colors">MRE</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast"
+        class="fixed bottom-6 right-6 z-[100] transform translate-y-20 opacity-0 transition-all duration-500 pointer-events-none">
+        <div class="bg-bark-800 text-ivory-100 px-6 py-4 rounded-xl shadow-xl flex items-center gap-3 max-w-sm">
+            <span class="iconify text-gold-400 text-xl flex-shrink-0" id="toastIcon"
+                data-icon="lucide:check-circle"></span>
+            <p class="text-sm" id="toastMsg">How to solve a most complex and controversial issues in the world ?</p>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="backToTop"
+        class="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-bark-800 text-ivory-100 flex items-center justify-center shadow-lg hover:bg-bark-900 transition-all active:scale-[0.95] opacity-0 pointer-events-none"
+        onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <span class="iconify" data-icon="lucide:chevron-up"></span>
+    </button>
+
+    <script>
+        // ====== Navbar scroll behavior ======
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 80) {
+                navbar.classList.add('bg-ivory-50/95', 'backdrop-blur-xl', 'shadow-sm');
+            } else {
+                navbar.classList.remove('bg-ivory-50/95', 'backdrop-blur-xl', 'shadow-sm');
+            }
+
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            if (currentScroll > 600) {
+                backToTop.classList.remove('opacity-0', 'pointer-events-none');
+                backToTop.classList.add('opacity-100');
+            } else {
+                backToTop.classList.add('opacity-0', 'pointer-events-none');
+                backToTop.classList.remove('opacity-100');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // ====== Mobile menu ======
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        let menuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.setAttribute('data-icon', menuOpen ? 'lucide:x' : 'lucide:menu');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-icon', 'lucide:menu');
+            });
+        });
+
+        // ====== Product Tabs ======
+        const tabs = document.querySelectorAll('.product-tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active from all
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(c => c.classList.add('hidden'));
+
+                // Add active to clicked
+                tab.classList.add('active');
+                const target = tab.getAttribute('data-tab');
+                document.getElementById('tab-' + target).classList.remove('hidden');
+            });
+        });
+
+        // ====== Scroll Reveal ======
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ====== Toast notification ======
+        function showToast(message, icon = 'lucide:check-circle') {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            const toastIcon = document.getElementById('toastIcon');
+
+            toastMsg.textContent = message;
+            toastIcon.setAttribute('data-icon', icon);
+
+            toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3500);
+        }
+
+        // ====== Subscription handler ======
+        function handleSubscribe(plan) {
+            const names = {
+                'discovery': 'Discovery Box — $0/mo',
+                'connoisseur': 'Connoisseur Box — $0/mo',
+                'master': 'Master\'s Reserve — $0/mo'
+            };
+            showToast(`Selected: ${names[plan]}. Redirecting to checkout...`, 'lucide:package');
+        }
+
+        // ====== Newsletter handler ======
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const form = e.target;
+            const email = form.querySelector('input[type="email"]').value;
+            const msgDiv = document.getElementById('newsletterMsg');
+
+            msgDiv.classList.remove('hidden');
+            msgDiv.classList.add('text-tea-600');
+            msgDiv.textContent = `Welcome to the Inner Circle! We'll send tea wisdom to ${email}.`;
+
+            form.reset();
+
+            showToast('Successfully subscribed to our newsletter!', 'lucide:mail');
+
+            setTimeout(() => {
+                msgDiv.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
